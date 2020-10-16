@@ -1,0 +1,14 @@
+Tutorial Link: https://realpython.com/beautiful-soup-web-scraper-python/
+
+Tutorial: https://towardsdatascience.com/selenium-tutorial-scraping-glassdoor-com-in-10-minutes-3d0915c6d905
+
+Glassdoor
+
+- the results on the side are organized by an article tag with the "MainCol" id. 
+- each result is then listed under a "ul" element with the following classes:
+"j1Grid hover p-0"
+-job content is displayed in a div with "JobDesc" + a number id, which houses
+another div with classes "jobDescriptionContent desc", which in turn houses all
+the text elements
+    - after that, text elements are unorganized, so will have to search for specific keywords
+- have to figure out some way of switching job descriptions, because I don't think its listed otherwise
