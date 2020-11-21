@@ -15,11 +15,23 @@ def main():
     print("You should include the following skills: \n")
     print(single_weight(VALUES, lines_available))
 
+    skill_list = objectify(VALUES)
+    n = len(skill_list)
+
+    dp_table = [[-1 for i in range(lines_available + 1)] for j in range(n + 1)] 
+    
+    print("If there were multiple weights, the correct answer is:")
+    print(multi_weights(skill_list, lines_available, dp_table, n))
+
+
 class Skill:
     def __init__(self, string, value, weight):
         self.value = value
         self.string = string 
         self.weight = weight
+    def __repr__(self):
+        #this is for better printing
+        return str(self.string) + ': weight = ' + str(self.weight) + ", value = " + str(self.value) 
 
 def objectify(dict):
     new_list = []
@@ -53,9 +65,40 @@ def single_weight(skills, num_lines):
 
     return ret
 
-
+def multi_weights(skills, space_available, dp, n_skills):
+    if n_skills == 0 or space_available == 0:
+        return (0, []) #no skills left to check or space to 
+        #place any of them
     
+    if dp[n_skills][space_available] != -1:
+        return dp[n_skills][space_available] # we have an answer!
 
+    #now we choose the best option: either taking or skipping
+    #the current choice
+    if skills[n_skills-1].weight <= space_available:
+        #let's consider if its worth adding
+        
+        #in this case, we select it, so subtract that element from the list as well 
+        #as subtract the space used
+        add_choice = multi_weights(skills, space_available - skills[n_skills-1].weight, dp, n_skills - 1)
+        add_val, add_list = add_choice
+
+        #in this case, we just skip the case, so ignore it in the list
+        skip_choice = multi_weights(skills, space_available, dp, n_skills - 1)
+        skip_val, skip_list = skip_choice
+
+        if add_val + skills[n_skills -1].value >= skip_val:
+            add_list.append(skills[n_skills-1])
+            dp[n_skills][space_available] = (skills[n_skills - 1].value + add_val, add_list)
+        else:
+            dp[n_skills][space_available] = (skip_val, skip_list)
+
+        return dp[n_skills][space_available]
+
+    elif skills[n_skills-1].weight > space_available:
+        #can't use this one, so only return the skip
+        dp[n_skills, space_available] = multi_weights(skills, space_available, dp, n_skills -1)
+        return dp[n_skills, space_available]
 
 
 if __name__ == "__main__":
