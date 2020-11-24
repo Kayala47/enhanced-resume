@@ -16,6 +16,7 @@ class SortByImportance implements Comparator<WordInfo> {
 }
 
 class WordInfo {
+
 	  public String word; 
 	  public int weight; 
 	  public int value;
