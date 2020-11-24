@@ -36,6 +36,7 @@ public class tagging {
 				File outputFile = new File("weights.txt");
 				writer = new FileWriter(outputFile);
 				
+				//get the first line of the text document containing the values input by the user
 				ArrayList<String> values = new ArrayList<String>();
 				String firstLine;
 				if((firstLine = reader.readLine()) != null) {
@@ -47,22 +48,26 @@ public class tagging {
 				}
 				
 				String row;
-				int wordNumber = 0;
+				//int wordNumber = 0;
 				ArrayList<String> words = new ArrayList<String>();
 				
+				//Read every row of the document(Starts on second line
 				while((row = reader.readLine()) != null) {
 					row = row.toLowerCase();
+					//split row into an array based on spaced
 					for(String word: row.split(" ")){
+						//wprd already found
 						if(map.containsKey(word)) {
 							WordInfo info = map.get(word);
 							info.value += 1;
-							
+						//not already found but in the value arraylist
 						}else if(values.contains(word)){
 							map.put(word, new WordInfo(word, word.length(), 1, wordNumber));
 						}
-						wordNumber += 1;
+						//wordNumber += 1;
 					}
 				}
+				//write values that were found and not found to wights.txt
 				for(String key : values) {
 					WordInfo info = map.get(key);
 					if(info==null) {
