@@ -9,13 +9,13 @@ VALUES = {"python": (3, 1), "javascript": (2, 1), "react": (4, 1),
 "public speaking": (2, 1), "html": (1, 1), "rust": (1000, 1), "ruby": (5, 1), 
 "leadership": (4, 1), "full stack": (13, 1), "SQL": (10, 1)}
 
-def main():
+def main(skill_dict):
     lines_available = random.randint(1, 10)
 
-    print("You should include the following skills: \n")
-    print(single_weight(VALUES, lines_available))
+    # print("You should include the following skills: \n")
+    # print(single_weight(VALUES, lines_available))
 
-    skill_list = objectify(VALUES)
+    skill_list = objectify(skill_dict)
     n = len(skill_list)
 
     dp_table = [[-1 for i in range(lines_available + 1)] for j in range(n + 1)] 

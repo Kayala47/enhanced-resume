@@ -4,7 +4,8 @@ from glassdoor_selenium import take_one
 f = open('outfile.txt', 'w')
 
 skills = ["python", "java", "react", "SQL", "MERN", "C++", "C",
-"rust", "Haskell", "Ruby", "Leadership", "English"]
+"rust", "Haskell", "Ruby", "Leadership", "English", "agile", "database", 
+"javascript", "unit test", "unix", "linux"]
 
 f.write(" ".join(skills))
 f.write("\n")
