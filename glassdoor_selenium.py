@@ -216,7 +216,7 @@ def get_jobs(keyword, num_jobs, verbose):
 
 def take_one():
     # This line will open a new chrome window and start the scraping.
-    df = get_jobs("datascientist", 5, False)
+    df = get_jobs("datascientist", 10, False)
 
     print(df["Job Description"])
 

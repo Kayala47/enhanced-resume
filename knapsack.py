@@ -19,8 +19,6 @@ def main(skill_file):
         # print(line)
         skill_dict[parts[0]] = (int(parts[1]), int(parts[2]))
 
-    # print("You should include the following skills: \n")
-    # print(single_weight(VALUES, lines_available))
 
     skill_list = objectify(skill_dict)
     n = len(skill_list)
@@ -104,8 +102,8 @@ def multi_weights(skills, space_available, dp, n_skills):
 
     elif skills[n_skills-1].weight > space_available:
         #can't use this one, so only return the skip
-        dp[n_skills, space_available] = multi_weights(skills, space_available, dp, n_skills -1)
-        return dp[n_skills, space_available]
+        dp[n_skills][space_available] = multi_weights(skills, space_available, dp, n_skills -1)
+        return dp[n_skills][space_available]
 
 
 
