@@ -15,7 +15,7 @@ class WordInfo {
 	  public int value;
 	  public Integer importance;
 	  
-	  public WordInfo(String word, int value, int weight, int importance) { 
+	  public WordInfo(String word, int weight, int value, int importance) { 
 	    this.word = word; 
 	    this.weight = weight; 
 	    this.value = value;
@@ -58,15 +58,18 @@ public class tagging {
 							info.value += 1;
 							
 						}else if(values.contains(word)){
-							map.put(word, new WordInfo(word, 1, word.length(), wordNumber));
-							words.add(word);
+							map.put(word, new WordInfo(word, word.length(), 1, wordNumber));
 						}
 						wordNumber += 1;
 					}
 				}
-				for(String key : words) {
+				for(String key : values) {
 					WordInfo info = map.get(key);
-					writer.write(key + "," + info.value + "," + info.weight + "\n");
+					if(info==null) {
+						writer.write(key + "," + key.length() + ",0\n");
+					}else {
+						writer.write(key + "," + info.weight + "," + info.value + "\n");
+					}	
 				}
 				writer.close();
 				reader.close();
