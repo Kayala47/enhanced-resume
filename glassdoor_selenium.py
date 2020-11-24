@@ -214,7 +214,27 @@ def get_jobs(keyword, num_jobs, verbose):
     # This line converts the dictionary object into a pandas DataFrame.
     return pd.DataFrame(jobs)
 
+def take_one():
+    # This line will open a new chrome window and start the scraping.
+    df = get_jobs("datascientist", 5, False)
 
-# This line will open a new chrome window and start the scraping.
-df = get_jobs("datascientist", 5, False)
-print(df["Job Description"])
+    print(df["Job Description"])
+
+    pd.set_option('display.max_colwidth', None)
+
+    #choose one job at random
+    return df.sample()['Job Description']
+
+    #strip out all non-letter characters
+
+    #write to a text file
+
+    
+
+
+
+
+
+
+if __name__ == "__main__":
+    take_one()
