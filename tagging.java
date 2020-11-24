@@ -8,13 +8,6 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
 
-class SortByImportance implements Comparator<WordInfo> {
-	@Override
-	public int compare(WordInfo o1, WordInfo o2) {
-		return o1.importance.compareTo(o2.importance);
-	}
-}
-
 class WordInfo {
 
 	  public String word; 
