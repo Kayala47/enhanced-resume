@@ -62,7 +62,7 @@ public class tagging {
 							info.value += 1;
 						//not already found but in the value arraylist
 						}else if(values.contains(word)){
-							map.put(word, new WordInfo(word, word.length(), 1, wordNumber));
+							map.put(word, new WordInfo(word, word.length(), 1, 0));
 						}
 						//wordNumber += 1;
 					}
