@@ -9,8 +9,15 @@ VALUES = {"python": (3, 1), "javascript": (2, 1), "react": (4, 1),
 "public speaking": (2, 1), "html": (1, 1), "rust": (1000, 1), "ruby": (5, 1), 
 "leadership": (4, 1), "full stack": (13, 1), "SQL": (10, 1)}
 
-def main(skill_dict):
+def main(skill_file):
     lines_available = random.randint(1, 10)
+    skill_dict = {}
+    f = open(skill_file, 'r') #read in these values and make a dict
+    for line in f:
+        # line = f.readline()
+        parts = line.split(',')
+        # print(line)
+        skill_dict[parts[0]] = (int(parts[1]), int(parts[2]))
 
     # print("You should include the following skills: \n")
     # print(single_weight(VALUES, lines_available))
@@ -20,7 +27,7 @@ def main(skill_dict):
 
     dp_table = [[-1 for i in range(lines_available + 1)] for j in range(n + 1)] 
     
-    print("If there were multiple weights, the correct answer is:")
+    # print("If there were multiple weights, the correct answer is:")
     print(multi_weights(skill_list, lines_available, dp_table, n))
 
 
@@ -36,7 +43,7 @@ class Skill:
 def objectify(dict):
     new_list = []
     for k in dict.keys():
-        val, wt = dict.get(k)
+        wt, val = dict.get(k)
         new_obj = Skill(k, val, wt)
         new_list.append(new_obj)
     return new_list 
@@ -101,5 +108,6 @@ def multi_weights(skills, space_available, dp, n_skills):
         return dp[n_skills, space_available]
 
 
+
 if __name__ == "__main__":
-    main()
+    main("weights.txt")
