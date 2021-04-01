@@ -23,7 +23,7 @@ def get_jobs(num_jobs: int = 5, keyword: str = "datascientist"):
 
     # Uncomment the lines below if you'd like to scrape without a new Chrome window every time.
     # options.add_argument('headless')
-    # options.add_argument('start-maximized')
+    options.add_argument('start-maximized')
 
     # the driver is responsible for opening the new window
     # installs driver each time
@@ -138,8 +138,20 @@ def get_jobs(num_jobs: int = 5, keyword: str = "datascientist"):
         # Clicking on the "next page" button
         # you'll do this once you run out of listings on one page
         try:
-            driver.find_element_by_xpath(
-                './/li[@class="pagination-next"]//a').click()
+            # driver.find_element_by_xpath(
+            #     './/li[@class="pagination-next"]//a').click()
+
+            '''
+                The next page button is also an svg, not a button. We need to move our
+                cursor to where the svg is and click that.
+
+            '''
+            elem = driver.find_element_by_css_selector(
+                '[data-test="pagination-next"]')
+            print(elem)  # just to make sure we've found it
+
+            ac = ActionChains(driver)
+            ac.move_to_element(elem).click().perform()
         except NoSuchElementException:
             # not enough job listings to satisfy criteria
             print("Scraping terminated before reaching target number of jobs. Needed {}, got {}.".format(

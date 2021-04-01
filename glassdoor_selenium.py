@@ -21,7 +21,7 @@ def get_jobs(keyword, num_jobs, verbose):
     driver = webdriver.Chrome(ChromeDriverManager().install())
     # driver.set_window_size(1120, 1000)
 
-    url = "https://www.glassdoor.com/Job/big-bear-city-software-engineer-intern-jobs-SRCH_IL.0,13_IC1147056_KO14,38.htm"
+    url = "https://www.glassdoor.com/Job/software-engineer-jobs-SRCH_KO0,17.htm?srs=RECENT_SEARCHES"
     driver.get(url)
     jobs = []
 
@@ -37,13 +37,14 @@ def get_jobs(keyword, num_jobs, verbose):
 
         try:
             driver.find_element_by_class_name(
-                "selected").click()
+                "react-job-listing").click()
         except ElementClickInterceptedException:
             pass
         except NoSuchElementException:
+            print("couldn't click")
             pass
 
-        time.sleep(2)
+        time.sleep(5)
 
         try:
             # clicking to the X.
@@ -59,8 +60,10 @@ def get_jobs(keyword, num_jobs, verbose):
 
         # Going through each job in this page
         # jl for Job Listing. These are the buttons we're going to click.
-        job_buttons = driver.find_elements_by_class_name("jl")
+        job_buttons = driver.find_elements_by_class_name("react-job-listing")
         for job_button in job_buttons:
+
+            print("got a job button")
 
             print("Progress: {}".format(
                 "" + str(len(jobs)) + "/" + str(num_jobs)))
@@ -73,12 +76,15 @@ def get_jobs(keyword, num_jobs, verbose):
 
             while not collected_successfully:
                 try:
-                    company_name = driver.find_element_by_xpath(
-                        './/div[@class="employerName"]').text
-                    location = driver.find_element_by_xpath(
-                        './/div[@class="location"]').text
-                    job_title = driver.find_element_by_xpath(
-                        './/div[contains(@class, "title")]').text
+                    # company_name = driver.find_element_by_xpath(
+                    #     './/div[@class="employerName"]').text
+                    company_name = -1
+                    # location = driver.find_element_by_xpath(
+                    #     './/div[@class="location"]').text
+                    location = -1
+                    # job_title = driver.find_element_by_xpath(
+                    #     './/div[contains(@class, "title")]').text
+                    job_title = -1
                     job_description = driver.find_element_by_xpath(
                         './/div[@class="jobDescriptionContent desc"]').text
                     collected_successfully = True
@@ -214,26 +220,22 @@ def get_jobs(keyword, num_jobs, verbose):
     # This line converts the dictionary object into a pandas DataFrame.
     return pd.DataFrame(jobs)
 
+
 def take_one():
     # This line will open a new chrome window and start the scraping.
     df = get_jobs("datascientist", 10, False)
 
-    print(df["Job Description"])
+    # print(df["Job Description"])
 
     pd.set_option('display.max_colwidth', None)
 
-    #choose one job at random
-    return df.sample()['Job Description']
+    # choose one job at random
+    # return df.sample()['Job Description']
 
-    #strip out all non-letter characters
+    # strip out all non-letter characters
 
-    #write to a text file
-
-    
-
-
-
-
+    # write to a text file
+    print(df['Job Description'])
 
 
 if __name__ == "__main__":
