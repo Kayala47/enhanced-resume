@@ -1,0 +1,8 @@
+https://www.glassdoor.com/Job/jobs.htm?sc.keyword=machine%20learning%20engineer%20jobs
+https://www.glassdoor.com/Job/jobs.htm?context=Jobs&suggestCount=0&suggestChosen=false&clickSource=searchBox&typedKeyword=Software%20Engineer&sc.keyword=Software%20Engineer
+https://www.glassdoor.com/Job/jobs.htm?sc.keyword=web%20developer%20jobs
+https://www.glassdoor.com/Job/marketing-analyst-jobs-SRCH_KO0,17.htm?srs=RECENT_SEARCHES
+https://www.glassdoor.com/Job/jobs.htm?context=Jobs&suggestCount=0&suggestChosen=false&clickSource=searchBox&typedKeyword=Data%20Scientist&sc.keyword=Data%20Scientist
+https://www.glassdoor.com/Job/jobs.htm?context=Jobs&suggestCount=0&suggestChosen=false&clickSource=searchBox&typedKeyword=Network%20Engineer&sc.keyword=Network%20Engineer
+https://www.glassdoor.com/Job/jobs.htm?context=Jobs&suggestCount=0&suggestChosen=false&clickSource=searchBox&typedKeyword=Devops%20Engineer&sc.keyword=Devops%20Engineer
+https://www.glassdoor.com/Job/jobs.htm?context=Jobs&suggestCount=0&suggestChosen=false&clickSource=searchBox&typedKeyword=Robotics%20Engineer&sc.keyword=Robotics%20Engineer

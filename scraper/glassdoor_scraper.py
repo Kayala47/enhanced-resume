@@ -8,7 +8,7 @@ import time  # to allow waiting for load
 import pandas as pd  # keep a database of our job listings
 
 
-def get_jobs(num_jobs: int = 5, keyword: str = "datascientist"):
+def get_jobs(num_jobs: int, url: str):
     '''
     Opens a chrome browser that manually clicks on job postings and scrapes the description
 
@@ -16,7 +16,7 @@ def get_jobs(num_jobs: int = 5, keyword: str = "datascientist"):
     Keyword = the search term for the job listings you want. Ie, "data scientist"
     num_jobs = number of listings you want to scrape. Low default is for testing. 
     '''
-
+    print("begain scraping")
     # we need a webdriver installed every time. However, we can get it to install
     # automatically instead of manually
     options = webdriver.ChromeOptions()
@@ -31,7 +31,7 @@ def get_jobs(num_jobs: int = 5, keyword: str = "datascientist"):
 
     # for now, hardcoded. Later, will depend on keyword entered above
     # TODO: change to allow different keywords
-    url = "https://www.glassdoor.com/Job/software-engineer-jobs-SRCH_KO0,17.htm?srs=RECENT_SEARCHES"
+    url = url
 
     driver.get(url)  # open webpage
 
@@ -161,7 +161,7 @@ def get_jobs(num_jobs: int = 5, keyword: str = "datascientist"):
     return pd.DataFrame(jobs_list)
 
 
-def gather_data(filename: str = "./output.csv"):
+def gather_data(filename: str = "./output.csv", num_jobs: int = 5, url: str = "https://www.glassdoor.com/Job/jobs.htm?sc.keyword=machine%20learning%20engineer%20jobs"):
     '''
     Performs scraping operation and creates a text file with our data
 
@@ -170,7 +170,7 @@ def gather_data(filename: str = "./output.csv"):
     '''
 
     # by default, will scrape 5 listings
-    df = get_jobs(10000)
+    df = get_jobs(num_jobs, url)
 
     pd.set_option('display.max_colwidth', None)
 

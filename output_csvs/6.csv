@@ -1,0 +1,695 @@
+Job Title,Company Name,Job Description
+-1,-1,"Overview:
+As a site reliability engineer or DevOps engineer, you get excited about working on real-time problems that are disrupting users and limiting functionality. You understand that collaborating with colleagues and building and creating deployment tools for our Software as a Service (SaaS) is essential to users' work, just as Esri’s cloud-based mapping platform is essential to analyzing and sharing geographic data. We welcome you to join our ArcGIS Online hosted services team, which is working on a product used by thousands of organizations around the world to make a difference while maintaining infrastructure, managing natural resources, responding to disasters, and more.
+Responsibilities:
+Collaborate with a team of SREs and DevOps engineers to operate SaaS capabilities across multiple cloud providers and regions
+Design, implement, and maintain the operational components within the ArcGIS Online hosted services platform, which leverages modern container infrastructure running Kubernetes
+Requirements:
+Recommended Qualifications:
+The Company:"
+-1,-1,"IT DevOps organization is seeking a dynamic, highly motivated, and service delivery-oriented Cloud DevOps Engineer to join our IT DevOps Underwriting team. The team is responsible for providing DevOps support for our underwriting, electronic documents, and digital communication systems in GEICO delivering infrastructure in Azure, automatic deployment of services, establishing appropriate monitoring & alerting, and environmental support to ensure a fault-tolerant, reliable, and highly available environment for our internal and external customers. If you enjoy hosting business-critical enterprise applications in a fast-paced dynamic environment, we’d love to hear from you!
+The candidate will be part of a team that is responsible for application onboarding, infrastructure provisioning, deployment automation, ITSM onboarding, maintain the environment for compliance, availability, optimized cloud cost while providing full application development lifecycle support across all environments including production support as per industry best practices and internal standards and controls."
+-1,-1,"As a DevOps Engineer at UHIN, you will help build out and migrate our next-generation infrastructure. You will get to work with cutting-edge technologies like Kubernetes, Docker, and AWS, and will help design and build a common platform for our development and infrastructure teams. You will possess a good understanding of networking, security, DNS, Linux, databases, proxies, and protocols preferred. We primarily use PHP and JavaScript, and knowledge of those languages is a requirement for this role. Security is paramount at UHIN and you will help define processes, procedures, and monitoring tools to automate compliance and security objectives. You’ll also help evangelize and train the rest of the company on DevOps processes and tools.
+Primary Responsibilities:
+· Core: Create strong practices around building scalable and resilient distributed microservices in a AWS cloud environment."
+-1,-1,"Bring your passion for what you do and come join the Science Platform Branch (SPB) with The Space Telescope Science Institute (STScI) as a Senior Software Engineer (DevOps). STScI is the science operations center for several NASA missions including the Hubble Space Telescope (HST), Kepler, GALEX, and TESS mission data. It will maintain mission data for the future James Webb Space Telescope (JWST), launching in 2021 and Nancy Grace Roman Space Telescope (Roman), launching in the mid-2020s.
+SPB seeks an experienced DevOps Engineer to help build development assets upfront for our missions, geared towards operating in a DevOps mode for smoother, quicker, and more reliable development and deployment of software deliverables. You will work with a team that is passionate about the work they do in support of astronomers around the world.
+We are located in Baltimore, MD. We offer an excellent and generous benefits package, tuition reimbursement, flexible work schedules and a stimulating and diverse work environment. Explore our benefits: http://www.stsci.edu/opportunities/benefits"
+-1,-1,"Ezoic, a VC backed Google Certified Publishing Partner is an easy-to-use, yet incredibly sophisticated machine learning platform that allows digital publishers to automatically test content, layouts and ads to enhance user experience and increase digital revenue. Our platform reaches more than 300 million unique individuals each month and is growing quickly.
+We're looking for a highly-motivated, self-starting DevOps Engineer that is excited to learn new cloud technologies and languages. You will help manage our infrastructure within AWS to keep the thousands of sites we power running smoothly. You'll also be involved in our CI/CD pipeline to keep our software engineers moving quickly, and use infrastructure as code to keep our systems up to date.
+This is a full-time employee position, no C2C please."
+-1,-1,"As the multiyear winner of the Best in KLAS award for Long-Term Care Software and Home Health and Hospice EMR, MatrixCare is an industry leader in interoperability and is trusted by thousands of facility-based and home-based care organizations to improve provider efficiencies and promote a better quality of life for the people they serve. They help providers connect and collaborate across the care continuum to optimize outcomes and successfully manage risk. Simply put, MatrixCare empowers providers—giving them vital information to deliver what people need, when they need it.
+MatrixCare knows the power of smart technology. Their solutions are changing the way people give and receive care in out-of-hospital care settings, and are built to adapt and grow with the industry, ultimately yielding successful outcomes.
+MatrixCare is a wholly owned subsidiary of ResMed (NYSE: RMD, ASX: RMD). Visit www.matrixcare.com and follow @MatrixCare on Twitter."
+-1,-1,"Secure our Nation, Ignite your Future
+Become an integral part of a diverse team while working at an Industry Leading Organization, where our employees come first. At ManTech International Corporation, you’ll help protect our national security while working on innovative projects that offer opportunities for advancement. Currently, ManTech is seeking a motivated, career and customer-oriented DevOps Engineer to join our team in McLean, VA.
+The successful candidate will use DevOps skills and associated Linux skills to support application development teams and improve the overall DevOps efficiency of the Sponsor organization.
+Responsibilities include, but are not limited to:
+Serving as an interface to the Linux infrastructure team for support to the application development team(s)"
+-1,-1,"Duties and Responsibilities:
+Work directly with the Development team and possibly also the Test/QA team, to test system integrity
+Be able to design and implement a set of standard procedures to be used for: build, deployment, and configuration management
+Can run build verification tests on implemented designs
+Able to help integrate automated test scenarios into Azure CI/CD pipelines; experience with AWS deployments will also be helpful
+Build and test automation tools for infrastructure provisioning
+Able to handle code deployments in all environments"
+-1,-1,"US CITIZENSHIP OR GREEN CARD REQUIRED
+ABILITY TO ACHIEVE PUBLIC TRUST CLEARANCE REQUIRED
+Indigo Arc is a consulting and cloud solutions company specializing in the design, development & implementation of highly available & secure solutions for government and commercial clients. Our approach to consulting engagements is to partner with our customers, providing value at all levels of customer organizations from C-suite leaders to implementation and operations managers. Additionally, Indigo Arc turn-key cloud-based solutions enable customers to efficiently and expertly address a wide range of business challenges.
+Our team of solution architects, computer engineers, software engineers and business specialists working on our consulting engagements also drive our product development and R&D initiatives applying the latest technologies and real-world experiences. Our experience with cloud-first solution development enables us to bring the lessons learned to our consulting customers across many domains, especially as we help customers migrate operations and applications to the cloud or leverage automation, apply DevSecOps concepts and manage virtualization in their on-premise data centers."
+-1,-1,"Do you want to get a foot in the door at an online Advertising and Media company that has seen tremendous growth? Do you want to work in the world of online video; one of the fastest growing advertising formats in the world? Then Playwire is the place for you…
+Playwire Media is a full-service digital innovation partner that leverages online advertising and proprietary technologies to build publishing brands in the gaming and entertainment verticals.
+To keep pace with our explosive growth, Playwire seeks a DevOps Engineer with excellent AWS skills and experience to support our development team in deploying and monitoring scalable, reliable systems. You’ll work hand-in-hand with both developers and senior leadership to make sure we leverage AWS’s services to their fullest potential. You’ll maintain and expand our internal monitoring and alerting capabilities, be an integral part of our deployment processes, and be responsible for security within our stack. This is both an independent and collaborative role: independent, in that you will both identify and drive potential initiatives on your own; collaborative, because this role is focused on enabling our team to create the best technical capabilities possible."
+-1,-1,"Posting Duration
+
+This posting will be open for application submissions for a minimum of seven (7) calendar days, including the ‘posting date’. Sandia reserves the right to extend the posting date at any time.
+What Your Job Will Be Like
+
+Are you looking for challenging and impactful work that contributes to security, peace and freedom worldwide?"
+-1,-1,"Currently, Vision Technology Services is seeking a Classified Junior-Mid Level DevOps Engineer to join our team and work directly on client projects.
+Education/Experience Requirements:
+Unix/Linux environments (bash, scripting, ftp, .sh); basic DevOps; Puppet
+Java, Java Spring Frameworks, general open-source Java libraries
+RESTful Web/Reactive Services (Java/Spring/SpringBoot)
+Containerization of services via Docker (e.g., DockerHub/Harbor, YAML files)
+Docker orchestration software (e.g., Kubernetes); multi-master/node configuration; persistent volumes, virtual network configuration; Zookeeper/Bookkeeper"
+-1,-1,"Secure our Nation, Ignite your Future
+ManTech is seeking an experienced Cloud Strategist with expertise across various commercial and government cloud service providers - including Google Cloud, MilCloud, Microsoft Azure, and Amazon Web Services (AWS) for our operations supporting NAVSEA PMO-IT in Norfolk, VA.
+Responsibilities Include but are not limited to:
+Primary focus of this position will be the development of cloud-based solutions and capabilities that solve our customers hardest mission problems.
+Develop IT solutions that optimize architectures and help define a migration plan for how to refactor application and architect deployment pipelines."
+-1,-1,"Senior Software Engineer (Big Data), Massive Graph Processing
+
+LiveRamp is the leading data connectivity platform for the safe and effective use of data. Our platform powers people-based customer experiences that improve the relevance of marketing and allow consumers to connect with the brands and products they love. We thrive on solving fascinating technical problems and enabling our customers' success—and we're always looking for smart, kind, compassionate people to help us blaze a trail.
+
+Mission: LiveRamp makes it safe and easy for businesses to use data effectively."
+-1,-1,"About the Role
+As the DevOps Engineer, you will maintain and optimize a real-time, scalable platform and support ongoing development.
+In this role, you will also be expected to:
+Support 24/7/365 multi-cloud operations, provide maximum uptime and security, and expand operations to additional cloud regions and providers
+Collaborate with information security team to implement new security tools and systems
+Maintain development and production environments for engineering teams
+Provide knowledgeable, confident high-level support within the organization to resolve internal and external customer issues"
+-1,-1,"About Robin:
+
+Robin is the first workplace management platform designed for flexible work. Every day, thousands of offices across the world use our software to find rooms, desks, and coworkers. Used by companies including HubSpot, Toyota, and Twitter, Robin empowers workplace professionals to build (and reopen) the best version of their office, so people do their best work.
+
+What We’re Looking For:
+
+The Robin Systems Operations team is working hard to develop and maintain Robin’s infrastructure in AWS. We are hiring a Systems/DevOps Engineer to help automate cloud systems provisioning through Infrastructure as Code and develop and maintain continuous deployment pipelines to Kubernetes. If this sounds as exciting to you as it does to us, we want to hear from you."
+-1,-1,"We are looking for you to join our team at TULK llc as a Systems Engineer to provide expertise in systems engineering and integration to support the development of the Allied System for Geospatial Intelligence (ASG).
+We are Change Agents: A 21st century management and technology consulting firm founded in 2013 by an educator and a Fortune 500 executive, TULK offers holistic systems thinking expertise and senior advisory services to US Federal and private sector clients. We translate, explain and expound; interpreting mission critical concepts between business and technology ensuring our clients get the results they expect.
+Responsibilities of the Systems Engineer
+Define requirements and solutions to ensure timely and accurate Geospatial Intelligence (GEOINT) is provided to our allies and partner agencies in the US Federal Government."
+-1,-1,"LiveRamp is the leading data connectivity platform for the safe and effective use of data. Our platform powers people-based customer experiences that improve the relevance of marketing and allow consumers to connect with the brands and products they love. We thrive on solving fascinating technical problems and enabling our customers' success—and we're always looking for smart, kind, compassionate people to help us blaze a trail.
+Mission: LiveRamp makes it safe and easy for businesses to use data effectively.
+We on the Identity Engineering team maintain the graph processing engine that connects the trillions of different identifiers for consumers and the devices they use online. Help us process this trillion edge graph as quickly and efficiently as possible.
+You will:"
+-1,-1,"WANTED: AMERICAN SYSTEMS is actively searching for a qualified Software Engineer with an active Secret Clearance
+
+As a Software Engineer you will:
+Be responsible for the software engineering activities supporting highly training systems and sensor simulations that deliver cutting edge simulation environments for autonomous systems
+Interact with senior internal and external personnel in own area of expertise to overcome issues and meet delivery
+Be responsible for integrating highly complex Systems and sensor simulations that deliver cutting edge operational environments for autonomous systems."
+-1,-1,"The Brainshark DevOps team supports our sales training and coaching platforms, ensuring that Brainsharks SaaS application is available 24x7 to thousands of customers including over half of the Fortune 500. Be part of a team to lead the transformation to DevOps and Continuous Delivery across the organization. Create process to perform continuous deployment, including full orchestration of deployment process. Develop tools and scripts to improve efficiency of operational tasks. Create and provide best practices to the organization for DevOps, builds, continuous integration, deployment and infrastructure. Implement monitoring processes and design/deploy monitoring dashboards. Build and support system automation, deployment, and continuous integration tools. Maintain and monitor production environments.
+
+Some technologies we use:
+
+Microsoft Azure Cloud Services, Terraform, Packer, PRTG, Python, Jenkins, Jira, Octopus, Bitbucket/Git, PowerShell, PagerDuty, Nutanix, FortiGate,
+
+Powered by JazzHR"
+-1,-1,"Job Description:
+Ferguson has an exciting opportunity for a remote Junior Site Reliability Engineer (SRE) / DevOps Engineer to join the Operations Center team, within the Ferguson IT organization. The Information Technology job family acquires, designs, implements and operates the organization’s information technology resources, including computer hardware, operating systems, communications, software applications, data processing and security.
+We are seeking a Site Reliability Engineer (SRE) to bridge the gap between developers and IT operations who will be dedicated to creating software and improves the reliability of systems in multiple environments, fixing issues, and responding to escalated incidents. The SRE should have a passion for tackling challenges across a spectrum of technologies. This role combines software and systems engineering disciplines with operations to build high-performance, scalable and resilient application systems that adhears to operational standards and principles. SREs are team players who embed themselves within product teams as needed to advance the architecture and performance of software systems and train their peers in topics such as debugging distributed systems, building self-healing applications and continuously improving performance."
+-1,-1,"Title: Expert Support Engineer (Warehouse Management System)
+Comparable Titles
+Sr. Product Specialist
+Blue Yonder’s WMS Operate Team
+Our WMS Operate (Support) Team is responsible for working with our global customer base to support the WMS Solution during onboarding, go-live, and steady state phases of their implementation. For our SaaS customers, we handle all aspects of solution support, including proactive monitoring, application, as well as infrastructure support: End-to-End. To help achieve success, we are transforming towards a DevOps model to work more closely with other cross-functional / development teams to drive a more controlled environment."
+-1,-1,"The Arbella Cloud Administrator (Technical Specialist III) will deliver Microsoft (Azure) and Amazon (AWS) cloud based solutions to meet our expanding business needs to implement a diverse multiple cloud environment. This role will design, implement, monitor, and maintain multiple cloud environments hosting multiple Arbella applications.
+Key Responsibilities:
+Administration of major Cloud services related to compute, storage, network, and security. This is a hands-on role for someone to manage, facilitate, and coordinate execution of proposed solutions from conceptual design to implementation and through its life cycle.
+This position will also require design and development of new Cloud service offerings and will rely heavily on the ability to use written and verbal communication skills in scoping, estimating and proposing the solutions."
+-1,-1,"Company Description:
+Crown Equipment Corporation is a leading innovator in world-class forklift and material handling equipment and technology. Crown brings the benefits of technology to material handling by connecting lift trucks, operators and facilities and collecting accurate, real-time information for better decision-making.
+
+Job Responsibilities:
+
+Join our agile based cloud development team chartered to develop and deploy new global fleet and service management products including Crown’s award-winning InfoLink. Oversee a DevOps team focused upon automated continuous deployment of application code and the operational and security monitoring and care of the infrastructure and software platforms. Serve as the liaison between team developers, corporate IT, and external cloud providers for deployment, operational efficiency, security, and business continuity."
+-1,-1,"Description:
+Position Overview:
+TRAX USA Corp is a leading aviation software company seeking a highly motivated Cloud DevOps Engineer with AWS and Terraform experience. This position requires a firm understanding of AWS to expertly support our TRAX Corporate and hosted product systems. The Cloud DevOps Engineer is responsible for the implementation, configuration, functions, and maintenance of the AWS environments and limited locally hosted systems and infrastructure.
+The Cloud DevOps Engineer will frequently communicate and work alongside our Database and Help Desk Teams. A high level of technical aptitude is required to consistently reanalyze and improve Cloud structure and processes. The Engineer will participate in the implementation and maintenance of AWS Hosted systems.
+. Requirements:"
+-1,-1,"Eaton’s Commercial and Residential Distribution Solutions (CRDS) Division is currently seeking a Lead DevOps Engineer to join our team. This position is based at our Peachtree City, GA facility. Relocation assistance will be provided.
+Position Overview:
+Eaton’s Commercial and Residential Distribution Solutions has an opening for a Lead DevOps Engineer for our Residential Connected Solutions team. The Lead DevOps Engineer will be leading the design & development of secure, scalable, and reliable cloud infrastructure solutions to support high availability software and services for IOT solutions in the residential market.
+We are looking for a DevOps Engineer who can develop next-generation technology solutions that ensure that our users have reliable access software solutions including mobile apps, IOT devices, and web services. As a member of a creative, motivated, and talented team, we need versatile engineers who are passionate to tackle new problems as we continue to push technology forward. If you get excited about building new things and modernizing existing things, then our team might be your next career step."
+-1,-1,"Work with our team of developers and our customers to create, test and automate our application environments. You are experienced with modern hosting technologies and understand how the Internet works. The systems you create help our developers work better, faster and make our applications more reliable. Your work is well organized and adaptable to many different situations and you choose the right tools for the job. You want to be part of the most innovative Midwest digital agency.
+
+Mission:
+You will be tasked with creating modern and reliable development, test and production environments for the software we implement. In many cases you will work with peers on our customers' teams who need help building, monitoring and maintaining these environments. Your expertise helps everyone stay focused on what they know best and adds value to the solutions we provide. Although modern hosting technologies are great, you understand what's going on under the hood and help advise and troubleshoot issues with other members of our team. You prefer open source tech like Linux and Vagrant but are OK with the occasional Microsoft environment. When not busy with projects you will help maintain our internal infrastructure and tools."
+-1,-1,"IdentityNow is SailPoint’s Identity as a Service (IDaaS) product, and the Sr. DevOps Engineer will be a key player on the DevOps team servicing the IdentityNow product suite. He/She will proactively work with Engineering, Product, Services, and other functional departments to implement and operate our global customer-facing SaaS infrastructure. The ideal candidate will be a self-starter who enjoys a fast-paced job, thrives on problem solving, and is committed to delivering seamless product availability to large enterprises around the world.
+Responsibilities:
+Build and maintain a resilient, secure, and efficient SaaS application platform to meet established SLAs
+Automate deployment, monitoring, management and incident response"
+-1,-1,"Dev Ops and Release Engineer
+
+About the Job
+
+This position reports to the Lead of the Release Engineering team. The DevOps and Release Engineer will execute tasks given by the lead to support container-based release engineering flows at Intralinks. Additionally, he/she will serve as a resource for all release engineering related tasks related to Source Control, Build and Deployment automation, Continuous Integration, Environment Monitoring, and general developer tools.
+
+About the Team
+
+The team is chartered with build/deployment/monitoring automation of mission critical products for our cloud offering using cutting edge technologies. You will be involved in all aspects of development cycle. Team members range in years of experience. The DevOps and Release Engineer is expected to support continuous integration process and will involve writing code that is both functional and efficient. This Engineer will also be involved in diagnosing performance bottlenecks and implementing optimizations.
+
+#LI - SH
+
+SS&C Intralinks is an Equal Employment Opportunity employer and does not discriminate against any applicant for employment or employee on the basis of race, color, religious creed, gender, age, marital status, sexual orientation, national origin, disability, veteran status or any other classification protected by applicable discrimination laws."
+-1,-1,"Facilisgroup is building SaaS solutions for the promotional products (Promo) industry.
+The ideal candidate for this position is passionate about DevOps with numerous years of experience behind them and eager to take on their next big challenge. A strong desire to automate everything, reduce friction, and increase productivity from development through operations is essential.
+The candidate will join an existing cross-functional agile team comprising of software developers, quality assurance engineers, infrastructure engineers, and product owners. This team is responsible for delivering multiple SaaS products for our existing customers; deployed to both Azure and on-prem hardware.
+As a Senior DevOps Engineer, you will be working with this team to introduce and lead the implementation and adoption of DevOps principles, practices, and processes in a primarily Microsoft stack."
+-1,-1,"Elevate Technology Solutions is currently accepting applications for a DevOps AWS Cloud Engineer to support our efforts with a government client in Washington, DC or Remote availability.
+This excellent opportunity requires that the ideal candidate to be customer focused, and willing to join a winning team.
+The DevOps AWS Cloud Engineer will be responsible for following the design, development and support of all non-security & compliance services.
+These responsibilities include creating, configuring and maintaining:
+ACES AWS Organizations organizational units, ACES AWS accounts and proper account placement within the organizational unit structure"
+-1,-1,"Business Group Highlights
+
+
+Defense
+The Defense group supports the Department of Defense (DoD) mission to keep our homeland and its citizens safe. We provide solutions to improve the Nation's defense by providing software, systems engineering, IT, training and logistics and fleet management solutions.
+
+
+Responsibilities
+
+Provides expertise and direction in the development and/or modification of computer-based scientific, technical, and business software systems. Uses expertise to design develop, code, test, and debug software. May work in one or several areas, such as equipment or software design, engineering evaluation or test, configuration management procedures, statistical analysis and modeling. Works with users to define existing or new system scope and objectives. Provides analytical support and technical advice during the conceptualization, development, and implementation phases. Plans and schedules new applications systems projects with user, systems software, and computer center operations personnel, including the identification of objectives, time frames, costs, and manpower requirements. Performs tasks necessary to ensure the identification and documentation of hazards within software systems using various analysis tools and techniques. Reviews and evaluates systems and software for adherence to government or commercial directives, standards, guidelines, and criteria concerning software safety and systems safety. Confirms design mitigations are captured in the design and its documentation and verifies implementation. May perform as a project lead with the responsibility for the instruction, assigning, direction, and monitoring of the performance of assigned systems developers / analyst working on a specific project."
+-1,-1,"Hewlett Packard Enterprise (HPE) advances the way people live and work. We bring together curious minds to create breakthrough technology solutions, helping our customers make their mark on the world.
+HPE makes Hybrid IT simple. HPE helps customers to design the right mix of Hybrid IT solutions to serve their unique needs. We bring next generation infrastructure that uses intelligent software to simplify and accelerate the delivery of new apps, services and business insights. Our mission is to empower our customers with new ways to deliver and manage IT on-premises and in the cloud.
+We are working on the next generation of cloud storage and computing services built with simplicity, scale and security in mind.
+
+Sounds like you? Then we have the right opportunity—we are looking for a Senior DevOps Engineer to join us! If you want to be part of a business area that is growing—with great opportunities, and are ready for your next role, then please apply today.
+1074905"
+-1,-1,"We hear you’re looking for your next stop on the Ansible Journey? We have a destination for you. We’re looking for the right person to join our team as an Ansible Engineer to help support our Gov Cloud.
+Essential Duties and Responsibilities:
+Responsibilities include, but are not limited to:
+Work collaboratively with the engineering team to create and deploy Ansible solutions for a distributed data center infrastructure environment
+Develop Ansible playbooks and modules
+Administer Ansible infrastructure, perform maintenance and configuration and provide SME level support"
+-1,-1,"WHO WE ARE
+We are a Premier Consulting partner with expertise in AWS migrations and management, managed services/help desk, and cybersecurity. Not only do we plan, build, and optimize for our clients, but we also have a growing list of clients that rely on us for 24x7 monitoring and management of their AWS infrastructure. We combine deep AWS experience with a genuine joy for the work we do. Working closely with great companies to solve their most important IT challenges is what gets us out of bed in the morning. We are seeking people who are smart, charming, gritty, and anxious to learn; and we give them opportunities to learn new skills and go deeper with the ones they already have. If you are looking for a place to grow professionally, this is it.
+THE ROLE"
+-1,-1,"About Dealerware:
+Dealerware is modern fleet management for the modern retailer. We are proud to be one of the hottest software companies in the automotive sector. By combining a modern-approach with fresh design thinking, Dealerware’s industry-leading SaaS platform enables best-in-class fleet management and mobility for top automotive dealerships and manufacturers. Three years ago, we burst onto the scene with a promise to reduce costs and elevate the customer experience at automotive dealerships. Today, we’re experiencing 100% YOY growth and are positioned to truly change the way the world hits the road. Across the automotive ecosystem, there’s hundreds of billions of dollars at stake. And we’re right in the swell of it.
+
+Dealerware has an immediate, full-time opportunity for a DevOps Engineer to help us transform the way car dealers and manufacturers think about products and profits. Together, we will help dealers manage a mounting profit crisis; enabling them to find profits in new places by digitizing and automating their operations, while elevating the customer experience. We’re looking for someone who will help maintain, develop, and scale our platform to support our rapid growth. The ideal candidate is just as comfortable writing a python script as deploying a lambda and configuring real time production alerts."
+-1,-1,"Mon-Fri 8am-5pm
+
+The AWS DevOps engineer will be responsible for working with teams across DCU to help support and implement solutions in our AWS environments. As a key member of the Platform Engineering Team, you will be the primary individual responsible for implementing secure and scalable solutions as we expand our presence in the cloud.
+Essential Functions:
+Collaborate with multiple teams to define infrastructure requirements in AWS.
+Implement secure and scalable solutions in AWS for various technical teams."
+-1,-1,"About Us:
+
+SentinelOne is defining the future of cybersecurity through our XDR platform that automatically prevents, detects, and responds to threats in real-time. Singularity XDR ingests data and leverages our patented AI models to deliver autonomous protection. With SentinelOne, organizations gain full transparency into everything happening across the network at machine speed to defeat every attack, at every stage of the threat lifecycle.
+
+We are a values-driven team where names are known, results are rewarded, and friendships are formed. Trust, accountability, relentlessness, ingenuity, and OneSentinel define the pillars of our collaborative and unified global culture. We're looking for people that will drive team success and collaboration across SentinelOne. If youre enthusiastic about innovative approaches to problem-solving, we would love to speak with you about joining our team!
+
+
+
+Advantages
+Why us?
+
+You will work on real-world problems and make an impact by protecting our customers from cyber threats. You will join a cutting-edge project and will be able to influence the architecture, design and structure of our core platform. You will tackle extraordinary challenges and work with the very BEST in the industry.
+SentinelOne is proud to be an Equal Employment Opportunity and Affirmative Action employer. We do not discriminate based upon race, religion, color, national origin, gender (including pregnancy, childbirth, or related medical conditions), sexual orientation, gender identity, gender expression, age, status as a protected veteran, status as an individual with a disability, or other applicable legally protected characteristics."
+-1,-1,"About The Role:
+As a Software Engineer, you will provide product teams’ software development and product delivery support for the full product stack. In this role, you will be responsible for product delivery and product lifecycle with direction from the Product Owner, the Solution Owner and technical guidance from Solution Architects.
+What You'll Get to Do:
+Support software development by providing engineering patterns to deliver the optimal product; including communicating design patterns. Mentor other engineers. Provide overall technical leadership to smaller working teams as needed."
+-1,-1,"SHIFT: Day Job
+
+SCHEDULE: Full-time
+
+Your innovation. Our impact. At Anthem, Inc., it’s a powerful combination, and the foundation upon which we’re creating greater access to care for our members, greater health for our communities, and greater experiences for our customers. Innovation is a top priority. Here, you’ll have an opportunity to work in a collaborative environment that brings together industry leaders and technology experts, so together we can drive the future of health care. This is an exceptional opportunity to create solutions and programs that can truly make a difference at one of America's leading health benefits companies and a Fortune Top 50 Company. ""At this time, Anthem will not sponsor a new applicant for employment authorization for this position."" Pega Engineer Sr Indianapolis, IN; Roanoke, VA; Norfolk, VA; Mason, OH; Atlanta, GA Responsible for programming on specific application subsets of the company's application portfolio, participating in all phases of the development and maintenance life cycle, typically for an assigned business unit, client program, or corporate department and utilizing various customer technology platforms. Primary duties may include, but are not limited to:
+
+Requires BA/BS degree in related field or technical institute training; Pega Certified – CSA and CSSA, Healthcare experience. 5 or more of total experience in building and implementing model-driven, enterprise-level business solutions using Pega PRPC. Other qualifications necessary:
+:"
+-1,-1,"Role: Staff Software Engineer - Machine Learning Infrastructure
+Other comparable titles: ML Platform Architect, Lead Platform Engineer- ML
+Locations: Coppell- TX, Waukesha, WI, Boston- MA
+About Blue Yonder"
+-1,-1,"Barnebys Group AB is the world’s leading eco-system for art, antiques and collectibles throughout the value chain. We are looking for a Senior DevOps Engineer to join our Simple Auction Site (SAS) team in New York, reporting directly to the CTO (based in Sweden). While knowledge in the online art & antique industry is strongly desired, it’s not essential.
+As a part of the SAS team you will be working on building SimpleAuctionSite, the leading auction software provider for websites specializing in collectibles. SimpleAuctionSite.com now conducts hundreds of auctions annually, presenting millions of auction lots to potential bidders on behalf of more than 60 of the world's finest auction houses.
+YOU WILL"
+-1,-1,"Why 2nd Watch
+
+2nd Watch is in growth mode, and we are looking for like-minded, focused team members to join us! We are looking for the most technically forward-thinking, cloud-passionate employees in the world, and strive daily to align our core values with those that we hire Elevating Each Other, Being Outcome Driven, Winning as a Team, Being Bold, Trusting Each Other, and Having FUN! these are all key elements to who we hire.
+
+2nd Watch has a unique company culture and working environment that live and breathe success and promote pushing the envelope every day in your respective role at the company. This is what drives our teams a perpetual thirst for knowledge, and a desire to work with the best people and take on big challenges together. Getting our attention takes creativity, integrity, a desire to improve yourself and your co-workers each day, and a track record of caring about who you are affecting, both positively and negatively, while you are getting the right stuff done.
+
+We offer roles ranging from all levels in our Sales, Managed Cloud Services, Cloud Enablement, DevOps, Product Development teams and beyond. We are looking for superstars to help raise the bar, setting industry-level standards around project management and delivery of AWS, Azure, and Google Cloud services.
+
+
+
+As a cloud native company, 2nd Watch has walked alongside our clients for over a decade helping them migrate to the cloud, accelerate application development, and deliver on their companys strategic goals through the blend of technology and innovation that is at our core. Our services deliver cloud native capabilities through strategic consulting, modernization services, and specialized technology practices focused on maximizing the value of public cloud through:
+With a client NPS of 85, our approach has been successful for some of the worlds leading brands and is tested, trusted, and proven to accelerate your cloud adoption.
+
+2nd Watch is an AWS Partner Network (APN) Premier Consulting Partner, a Microsoft Azure Gold Partner, and a Google Cloud Platform Partner. The venture-backed company is headquartered in Seattle, Washington. To learn more about 2nd Watch, visit www.2ndwatch.com or call 888-317-7920.
+
+
+
+
+
+
+
+AWS Solutions Architect Associate level Certified or higher
+
+Ideal candidate is an Application Architect or DevOps Architect with hands on experience.
+
+AWS Skills -
+Powered by JazzHR"
+-1,-1,"Stratovan is a leading developer of next-generation interactive imaging software for the global medical device and diagnostic markets. Our solutions have broad application to disciplines beyond healthcare, such as life sciences and airport security. Stratovan's core product line includes a range of novel next-generation visual analysis applications including 3D image viewing station software, airport screening simulation software, and system solutions including Automated Threat Recognition (ATR), DICOM and DICOS (Digital Imaging and Communications in Medicine/Security) based toolsets. Our innovative 3D surgical planning and diagnostic tools are used in orthopedics, craniofacial surgery, neuroimaging, oncology, ophthalmology, otolaryngology, paleontology, anthropology and veterinary medicine.
+We are looking for an experienced DevOps Engineer to help expand and reinforce our deployment processes for our collection of applications using robust DevOps techniques. The ideal candidate has experience in DevOps on Full-Stack applications using C++, CMake, and Bash. They must be comfortable with Linux, macOS, and/or Windows development, and have the ability to fashion robust scalable solutions that can manage complex deployment pipelines for multiple projects simultaneously. They should be at ease working in an agile environment and should embody a passion for continuous improvement and test-driven development. Most importantly, they should have a strong passion for “saving lives through software”."
+-1,-1,"This is a 4 month contract to hire opportunity. and will be 100% remote role for duration of the job.
+Salary range is $110k - $120k + 15% bonus.
+Here is an overview of what we are seeking. We are looking for a .NET Developer who wants to learn the security piece. Someone who wants to be the voice of security at this client to App Dev and DevOps teams. Candidate will very likely have .NET, Azure and DevOps within an enterprise environment. This is the core of the job. Candidate will have a strong dev background and have touched on security.
+Responsible for leading team efforts to maintain and automate application security and DevOps tools."
+-1,-1,"Why choose between doing meaningful work and having a fulfilling life? At MITRE, you can have both. That's because MITRE people are committed to tackling our nation's toughest challenges—and we're committed to the long-term well-being of our employees. MITRE is different from most technology companies. We are a not-for-profit corporation chartered to work for the public interest, with no commercial conflicts to influence what we do. The R&D centers we operate for the government create lasting impact in fields as diverse as cybersecurity, healthcare, aviation, defense, and enterprise transformation. We're making a difference every day—working for a safer, healthier, and more secure nation and world. Our workplace reflects our values. We offer competitive benefits, exceptional professional development opportunities, and a culture of innovation that embraces diversity, inclusion, flexibility, collaboration, and career growth. If this sounds like the choice you want to make, then choose MITRE—and make a difference with us."
+-1,-1,"Senior Software Engineer
+The Senior Software Engineer is a key leader within the software development team.
+We’re not looking for just anyone, but a special individual with unique superpowers that can hit the ground at a full sprint. The candidate will work as a software engineer and integrator performing on new development projects as well as break/fix software modifications and tier 3 DevOps as part of a development team. If you believe you have what it takes to drive client success and satisfaction at All Point, contribute to a high-energy team focused on driving growth, and fundamentally disrupt the established retail market, we’d like to hear from you.
+This position reports to the Development Manager."
+-1,-1,"We have an exciting opportunity to join our Technology organization as a Senior DevOps Engineer supporting various Advisor & Client Technology. This team oversees trading, fee billing, data, service transformation by delivering a transformed, multi-channel service experience to our advisors leveraging artificial intelligence, machine learning, straight through processing, and other innovative capabilities.
+Key Responsibilities:
+Provide technical leadership and mentoring to teammates through technical design of CI/CD processes and process orchestration, code reviews and implementation, adhering to industry standard best practices.
+Create standards and tools that enable faster delivery of software features with governance enforcement of coding and test standards"
+-1,-1,"At Bluebeam, we empower people to promote the way the world is built. We create smart software solutions that make construction sites more efficient, connected and safe and improve the lives of design and construction professionals everywhere.
+You will be a full-time, onsite position based in Pasadena. Due to COVID-19, all new employees will start work remotely until we can return to the office. More information will be provided in the interview process.*
+About the role:
+Bluebeam is looking for a Senior DevOps Engineer to join our team. You'll help us better our software engineering practice. You will help develop solutions, and allow our engineering team to build our next generation of cloud native applications."
+-1,-1,"Overview
+Are you looking to join a global technology department for an industry-leading investment firm? Fisher Investments is looking for motivated technologists to support our growing business. If you are looking to make a difference as we develop scalable solutions to support global growth, this may be the right opportunity for you!
+
+The Opportunity:
+
+As a Mulesoft Release Engineer, you will oversee daily Mulesoft system administration; DevOps; review and manage deployment of Mulesoft projects; platform monitoring and support. You will support several Technology Business Services teams, 3rd party vendors, and implementation partners. This hands-on role will provide support to other developers of the application integration teams. You will report directly to the MuleSoft Team Manager."
+-1,-1,"At Bluebeam, we empower people to promote the way the world is built. We create smart software solutions that make construction sites more efficient, connected and safe and improve the lives of design and construction professionals everywhere.
+This role is a full-time, onsite position. Due to COVID-19, all new employees will be required to start work remotely until we are able to return to the office. More information will be provided in the interview process.
+About the role:
+Bluebeam is looking for a Lead DevOps Engineer to join our team. You'll help us better our software engineering practice. You will help develop solutions, and allow our engineering team to build our next generation of cloud native applications."
+-1,-1,"Job Summary
+A DevOps Senior Software Engineer is responsible for the architecture, design and implementation of new or modified software products. He/she is very accomplished and is able to mentor others effectively. He/she will be able to make decisions quickly. He/she will help a team succeed by being an effective leader and owning tasks. He/she is involved in liaising with the Product Owners and Development Managers to ensure software projects meet requirements on time.
+Responsibilities
+Building, maintaining and creating architecture for AWS resources
+Ability to lead a team and mentor"
+-1,-1,"ID: WV-1093 Biometrics Systems Engineer (US Citizen)
+Location: Fairmont, WV
+Job Type: Full Time, currently remote due to COVID
+Education/Experience: BS and 5+ yrs experience
+U.S. Citizenship Required: Yes
+Systems Engineer Required Skills:
+Knowledge of SEEK II Jump Kits
+Cogent ABIS
+AWS GovCloud
+Fluent in spoken and written English language"
+-1,-1,"SkySilk Cloud Services is an up-and-coming cloud computing services provider. We are a small, yet quickly growing team of tech-heads working on building a product to help developers, students, businesses, and more work more efficiently on the internet through the use of virtual servers. This is an exciting time in our company and an opportunity to join our team on the ground floor.
+We are looking for an experienced enterprising network engineer II who will be able to maintain, control, and develop actionable plans to execute our go forward strategy for all networking topologies.
+The individual hired will have the opportunity to work with our team of qualified network engineers and administrators on various projects & initiatives. This position is key to developing the engineering platform, automation, continuous integration, and developing the technology roadmap."
+-1,-1,"Base2 Solutions (a Belcan Company) s a technology consulting firm where each day offers new opportunities to learn, innovate, and have real impact. Base2 Solutions was selected by the Puget Sound Business Journal as one of 2020's Best Places to Work. For the sixth year in a row in Washington, this publication has recognized Base2 for its commitment to fostering an innovative culture and its dedication to providing employees with a great work experience.
+
+Our headquarters are in downtown Bellevue, Washington with an additional office in Brea, California.
+
+This position is for our Brea location, and the work will be onsite at a customer's site in Anaheim.
+
+What you will do:
+
+Base2 is engaged in an ever-expanding set of interesting projects. We need focused, creative engineers with a passion for harnessing the complex tools that make CI and CD possible. Our business is building new, innovative solutions, both internally and for our customers; you will use everything you know, and a lot you don't.
+
+This is an opportunity to join Base2's outstanding technical team; you will work with other great engineers, while developing new skills and furthering your career within an innovative and progressive technology company.
+
+This is for direct hire only. We are not considering Corp-to- Corp for this position. We are not able to offer Visa sponsorship nor are we accepting contractors placed through agencies/other companies.
+
+This job description is Base2's general DevOps Engineer position. A candidate's level will be evaluated during the interview process.
+
+Base2 is committed to hiring and retaining a diverse workforce. We are an Equal Opportunity/Affirmative Action Employer and provide equal employment opportunity to all employees and applicants without regard to race/ethnicity, color, national origin, sex/gender, sexual orientation, religion, age, disability, veteran status, or any other protected status. If you need a reasonable accommodation for any part of the employment process, or should you have questions regarding our Affirmative Action Plans or wish to view the available portions of the plans, please send an email to recruiting@base2s.com with your contact information. Please note that only those inquiries concerning a request for reasonable accommodation or our Affirmative Action plan will be responded to from this e-mail address."
+-1,-1,"Join our award-winning A-Team!
+Ready to produce exceptional results with exceptional people? Get in touch, we would love to get to know you.
+Affinitiv is the largest provider of end-to-end, data-driven marketing and software solutions exclusively focused on the automotive customer lifecycle. Backed by 20+ years of automotive and marketing expertise, we pride ourselves on being the go-to experts in the industry. Not only do we work with over 6,500 dealerships and every major manufacturer in the country, we're well-versed in OEM standards and the intricacies of a dealership or group's local business."
+-1,-1,"Seeking an individual to work in an agile team developing and maintaining applications built using Microsoft technologies in an AWS environment. The ideal candidate would possess strong .NET development skills and have a background in cloud-based infrastructure.
+Job responsibilities
+Design and develop web applications using Microsoft development tools in an AWS environment.
+Analyze business rules and provide detailed technical specifications
+Participate in overall system design as well as individual sub-systems or components, including providing development estimates
+Implement components and sub-systems in accordance with agreed upon designs"
+-1,-1,"Secure our Nation, Ignite your Future
+Become an integral part of a diverse team while working at an Industry Leading Organization, where our employees come first. At ManTech International Corporation, you’ll help protect our national security while working on innovative projects that offer opportunities for advancement.
+Currently, ManTech is seeking a motivated, career and customer-oriented DevOps Tools Engineer, L3 to join our team in Annapolis Junction, MD .
+Responsibilities include, but are not limited to:
+Efficient software development teams make the most of their time by limiting the activities that take developers away from writing their code. That's why we need you, a DevOps engineer, to help us shorten the time it takes to get critical tools developed and into the hands of our users who need them to make better decisions using data through a continuously adaptive, customer centric environment. As a DevOps engineer on our team, you'll help streamline our software development life cycle from requirements to monitoring in production. You'll incorporate DevOps tools, automation, and private cloud resources to cut down on tedious, boring tasks and free up the team's developers to do what they do best - innovate. You'll work with the team to implement continuous integration and delivery to limit manual testing and troubleshooting. This is an opportunity to build your experience in automation and deployment processes while developing software that will spur innovation."
+-1,-1,"DevOps CI/CD Engineer
+Radiant Logic, Inc.
+www.radiantlogic.com
+Location: Novato, CA
+Duration: On-going, Full Time
+Radiant Logic Introduction
+Radiant Logic is the leader for enterprise-class Federated Identity and context management solutions. Our customers are Fortune 1000 companies; we help them better leverage their existing Identity infrastructure, integrating their businesses to the cloud securely and improving operational productivity. We are a private company, profitable and growing rapidly. The company is led by the founders and their vision and passion are part of every aspect of what we do."
+-1,-1,"Aura is looking for a Lead DevOps Engineer to work with our Silicon Valley team. The position is remote but will be working PST hours.
+Location Flexible:
+A Flexible Talent model means the location of our employees is targeted but flexible. If “Location Flexible” is listed in the job title of a role, the role can be located in any of the states where Aura is authorized to do business. Some roles (including those which do not have “Location Flexible” in the job title), however, may have to be co-located with their teams in certain locations. Please work with your recruiter and your hiring manager to understand any location constraints of a particular role and to communicate your location preferences. Aura is authorized to do business throughout the U.S., but not in all states. If you are not located in or able to work from a state where Aura is registered, you will not be eligible for employment. Please speak with your recruiter to learn more about where Aura is registered."
+-1,-1,"Overview:
+Systems Planning and Analysis, Inc. (SPA) is a well-established and progressive defense contracting company in the DC Metro area. We are a professional services firm established in 1972 that has a long-standing reputation for unrivaled technical and analytical support to some of the top decision makers in the Federal Sector. We do state of the art work and have a cadre of outstanding professionals on our team.
+
+The Integrated Warfare Systems Group (IWSG) focus is to provide engineering, technical and programmatic support to the Program Executive Office Integrated Warfare Systems, Above Water Sensors (PEO IWS 2.0) Directorate. Efforts include overarching program management, test and evaluation, systems engineering, operations analysis, systems integration, international, cyber security, IT network and programmatic support for over 25 PEO IWS 2.0 advanced radar, phased array radar, electronic warfare, electro-optic, advanced off-board electronic warfare/decoy and directed energy programs.
+Responsibilities:
+
+Qualifications:"
+-1,-1,"Sierra7 is seeking an Automation Test Engineer to join a team providing full DEVOPS lifecycle support and services to the Department of Veterans Affairs (VA). This program will consolidate, reengineer, and sustain a suite of Veteran-facing processes. The qualified candidate will be a qualified test engineer with at least 5 years of experience creating tests and test software to verify system operation and security and must have at least 2 years of test case automation and Selenium experience. The candidate will be responsible for understanding how to properly document test cases and create effective test plans; creating practical demonstrations of proposed solutions; define clear goals for all aspects of a product test and develop steps for proper execution.
+The candidate must have experience in the coordination and execution of test events in accordance with approved test plans, procedures, and scripts. Must have knowledge and skills to ensure that test environments are set up accurately. Must be able to create test reports. The automation test engineer must be able to test IT hardware, software, systems, and networks."
+-1,-1,"DevOps Engineer
+Candidates must be US Citizen or Green Card Holder.
+Applicants should be local to the Greater Atlanta Area or willing to travel up to 10% post-Covid.
+Responsibilities of the DevOps Engineer include:"
+-1,-1,"As a DevOps Customer Engineer at CircleCI, you will be responsible for providing world class post-sales technical leadership to our client base. Working directly with customers, you will be the subject matter expert on both the CircleCI platform and continuous integration and deployment as a general practice. You will be responsible for delivering value by driving adoption of CircleCI across the client's enterprise.
+
+The successful candidate for this job will have a strong technical aptitude along with a strong self-starting, proactive mentality as well as the ability to create and maintain deep, lasting relationships with customers. You're going to be dealing with very technical users and complex issues, but you're also tasked with creating excitement and loyalty in the customers you interact with.
+
+About Customer Engineering at CircleCI
+
+
+CircleCI's Customer Engineering organization's goal is to make life easier for our customers and leave them with the ""wow"" experience of building and testing their applications with ease. Customer Engineering works with customers to understand their technical and business needs and requirementsfrom onboarding to implementation to scale. Customer Engineering currently comprises Customer Success Engineering (your team), Solutions Engineering (your pre-sales counterparts), and Support Engineering. There is opportunity for both horizontal and vertical growth and promotion within as well.
+
+
+
+We know there's no such thing as a ""perfect"" candidate - we're all a work in progress and are growing new skills and capabilities all the time. CircleCI welcomes those who are enthusiastic about learning and evolving, so however you identify and whatever your background, if this looks like a role where you could do work that excites you, we hope you'll apply.
+
+
+
+CircleCI is the world's largest shared continuous integration and continuous delivery (CI/CD) platform, and the central hub where code moves from idea to delivery. As one of the most-used DevOps tools that processes more than 1 million builds a day, CircleCI has unique access to data on how engineering teams work, and how their code runs. Companies like Spotify, Coinbase, Stitch Fix, and BuzzFeed use us to improve engineering team productivity, release better products, and get to market faster.
+
+Founded in 2011 and headquartered in San Francisco with a global remote workforce, CircleCI is venture-backed by Scale Venture Partners, Threshold Ventures (formerly DFJ), Baseline Ventures, Top Tier Capital, Industry Ventures, Heavybit, Harrison Metal Capital, Owl Rock Capital Partners, and NextEquity Partners.
+
+CircleCI is proud to be an Equal Opportunity and Affirmative Action employer. We do not discriminate based upon race, religion, color, national origin, sexual orientation, gender, gender identity, gender expression, transgender status, sexual stereotypes, age, status as a protected veteran, status as an individual with a disability, or other applicable legally protected characteristics. We also consider qualified applicants with criminal histories, consistent with applicable federal, state and local law."
+-1,-1,"DevOps Engineer
+Job Description:
+BigBear.ai currently has an immediate position available for a DevOps Engineer to join our top-notch team of forward-thinking engineers, data scientists, analysts, and innovators. The successful candidate will be a self-starter that demonstrates excellent communication and problem-solving skills with a strong drive for innovation. This position will support BigBear, LLC, a BigBear.ai company.
+Minimum Requirements:
+-Solid experience operating in a Linux environment (Primarily CentOS)
+-Amazon Web Services such as EC2, S3, SQS, RDS
+-Deployment automation with tools such as Terraform, CloudFormation, Jenkins, Ansible, or Chef
+-Scripting skills with Python or Bash
+-Bachelor’s or Master’s degree in Computer Science, Engineering, a related field, or equivalent work experience"
+-1,-1,"WHY commute when you can work right in beautiful Temecula CA!
+FULL TIME SALARY + health benefits + paid holidays + 401K retirement + paid time off (PTO) and more
+ABOUT US:
+The Identity Intelligence Group known as IDIQ in Temecula is currently recruiting for a Site Reliability Engineer. IDIQ is a privately-owned company that has been in business since 2009. We provide identity theft and credit reporting services to consumers nationwide under our brands such as IdentityIQ®, CreditScoreIQ® and MyScoreIQ®. Our company is currently ranked in the top 5 in our industry and has been honored as a Top-10 Ranked Company by BestCompany.com, earned the 2019 Stevie Bronze Winner, and the Enterprise Security Top 10 Fraud and Breach Protection Solution Provider for 2019. We have been recognized on TV, online, and radio by shows such as Modern Living with Kathy Ireland. To learn more about our flagship service visit our website at ."
+-1,-1,"IAI is looking for a self-motivated DevOps Engineer who is interested in working in a highly agile and dynamic R&D, technology transition, and product development environment. You will be working with the Products Development team and/or other R&D teams within IAI to advance research and develop products.
+
+Our products are in the areas of big data, data analytics (video, image, text), healthcare, human studies research, and network analytics. You are highly encouraged to apply if you are excited about working in a cross functional, collaborative team while designing/building/deploying new automations for all aspects of our development lifecycle."
+-1,-1,"WHAT WE DO
+Our award-winning Enterprise Imaging software solutions allow physicians to quickly, efficiently, and accurately access data and provide critical care to patients across the healthcare organization. We do this by providing scalable and robust services that connect our clinical applications with many different hospital systems.
+Our product runs primarily on Windows and needs to scale from a single workstation to full enterprise spanning multiple datacenters. The data required to accomplish these tasks must be processed quickly, efficiently, and accurately so that care is not delayed.
+
+OUR TEAM"
+-1,-1,"The Staff Engineer will play a pivotal role in building and operationalizing the enterprise data and analytics initiatives following industry standard practices and tools. This resource will be responsible for building, managing and optimizing data pipelines and automating production deployments. This is a technical leadership role working closely with business and IT partners to solve business problems using data engineering and analytics.
+PRINCIPAL RESPONSIBILITIES:
+Designs and develops code and data pipelines to ingest from relational databases (Oracle, SQL Server, DB2, Aurora), file shares, and web services.
+Streaming ingestion with Kinesis Streams, Kinesis Firehose, Kinesis Analytics and Kafka(MSK)
+
+
+
+Republic Services is an equal opportunity employer. All qualified applicants will receive consideration for employment without regard to race, color, religion, gender, sexual orientation, gender identity or expression, national origin, age, disability, protected veteran status, genetic information, or any other characteristic protected by applicable law.
+
+The statements used herein are intended to describe the general nature and level of the work being performed by an employee in this position, and are not intended to be construed as an exhaustive list of responsibilities, duties and skills required by an incumbent so classified. Furthermore, they do not establish a contract for employment and are subject to change at the discretion of the Company."
+-1,-1,"Secure our Nation, Ignite your Future
+The Information System Security Engineer (ISSE) is primarily responsible for conducting information system security engineering activities with a focus on lifecycle of current systems and future requirement scoping. The position will collect and process the captured information security requirements and ensures that the requirements are effectively integrated into information systems through purposeful security architecting, design, development, and configuration. The position is an integral part of the development team designing and developing organizational information systems or upgrading legacy systems. The ISSE employs best practices when implementing security requirements within an information system including software engineering methodologies, system/security engineering principles, secure design, secure architecture, and secure coding techniques. This position’s main function is working within Special Access Programs (SAPs) supporting Department of Defense (DoD) agencies, such as HQ Air Force, Office of the Secretary of Defense (OSD) and Military Compartments efforts. The position will provide “day-to-day” support for Collateral, Sensitive Compartmented Information (SCI) and Special Access Program (SAP) activities."
+-1,-1,"Secure our Nation, Ignite your Future
+Become an integral part of a diverse team while working at an Industry Leading Organization, where our employees come first. At ManTech International Corporation, you’ll help protect our national security while working on innovative projects that offer opportunities for advancement.
+Currently, ManTech is seeking a motivated, career and customer-oriented System Engineer to join our team in the Columbia, MD.
+Responsibilities include, but are not limited to:
+Leadership responsibilities within the team
+Participate in planning meetings
+(Large scale information system is defined as having at least one of the following characteristics: Over 1,000 users; Over 100 sensors; Over 1000 entities in the information model as represented by an Entity Relationship diagram or UML; Over 20 distinct physical subsystems.)"
+-1,-1,"The Data Engineer will work with apart of the Global Analytics Team within Global Professional Services. This role will work with a variety of Lexmark teams including Service Operations, Engineering, R&D, and IT. This role will work directly with Lexmark’s customers as needed to develop new capabilities for Lexmark’s IoT initiative. Dive into technical project work to help Predictive Service Management increase customer up time and reduce Lexmark costs. Leverage and create cutting-edge predictive models and supporting technologies to build better services and support for Lexmark print and IoT devices.
+Responsibilities:
+Work with cross-functional resources including IT, Hardware/Firmware/Software Development Engineering, and Service Operations teams within Lexmark"
+-1,-1,"DevOps Engineer - Jeffersonville, IN (Remote Available)
+Attention all DevOps Superheroes – We’re searching for the best and brightest Senior DevOps Engineer around. We’re a team of big thinkers, creators, and innovators, using our talents and passions to craft world-class software to solve our clients’ most challenging cyber needs. If you’re ready to upgrade your career, keep reading.
+WHAT YOU WILL DO
+Contribute to the craftsmanship, availability, resilience, and scalability of our commercial products and in-house solutions
+Lead improvements to developer productivity through the building of scripts, tools, and other services"
+-1,-1,"Job Description
+Company Summary
+If you have taken a moment to unwind with a bottle of beer, toast with glass of wine, or celebrate with a cocktail, chances are that you have shared that moment with Constellation Brands. We are passionate producers of iconic beer, wine and spirits brands that consumers love. From Corona Extra, to Robert Mondavi Wines, to SVEKDA Vodka, we produce over 100 premium brands with sales in nearly 100 countries, making us the number one multi-category beverage alcohol company in the U.S.
+
+Position Summary
+Canandaigua, New York
+Full time"
+-1,-1,"Sierra7 is seeking an Automation Test Engineer to join a team providing full DEVOPS lifecycle support and services to the Department of Veterans Affairs (VA). This program will consolidate, reengineer, and sustain a suite of Veteran-facing processes. The qualified candidate will be a qualified test engineer with at least 5 years of experience creating tests and test software to verify system operation and security and must have at least 2 years of test case automation and Selenium experience. The candidate will be responsible for understanding how to properly document test cases and create effective test plans; creating practical demonstrations of proposed solutions; define clear goals for all aspects of a product test and develop steps for proper execution.
+The candidate must have experience in the coordination and execution of test events in accordance with approved test plans, procedures, and scripts. Must have knowledge and skills to ensure that test environments are set up accurately. Must be able to create test reports. The automation test engineer must be able to test IT hardware, software, systems, and networks."
+-1,-1,"This position is for a Operations Engineer for the UCRS Project. The preson will be responsible for day to day operations and support for the system.
+JOB RESPONSIBILITES
+Deploy and maintain critical applications on cloud architecture.
+Implement automation, effective monitoring tools.
+Develop and maintain solutions for operational administration, system/data backup, disaster recovery, and security/performance monitoring.
+Manage our continuous integration and delivery pipeline to maximize efficiency.
+Support and work alongside a cross-functional engineering team.
+Sustain and improve the process of knowledge sharing throughout the engineering team."
+-1,-1,"Senior Site Reliability Engineer
+
+Why YOU want this position
+
+Since our founding as a groundbreaking provider of oil & gas data, we have evolved our solutions to cover oil & gas analytics, trading & risk, and business automation for customers across the energy industry. Enverus represents this growth while bringing us closer together as one team. Enverus delivers business-critical insights to the global energy industry through a state-of-the-art SaaS platform built on industry-leading data and energy analytics. Our solutions deliver value across the entire energy value chain, empowering customers to be more agile, efficient, and competitive. The range of energy industry participants we serve includes exploration and production (E&P) companies and related businesses such as oilfield services, midstream, capital markets, power generators and utilities, energy traders, and downstream commercial & industrial energy consumers."
+-1,-1,"Love developing software and innovating? Have an analytical mind? Love creating solutions? We are looking for a motivated and positive individual to lead creation of software solutions that exceed expectations!
+Based in Fort Wayne, Ind., Do it Best Corp. proudly serves thousands of member-owned home improvement businesses throughout the US and all around the world. We provide everything independent hardware stores, home centers, lumberyards, industrial/commercial distributors, and e-tailers need to grow their businesses and achieve their dreams. With annual sales of $3.7 billion, Do it Best Corp. serves member-owned stores in the United States and 50 foreign countries and prides itself on offering opportunity for advancement and benefits, such as tuition reimbursement.
+Description"
+-1,-1,"Lead Infrastructure Engineer
+Overview
+Kalani Consulting, Inc. (KCI) is seeking a capable and experienced Lead Infrastructure Engineer to join our team in support of the Department of Homeland Security. The ideal candidate will provide expert technical leadership to manage, monitor, and ensure the highest level of availability of all operational systems and infrastructure within a large data warehouse.
+Responsibilities
+Lead the infrastructure team in the support of the databases, ETL, BI layer, SAS, and OS."
+-1,-1,"Position : Kubernetes Engineer/Architect
+Location : Tampa, FL
+Duration : fulltime
+Job description :
+Mandatory skill –
+Deep understanding of k8s architecture with strong basics of Docker concepts & virtualization. 30%
+Hands on experience with Big Data tools HDFS/Spark/Kerberos etc. Cloudera Hadoop or MapR Distribution exposure preferred. – 30%
+Understanding of Docker containers and ability to author Docker images /Understanding of Kubernetes/ OpenShift/Service Mesh and shared storage technologies like NAS/ SAN – 30%"
+-1,-1,"Position : Kubernetes Engineer/Architect
+Location : Tampa, FL
+Duration : fulltime
+Job description :
+Mandatory skill –
+Deep understanding of k8s architecture with strong basics of Docker concepts & virtualization. 30%
+Hands on experience with Big Data tools HDFS/Spark/Kerberos etc. Cloudera Hadoop or MapR Distribution exposure preferred. – 30%
+Understanding of Docker containers and ability to author Docker images /Understanding of Kubernetes/ OpenShift/Service Mesh and shared storage technologies like NAS/ SAN – 30%"
+-1,-1,"Intro (Use Font Arial 12):
+As a DevOps Engineer, you will collaborate with our clients to help design, implement, maintain, and test a variety of technical solutions by utilizing a variety of the latest technologies. You will also be responsible for creating and enhancing Continuous Integration (CI)/Continuous Delivery (CD) pipelines and various kinds of automation processes (build management, automated deployments, automated testing, configuration management, etc).
+What You'll Be Doing:
+Treat infrastructure as a product and provide ideas on how to continually improve automation services and resiliency of the platform
+Gather technical requirements and execute on deliverables
+Scale infrastructure and/or applications in an automated way
+Location and Travel Details:
+Profile of Success:
+Desirable Skills:
+About AIS:
+
+
+
+
+
+
+
+EEO Statement:"
+-1,-1,"The Senior Software Engineer is responsible for working on complex projects with little or no supervision. This role should also be able to mentor other developers and contractors. The Senior Developer should participate in setting technical direction, standards, and methodologies for application development. This position will learn a working knowledge of the business and be able to apply the appropriate technology. This position requires strong interpersonal skills, ability to work in a team environment and share ideas, and exhibit great customer service. Must be flexible in giving and getting feedback on development ideas and approaches.
+Essential Functions and Competencies:
+To perform the job successfully, an individual should demonstrate the following competencies to perform the essential functions of this position."
+-1,-1,"About the Job
+As part of a small and passionate team of engineers, you will be responsible for creating and maintaining navigation algorithms, test infrastructure, and software tools used to design, build, and test navigation and attitude determination algorithms for guidance, navigation, and control (GN&C) of mobile robotic platforms. Your contributions will play a key role in commercializing advanced navigation technology and transitioning novel algorithm development from R&D into production.
+Engineering opportunities exist at multiple experience levels. Roles are focused on algorithm design/ software engineering and span a diverse range of technical responsibilities including task and project leadership, autonomous individual contributor for novel algorithm development, design and implementation of test software and tooling for algorithm verification and validation, and continuous improvement initiatives for software engineering processes."
+-1,-1,"CI CD
+Terraform/pulumi
+cloudformation,
+helm charts
+python
+groovy
+Jenkins
+Contract length: 3 months"
+-1,-1,"Overview:
+Summary: As Production Support Engineer you will have five main functional areas: Change Management, Assigned Projects, Configuring Server Environments for Applications in Production and UAT, Software Testing, and Production Support. Your team’s responsibilities include responding to production issues, daily application maintenance, incident resolution and process improvement, disaster recovery activities, application monitoring strategy, and overall application stability. You will participate and drive production outage resolution, ensuring the right support staff are engaged and executive communications are sent, be responsible for team and application metrics and the quality of the data supporting them. Applications in this portfolio may include a combination of in-house developed, locally hosted, and SaaS systems. Overall experience Bachelor’s Degree in Information Technology or equivalent combination of four years of IT education and work experience.
+Responsibilities:
+Qualifications:"
+-1,-1,"We are looking for a Junior Dev/Ops Engineer that will play a key role in maintaining and improving the SAAS solutions we provide to the market. The Convercent platform incorporates a wide variety of features, including scalable website & ecommerce hosting, rating, billing and array of integration capabilities with external partners using web APIs, and other technologies. This is a very hands-on role which will involve working with our engineering and operations departments, building and maintaining production environments in AWS, Azure, and physical data centers.
+
+A Day in the Life Will Likely Include:
+Build and maintain infrastructure on AWS and Azure cloud
+Write scripts to automate operations and server management
+Maintain QA and Production configuration using automation tools
+
+
+Key characteristics of the right individual are a desire and passion to take-on a broad set of responsibilities. This job will require the individual to rapidly understand our technology and work with multiple partners.
+
+
+The salary compensation range provided here is just thata range! The offer that is ultimately extended is based on level of experience, skillset, certifications and education.
+
+
+Bringing the transformative power of the cloud to the compliance and ethics industry, Convercent's award-winning SaaS solution empowers our customers to be more effective and efficient in managing their compliance efforts. With an inclination towards innovation, Convercent is helping our customers raise the standardand expectationsfor how companies safeguard their financial and reputational health.
+
+
+
+We are committed to be a more diverse, inclusive, and equitable workplace. If you choose to fill out these demographic questions, your response will help us identify how we can improve our hiring process to support a more diverse workplace.
+
+Completion of these questions is entirely voluntary. Your responses, or choice not to respond, will not be associated with your application for this role, will not be used in making any hiring decisions, and will be recorded and maintained in a confidential file.
+
+Hiring from a wide variety of backgrounds is important to us, because our customers and their employees come from a wide variety of backgrounds. Individuals seeking employment at Convercent are considered without regards to race, color, religion, national origin, age, sex, marital status, ancestry, physical or mental disability, veteran status, gender identity, or sexual orientation."
+-1,-1,"Summary:
+This is a mid-level position that will contribute to a team effort in all aspects of software engineering including design, development, testing, and support. This position will also support project estimation and task delegation.
+Job Specific Tasks:
+Be a subject matter technical expert, provide a roadmap to the development team and make architectural decisions in consultation with the project technical architect. This person is humble, talented, quick learner, and always looking to make things better.
+Collaborate with developers and project managers to deliver high quality and successful software implementations that meet the business goals of the customer"
+-1,-1,"Daugherty Business Solutions, a leading advisory services and technology consulting firm will be expanding its operations to open a new, world-class Software Development Center in Columbus, Ohio to support its rapid growth and to engage the region’s diverse talent pool and thriving business community.
+In addition to existing Software Development Centers across the organization; in Minneapolis, Atlanta, Dallas, Chicago, NY and the St. Louis Headquarters, the team in Columbus will strategically support Daugherty’s growth strategy and commitment to delivering high quality software fast and effectively for its Fortune 500 clients.
+From Ron Daugherty, founder and CEO of Daugherty Business Solutions: “I am excited to announce that Daugherty is expanding to Columbus, OH. This expansion is a direct result of the hard work of our consultants during this pandemic. Daugherty teammates continue to find ways to add even more value for our clients and to increase the demand for our consulting expertise. Columbus is a growing metro area with a strong base of talent, excellent universities, and interesting perspective clients. That’s why I’m proud to add Columbus to our existing development centers across the country.”"
+-1,-1,"About TechSmith:
+Being a TechSmithie allows you to work creatively to solve real problems for people and businesses in an innovative and collaborative environment. We are a home-grown, mid-sized company that has achieved global success. We help people “show what they know” using our screen capture and video creation software. Our products, including Camtasia, Snagit, and Knowmia, are used by over 30 million professionals, from individuals to Fortune 500 Companies.
+Position Overview:
+As a Software Engineer working on our Cloud team, you’ll be part of an open, curious team of engineers looking after the development, care, and keeping of our web-based products and services. You’ll work along the range of the software stack: from front-end interactions to API management, to data and storage concerns, through deployment and performance metrics.
+
+You will put your problem-solving skills and passion for developing great software to use every day. You will work within a team, building world-class software products in a fun, collaborative environment. Responsibilities include: participating in an agile team, programming, estimating upcoming work, reviewing completed work with teammates, as well as other duties, as assigned. If you love solving customer problems and innovating with new technology, you will fit right in.
+
+At TechSmith, every individual can make a big impact, while working in a supportive team environment. As part of an agile team, you will have a voice in helping to decide what assignments the team tackles. While working directly with User Experience Designers and Product Owners, you will help decide how to solve our customer’s requests. With the help of Software Test Specialists and your teammates, you will have the time and support to fully test your solutions and create quality work. Together with Systems Engineers, you will deploy and observe your services and applications. When you are not coding solutions for customer problems, you will have the time to advance your skills and your career with the help and support of your programming lead and manager. The TechSmith agile process is set up to give you the opportunity to dedicate entire sprints to innovation, self-guided work, or professional development multiple times a year.
+At TechSmith, we love our employees and are always looking for ways to reward outstanding performance. Our compensation is competitive and based on skills and experience. As a full-time employee you will receive the standard TechSmith benefits package including health insurance, paid time off, 401(k) program, and more. A casual work environment, company-sponsored events, free Friday lunches, and kitchens stocked with snacks and soft drinks are just a few of our additional perks. We offer you a unique and growing company value where you can enjoy your work and advance your career. If this sounds like a place you would like to work, please submit your resume and cover letter."
+-1,-1,"Dev Ops Engineer
+Are you looking to make an impact at a fast-growing health-tech company that tops the lists on the Inc. 5000 and the Boston Business Journal? You’ve come to the right job description.
+SUMMARY
+As our Lead DevOps Engineer will help build and lead a dynamic team creating leading edge products for our clients.
+Who‌ ‌We‌ ‌Are‌ ‌ ‌
+At IntelyCare, we’re empowering healthcare heroes to transform the way they work. IntelyCare simplifies the scheduling and staffing process to match qualified nursing professionals - we call them IntelyPros - with shifts at our partnered facilities. We have a pool of over 15,000 IntelyPros in our network who get the pay, freedom, and flexibility they deserve—all from one smart and easy-to-use mobile app and platform. And our partnered facilities‌ get ‌access‌ ‌to‌ ‌nursing‌ ‌resources‌ ‌when‌ ‌they‌ ‌need‌ ‌them.‌ ‌All‌ ‌of‌ ‌which‌ ‌leads‌ ‌to‌ ‌the‌ ‌ultimate‌ ‌goal‌ ‌-‌ ‌better‌ ‌care‌ ‌for‌ ‌patients.‌ ‌ ‌"
+-1,-1,"About the Role
+
+We are growing our Core Engineering (DevOps) team to meet the challenges of a rapidly growing and changing SaaS company. We are looking to expand our capability to maintain, optimize and evolve our AWS-based cloud operations for our SaaS products.
+
+Our mission is to maintain rock-solid stability and reliability for our customers while making development and management of the environment as easy as possible for our colleagues at Validity. We aspire to follow the SRE/DevOps methodologies and best practices of distinguished tech industry leaders while making the appropriate choices for our organizations scale.
+
+We are looking for an experienced engineer who is confident with cloud infrastructure and code pipelines. In addition to becoming deeply familiar with core tools and technology, they will need to build broader familiarity with a wider set of technologies in the environment. We expect them to own projects and help guide the evolution of our platforms.
+
+
+
+We support a complex environment that has grown rapidly through mergers and acquisitions. We host applications written in-house, purchased commercially, and from the open-source community. No two days are the same here. This gives our team the opportunity to develop great hands-on experience with many exciting technologies such as Linux, AWS, Docker, and Kubernetes.
+
+
+
+Final salary may vary depending on skills, location, and/or experience.
+
+
+
+AL, AR, AZ, CA, CO, CT, FL, GA, HI, ID, IL, IN, KS, KY, MA, MD, ME, MI, MO, NC, NE, NH, NJ, NV, NY, OH, OK, PA, RI, SC, TN, TX, UT, VA, VT, WA
+
+
+
+For over 20 years, tens of thousands of organizations across the world have relied on Validity solutions to target, contact, engage, and retain customers – using trustworthy data as a key advantage. Validity’s flagship products – DemandTools, BriteVerify, Return Path, Trust Assessments, and GridBuddy – are all highly rated, #1 solutions for sales and marketing professionals. These solutions deliver smarter email campaigns, more qualified leads, more productive sales, and ultimately faster growth.
+
+Validity is a truly unique company - massive revenue growth, top-tier investors, 5-star product ratings, proven ability to acquire and integrate top tech companies and welcome them into the Validity family, winning culture, and a work environment that fosters hard work, trust, and fun.
+
+Headquartered in Boston, Validity has offices in Tampa, Denver, Indianapolis, London, and Sydney. For more information, visit connect with us on LinkedIn, Instagram, and Twitter.
+
+Validity is proud to be an equal opportunity employer. We are committed to equal opportunity regardless of race, color, ancestry, religion, gender, gender identity, parental or pregnancy status, national origin, sexual orientation, age, citizenship, marital status, disability, or veteran status.
+
+Powered by JazzHR"
+-1,-1,"At Delta Dental, our strategy is only as strong as the people who execute it! We are hiring individuals that are not just right for today but also for our future. We have built a foundation of high-trust by treating all people with dignity, making and keeping commitments, and consistently striving to do the right thing. Our leaders optimistically share future possibilities to inspire and motivate others toward their full potential. We expect our employees to find ways to embrace positive change, be curious and challenge the status quo, and provide solutions to unmet problems. Joining Delta Dental means joining a culture focused on fostering development, building genuine connections, recognizing each other’s strengths and sharing in successes.
+
+The incumbent in this position is responsible for enterprise level designing, planning, implementation and support of Azure Cloud environments in a highly collaborative and fast-paced setup. The engineer's responsibilities include cloud operations and governance using best practices for the implementation and migration of our critical applications from data center to public cloud with adherence to best infrastructure standards, providing support to applications developers, infrastructure and DevOps teams, and end-users. The engineer will participate in the design of automated solutions, process improvement, server provisioning, capacity and performance management, software installations, technical assistance, server security management, topology recommendations and cost control. The incumbent must have in depth working knowledge of Azure Cloud along with knowledge on core infrastructure components such as UNIX/Linux operating systems, storage, network, databases, DevOps tools, scripting and Windows."
+-1,-1,"About Us:
+
+SentinelOne is defining the future of cybersecurity through our XDR platform that automatically prevents, detects, and responds to threats in real-time. Singularity XDR ingests data and leverages our patented AI models to deliver autonomous protection. With SentinelOne, organizations gain full transparency into everything happening across the network at machine speed to defeat every attack, at every stage of the threat lifecycle.
+
+We are a values-driven team where names are known, results are rewarded, and friendships are formed. Trust, accountability, relentlessness, ingenuity, and OneSentinel define the pillars of our collaborative and unified global culture. We're looking for people that will drive team success and collaboration across SentinelOne. If youre enthusiastic about innovative approaches to problem-solving, we would love to speak with you about joining our team!
+
+
+
+We are seeking a whose objective is to ""accelerate product delivery"".This includes working hand in hand with our CloudOps, Site Reliability Engineering, and Core Engineering teams to enhance operations of our massive kubernetes infrastructure, accelerate of our multi-cloud, on-premise, and air-gapped deployments, and provide expert level guidance on best practices for kubernetes CI/CD automation. Our industry's best security products ensure our customers operate fearlessly regardless of where and how they operate. As part of our Site Reliability and Cloud Operations Organization, youll help SentinelOne continue to grow by ensuring rapid delivery of new features nad stable and reliable operations for our customers that directly impacts revenue.
+
+
+
+The will bring deep expertise designing and supporting highly-scalable, highly-available infrastructure and applications in Kubernetes as well as promoting meshed microservice design patterns in complex working environments. You will serve as a subject matter expert on all aspects of our containerized deployments, including deployment, configuration, scaling, and upgrades. You will provide technical leadership in the team as the subject matter expert on Kubernetes for a complex and highly available production system.
+
+In addition, you will debug problems in production and test environments, advise developers on best practices applicable to the environment, and maintain high-volume clusters in multiple datacenters. You will develop automation that improves deployment speed and service reliability in the containerized environment. You will help mentor other team members and customers on the adoption of new technologies and design principles as well as promote DevOps culture and collaboration.
+
+
+
+Significant real world, production expertise in the deployment, management, and monitor of Kubernetes:
+
+
+You will work on real-world problems and make an impact by protecting our customers from cyber threats. You will be joining a cutting-edge project and will be able to influence the architecture, design, and structure of our core platform. You will tackle extraordinary challenges and work with the very BEST in the industry.
+SentinelOne is proud to be an Equal Employment Opportunity and Affirmative Action employer. We do not discriminate based upon race, religion, color, national origin, gender (including pregnancy, childbirth, or related medical conditions), sexual orientation, gender identity, gender expression, age, status as a protected veteran, status as an individual with a disability, or other applicable legally protected characteristics."
+-1,-1,"Job Description
+
+The Clairvoyant framework is a scalable, extensible, cloud-based software-hosting-and-integration environment that enables the rapid development and deployment of advanced mission applications and analytics within an enterprise. Clairvoyant is looking for highly adaptable engineers who are willing to step outside of their comfort zone to accomplish the mission.
+
+As an DevOps engineer, you will:
+Develop, deploy, and maintain a fully automated Continuous Integration pipeline, using Jenkins
+Execute and implement the necessary security, vulnerability, and quality scans for the CI pipeline
+Develop, deploy, and maintain a fully automated Continuous Delivery pipeline to a Kubernetes environment, using ArgoCD
+Automate the touch point between CI and CD
+Deploy, configure, and maintain all the tools and packages the pipelines require, as Docker containers
+Deploy the CI/CD pipeline into the Kubernetes clusters via Helm
+
+
+Candidate must have a TS/SCI clearance and have or be willing to obtain a current Polygraph
+Bachelor's degree or equivalent in Computer Science, Computer Engineering, or related field
+Experience with Containerization (Docker) and Container Orchestration (Kubernetes)
+Experience with implementing CI/CD pipelines
+Good command of Linux/Unix and command line knowledge
+Familiarity with agile development methodologies
+Experience in application administration, configuration, and integration
+Ability to travel 5% of the time
+Willingness to learn
+Ability to work in a fast pace and dynamic environment
+Self-starter with good interpersonal and written/verbal communication skills
+
+
+Significant experience with cloud native technologies
+Familiarity with AWS
+Current certification compliant with DoD 8570 IAT level 3 (COMPTIA Security +)
+
+
+Normal demands associated with an office environment. Ability to work on computer for long periods, and communicate with individuals by telephone, email and face to face. Some travel may be required.
+
+
+BITS, a CACI Company, benefits are unique. The benefits equate to 50% of salary on top of your base salary. The first part is a tax qualified profit-sharing retirement plan to which BITS annually contributes up to 25% of your base salary (not in excess of applicable IRS limits) to your retirement account under the plan. The second part consists of BITS' Individual Benefit Account (IBA), which is used for premiums, medical reimbursements, dependent care, education and Paid Time Off (PTO) policy. Both components of the BITS benefit package are paid for by BITS in addition to your base salary and potential performance bonuses.
+We believe in healthy home/work balance. Our locations offer a wide variety of activities to balance with your work life.
+
+Check us out at http://www.caci.com/bit-systems/
+BITS3
+SE5
+Job Location
+US-Sterling-VA-DENVER
+
+CACI employs a diverse range of talent to create an environment that fuels innovation and fosters continuous improvement and success. At CACI, you will have the opportunity to make an immediate impact by providing information solutions and services in support of national security missions and government transformation for Intelligence, Defense, and Federal Civilian customers. CACI is proud to provide dynamic careers for employees worldwide. CACI is an Equal Opportunity Employer - Females/Minorities/Protected Veterans/Individuals with Disabilities."
+-1,-1,"In support of the National Cancer Institute (NCI) and its mission to accelerate the prevention and treatment of cancer, we will be supporting the management and execution of IT projects and services sponsored by the NCI Center of Biomedical Informatics and Information Technology (CBIIT).
+Below are the primary responsibilities and basic qualifications of the DevOps Engineer who supports IT projects:
+Roles/Responsibilities:
+Setting up AWS basic services. VPCs, VPNs, static routing etc.
+Performance and Availability Monitoring
+Bash scripting"
+-1,-1,"About Us:
+
+SentinelOne is defining the future of cybersecurity through our XDR platform that automatically prevents, detects, and responds to threats in real-time. Singularity XDR ingests data and leverages our patented AI models to deliver autonomous protection. With SentinelOne, organizations gain full transparency into everything happening across the network at machine speed to defeat every attack, at every stage of the threat lifecycle.
+
+We are a values-driven team where names are known, results are rewarded, and friendships are formed. Trust, accountability, relentlessness, ingenuity, and OneSentinel define the pillars of our collaborative and unified global culture. We're looking for people that will drive team success and collaboration across SentinelOne. If youre enthusiastic about innovative approaches to problem-solving, we would love to speak with you about joining our team!
+
+
+
+We are seeking a whose objective is to ""accelerate product delivery"".This includes working hand in hand with our CloudOps, Site Reliability Engineering, and Core Engineering teams to enhance operations of our massive kubernetes infrastructure, accelerate of our multi-cloud, on-premise, and air-gapped deployments, and provide expert level guidance on best practices for kubernetes CI/CD automation. Our industry's best security products ensure our customers operate fearlessly regardless of where and how they operate. As part of our Site Reliability and Cloud Operations Organization, youll help SentinelOne continue to grow by ensuring rapid delivery of new features nad stable and reliable operations for our customers that directly impacts revenue.
+
+
+
+The will bring deep expertise designing and supporting highly-scalable, highly-available infrastructure and applications in Kubernetes as well as promoting meshed microservice design patterns in complex working environments. You will serve as a subject matter expert on all aspects of our containerized deployments, including deployment, configuration, scaling, and upgrades. You will provide technical leadership in the team as the subject matter expert on Kubernetes for a complex and highly available production system.
+
+In addition, you will debug problems in production and test environments, advise developers on best practices applicable to the environment, and maintain high-volume clusters in multiple datacenters. You will develop automation that improves deployment speed and service reliability in the containerized environment. You will help mentor other team members and customers on the adoption of new technologies and design principles as well as promote DevOps culture and collaboration.
+
+
+
+Significant real world, production expertise in the deployment, management, and monitor of Kubernetes:
+
+
+You will work on real-world problems and make an impact by protecting our customers from cyber threats. You will be joining a cutting-edge project and will be able to influence the architecture, design, and structure of our core platform. You will tackle extraordinary challenges and work with the very BEST in the industry.
+SentinelOne is proud to be an Equal Employment Opportunity and Affirmative Action employer. We do not discriminate based upon race, religion, color, national origin, gender (including pregnancy, childbirth, or related medical conditions), sexual orientation, gender identity, gender expression, age, status as a protected veteran, status as an individual with a disability, or other applicable legally protected characteristics."
+-1,-1,"Do you dare to reinvent the future of education?
+At Cengage, we’re harnessing the power of tech to build a future where all learners have the tools and confidence to achieve their goals. National Geographic Learning (NGL) is a Cengage company delivering comprehensive educational programs and academic instructional materials that offer the same engaging high-quality content that you’ve come to know and expect from National Geographic. As a member of the NGL team, you’ll help transform learning for students of all ages (from Pre-K through adults), providing academic materials that enhance learning across a wide range of subjects, including: Reading/Language Arts, ESL/ELD, Mathematics, Sciences, and Social Studies. Collaborating with the best of the best, you’ll feel challenged and inspired to do breakthrough work. There’s no limit to what we can imagine, create and innovate together!"
+-1,-1,"ID: WV-1093 Biometrics Systems Engineer (US Citizen)
+Location: Fairmont, WV
+Job Type: **Full Time in Fairmont, WV, temporarily remote due to COVID
+Education/Experience: BS and 5+ yrs experience
+U.S. Citizenship Required: Yes
+** FULL TIME ON SITE IN FAIRMONT, WEST VIRIGNIA**
+** RELOCATION to Fairmont, WV is required -- ASSISTANCE AVAILABLE**
+**Salary determined by skills and relevant years of experience
+Systems Engineer Required Skills:"
+-1,-1,"Overview
+Do you have a passion for improving DevOps processes and improving software development agility and automation? Do you enjoy leading technical teams and working to create strategic solutions? If so, our DevOps and Tools Team Leader position may be the right fit for you
+
+The Opportunity:
+
+As our DevOps and Tools Team Leader you will align team actions with business and information technology goals to achieve meaningful results and develop employee career growth through coaching and stretch assignments. You will establish and promote best practices in DevOps technologies and philosophies. Your team will build and operate large-scale systems to ensure security, high availability, and scalability within our platform. You will develop tools and processes that enable our engineering teams to deliver continuous integration and deployment (CI/CD) principles. You will report directly to the Vice President of Application Engineering."
