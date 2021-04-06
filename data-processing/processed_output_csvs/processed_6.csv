@@ -1,4 +1,4 @@
-Job Title,Company Name,Job Description,Cleaned Data,Tokenized Data
+Job Title,Company Name,Job Description,Tokenized,Stop Words Removed
 -1,-1,"Overview:
 As a site reliability engineer or DevOps engineer, you get excited about working on real-time problems that are disrupting users and limiting functionality. You understand that collaborating with colleagues and building and creating deployment tools for our Software as a Service (SaaS) is essential to users' work, just as Esri’s cloud-based mapping platform is essential to analyzing and sharing geographic data. We welcome you to join our ArcGIS Online hosted services team, which is working on a product used by thousands of organizations around the world to make a difference while maintaining infrastructure, managing natural resources, responding to disasters, and more.
 Responsibilities:

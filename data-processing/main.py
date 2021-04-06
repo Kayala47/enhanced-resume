@@ -25,8 +25,8 @@ def remove_stopwords(csv_name):
         csv_writer = csv.writer(write_obj)
         # Add title row to new csv
         row0 = next(csv_reader)
-        row0.append("Cleaned Data")
-        row0.append("Tokenized Data")
+        row0.append("Tokenized")
+        row0.append("Stop Words Removed")
         csv_writer.writerow(row0)
         # Read each row of the input csv file as list
         for row in csv_reader:
