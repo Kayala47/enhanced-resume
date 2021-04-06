@@ -1,4 +1,4 @@
-Job Title,Company Name,Job Description,Cleaned Data,Tokenized Data
+Job Title,Company Name,Job Description,Tokenized,Stop Words Removed
 -1,-1,"WANTED: AMERICAN SYSTEMS is actively searching for a qualified Software Engineer with an active Secret Clearance
 
 As a Software Engineer you will:
