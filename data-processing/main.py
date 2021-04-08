@@ -3,7 +3,7 @@ import sys
 import stopword_remover
 import tokenizer
 
-#TODO: Consider making all text lowercase, I noticed a capitalized 'The' 
+# TODO: Consider making all text lowercase, I noticed a capitalized 'The'
 #      was able to slip past the stop word filter, for example.
 
 '''
@@ -15,6 +15,8 @@ new columns to hold:
 1) tokenized data 
 2) tokenized data with stop words removed
 '''
+
+
 def remove_stopwords(csv_name):
 
     with open('../output_csvs/'+csv_name, 'r') as read_obj, \
@@ -27,14 +29,15 @@ def remove_stopwords(csv_name):
         row0 = next(csv_reader)
         row0.append("Tokenized")
         row0.append("Stop Words Removed")
+        row0.append("Finished Text")
         csv_writer.writerow(row0)
         # Read each row of the input csv file as list
         for row in csv_reader:
 
-            #description is in column 2
+            # description is in column 2
             description_text = row[2]
 
-            #tokenization here...
+            # tokenization here...
             tokenized_data = tokenizer.tokenize(description_text)
             row.append(tokenized_data)
 
@@ -42,9 +45,12 @@ def remove_stopwords(csv_name):
             # print(tokenized_data)
             # print("\n\n\n")
 
-            #stop word removal here...
+            # stop word removal here...
             stopwords_removed = stopword_remover.remove_from(tokenized_data)
             row.append(stopwords_removed)
+
+            finished = " ".join(stopwords_removed)
+            row.append(finished)
 
             # print("Stop words removed:\n")
             # print(stopwords_removed)
@@ -53,9 +59,11 @@ def remove_stopwords(csv_name):
             # Add the updated row / list to the output file
             csv_writer.writerow(row)
 
+
 def main(csv_name):
     remove_stopwords(csv_name)
     print("generated the new csv")
+
 
 if __name__ == "__main__":
     remove_stopwords(sys.argv[1])
