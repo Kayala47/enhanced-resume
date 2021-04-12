@@ -1,0 +1,10 @@
+TRAIN_DATA = [
+    (0, {
+        'entities': [(48, 58, 'ATTRIBUTE'), (751, 758, 'SKILL'), (759, 765, 'SKILL'), (768, 774, 'SKILL'), 
+        (777, 788. 'SKILL'), (791,794, 'SKILL'), (797,804, 'SKILL'), (805,811, 'SKILL'), (854,895, 'ATTRIBUTE'), 
+        (919,924, 'SKILL')]
+    }),
+    (1, {
+
+    })
+]
