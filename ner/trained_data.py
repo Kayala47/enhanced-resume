@@ -116,7 +116,9 @@ TRAIN_DATA = [
                        (29, 46, 'SKILL'),
                        (49, 62, 'SKILL'),
                        (81, 97, 'SKILL'),
-                       (100, 115, 'SKILL')]}),
+                       (100, 115, 'SKILL')]
+                       }),
+
     (17, {'entities': [(752, 763, 'ATTRIBUTE'),
                        (2196, 2214, 'ATTRIBUTE'),
                        (2433, 2449, 'ATTRIBUTE'),
