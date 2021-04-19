@@ -14,6 +14,12 @@ n_iter = 100
 
 nlp = spacy.load("en_core_web_sm")
 
+df = pandas.read_csv("tagged_data.csv")
+
+x = df[0]['Finished Text']
+print(x)
+
+
 if model is not None:
     nlp1 = spacy.load(model)  # load existing spaCy model
     print("Loaded model '%s'" % model)
