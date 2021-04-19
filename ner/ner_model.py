@@ -74,6 +74,11 @@ for num, _ in trained_data.TRAIN_DATA:
     doc = nlp1(list_text[num])
     print('Entities', [(ent.text, ent.label_) for ent in doc.ents])
 
+# test on 3 random paragraphs
+for i in range(0, 3):
+    doc = nlp1(list_text[random.randint(0, len(list_text))])
+    print('Entities', [(ent.text, ent.label_) for ent in doc.ents])
+
 
 # save model to output directory
 if output_dir is not None:
