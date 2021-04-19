@@ -14,10 +14,17 @@ n_iter = 100
 
 nlp = spacy.load("en_core_web_sm")
 
-df = pandas.read_csv("tagged_data.csv")
+df = pd.read_csv("tagged_data.csv")
+texts = pd.read_csv(
+    "..\\data_processing\\processed_output_csvs\\final_output.csv")
 
-x = df[0]['Finished Text']
-print(x)
+list_text = df['Finished Text']
+
+# converts dataset into one big string
+bigString = ''
+for i in list_text:
+    i = str(i)
+    bigString += i
 
 
 if model is not None:
@@ -48,9 +55,11 @@ with nlp1.disable_pipes(*other_pipes):  # only train NER
     for itn in range(n_iter):
         random.shuffle(trained_data.TRAIN_DATA)
         losses = {}
-        for text, annotations in tqdm(trained_data.TRAIN_DATA):
+        for text_num, annotations in tqdm(trained_data.TRAIN_DATA):
+            print([text_num])
+            # print(annotations)
             nlp1.update(
-                [text],  # batch of texts
+                [df['Finished Text'][text_num]],  # batch of texts
                 [annotations],  # batch of annotations
                 drop=0.5,  # dropout - make it harder to memorise data
                 sgd=optimizer,  # callable to update weights
@@ -59,8 +68,10 @@ with nlp1.disable_pipes(*other_pipes):  # only train NER
 
 
 # test the trained model
-for text, _ in trained_data.TRAIN_DATA:
-    doc = nlp1(x)
+# print(len(texts['Finished Text']))
+for num, _ in trained_data.TRAIN_DATA:
+
+    doc = nlp1(list_text[num])
     print('Entities', [(ent.text, ent.label_) for ent in doc.ents])
 
 
@@ -69,27 +80,13 @@ if output_dir is not None:
     output_dir = Path(output_dir)
 if not output_dir.exists():
     output_dir.mkdir()
-nlp.to_disk(output_dir)
+nlp1.to_disk(output_dir)
 print("Saved model to", output_dir)
 
 
 # test the saved model
 print("Loading from", output_dir)
 nlp2 = spacy.load(output_dir)
-for text, _ in trained_data.TRAIN_DATA:
-    doc = nlp2(text)
+for num, _ in trained_data.TRAIN_DATA:
+    doc = nlp2(list_text[num])
     print("Entities", [(ent.text, ent.label_) for ent in doc.ents])
-
-# nlp = spacy.load("en_core_web_sm")
-
-# # import data
-# df = pd.read_csv('../data_processing/processed_output_csvs/final_output.csv')
-
-# for index, row in df.iterrows():
-#     # print(list(df.columns))
-#     print(row['Finished Text'])
-
-#     doc = nlp(row['Finished Text'])
-
-#     ents = [(e.text, e.start_char, e.end_char, e.label_) for e in doc.ents]
-#     print(ents)
