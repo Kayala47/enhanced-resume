@@ -189,5 +189,4 @@ TRAIN_DATA = [
                                                                   'SKILL'), (729, 751, 'SKILL'), (754, 772, 'SKILL'),
                        (775, 803, 'SKILL')]}),
     (34, {'entities': [()]})
-
 ]
