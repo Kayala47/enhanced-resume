@@ -188,6 +188,8 @@ TRAIN_DATA = [
                        (659, 673, 'SKILL'), (694, 711, 'SKILL'), (714, 726,
                                                                   'SKILL'), (729, 751, 'SKILL'), (754, 772, 'SKILL'),
                        (775, 803, 'SKILL')]}),
-    (34, {'entities': [()]})
+    (34, {'entities': [(9, 20, 'ATTRIBUTE'), (53, 68, 'SKILL'), (93, 104, 'ATTRIBUTE'), (231, 238, 'SKILL'), (239, 242, 'SKILL'), (387, 397, 'ATTRIBUTE'), (443, 459, 'SKILL'),
+                       (460, 462, 'SKILL'), (465, 475, 'SKILL')]}),
+    ()
 
 ]
