@@ -271,5 +271,14 @@ TRAIN_DATA = [
     }),
     (69, {
         'entities': [(59, 133, 'SKILL'), (136, 154, 'SKILL'), (157, 161, 'SKILL'), (166, 200, 'SKILL'), (460, 469, 'ATTRIBUTE'), (472, 496, 'ATTRIBUTE')]
+    }),
+    (70, {
+        'entities': [(156, 162, 'ATTRIBUTE'), (165, 172, 'ATTRIBUTE'), (226, 238, 'ATTRIBUTE'), (241, 249, 'ATTRIBUTE'), (395, 421, 'SKILL'), (447, 463, 'SKILL'), (488, 509, 'SKILL'), (510, 527, 'SKILL'), (475, 485, 'SKILL'), (550, 573, 'ATTRIBUTE'), (584, 622, 'SKILL'), (623, 663, 'SKILL')]
+    }),
+    (71, {
+        'entities': [(584, 605, 'ATTRIBUTE'), (670, 708, 'SKILL')]
+    }),
+    (72, {
+        'entities': [(26, 31, 'SKILL'), (77, 109, 'ATTRIBUTE'), (189, 208, 'SKILL'), (164, 169, 'SKILL'), (286, 305, 'SKILL'), (306, 317, 'SKILL'), (318, 325, 'SKILL'), (380, 385, 'SKILL'), (402, 453, 'SKILL'), (456, 475, 'SKILL'), (478, 487, 'SKILL'), (564, 567, 'SKILL'), (608, 611, 'SKILL'), (614, 637, 'SKILL'), (666, 711, 'SKILL'), (780, 790, 'SKILL'), (814, 838, 'SKILL'), (860, 864, 'SKILL'), (841, 857, 'SKILL'), (878, 905, 'SKILL'), (908, 915, 'SKILL'), (916, 923, 'SKILL'), (935, 940, 'SKILL')]
     })
 ]
