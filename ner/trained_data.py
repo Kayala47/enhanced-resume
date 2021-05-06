@@ -220,7 +220,30 @@ TRAIN_DATA = [
     (50, {'entities': [(116, 123, 'ATTRIBUTE'), (259, 280,
                                                  'ATTRIBUTE'), (691, 749, 'SKILL'), (1018, 1033, 'ATTRIBUTE')]}),
     (51, {'entities': [(4, 26, 'ATTRIBUTE'), (54, 70, 'ATTRIBUTE'), (71, 87,
-                                                                     'ATTRIBUTE'), (228, 244, 'SKILL'), (329, 371, 'SKILL'), (443, 479, 'SKILL')]})
+                                                                     'ATTRIBUTE'), (228, 244, 'SKILL'), (329, 371, 'SKILL'), (443, 479, 'SKILL')]}),
+    (52, {'entities': [(236, 263, 'SKILL'), (308, 321, 'SKILL'), (324, 340, 'SKILL'), (294, 305,
+     'SKILL'), (682, 686, 'ATTRIBUTE'), (687, 695, 'ATTRIBUTE'), (722, 739, 'ATTRIBUTE')]}),
+    (53, {'entities': [(356, 378, 'SKILL'), (388, 405, 'SKILL'), (419, 451, 'SKILL'), (465, 472, 'ATTRIBUTE'),
+     (475, 490, 'ATTRIBUTE'), (493, 505, 'ATTRIBUTE'), (508, 556, 'ATTRIBUTE'), (572, 627, 'SKILL')]}),
+    (54, {'entities': [(140, 164, 'SKILL'), (175, 242, 'SKILL'), (279, 289, 'SKILL'), (292, 304, 'SKILL'), (307, 331, 'SKILL'), (334, 350, 'SKILL'), (353, 376, 'SKILL'), (379, 408,
+     'SKILL'), (556, 566, 'SKILL'), (569, 581, 'SKILL'), (584, 608, 'SKILL'), (611, 627, 'SKILL'), (630, 653, 'SKILL'), (656, 685, 'SKILL'), (489, 512, 'SKILL'), (437, 473, 'SKILL')]}),
 
+    (55, {
+        'entities': [(278, 332, 'SKILL'), (420, 440, 'ATTRIBUTE'), (470, 504, 'SKILL'), (505, 569, 'SKILL'), (570, 602, 'SKILL'), (605, 626, 'SKILL'), (635, 648, 'SKILL')]
+    }),
+    (56, {
+        'entities': [(53, 65, 'ATTRIBUTE'), (77, 92, 'ATTRIBUTE'), (93, 107, 'ATTRIBUTE'), (440, 447, 'SKILL'), (534, 541, 'SKILL'), (574, 581, 'SKILL'), (625, 643, 'SKILL'), (644, 674, 'SKILL'), (675, 686, 'SKILL'), (689, 733, 'SKILL'), (745, 780, 'SKILL'), (797, 833, 'SKILL'), (762, 780, 'SKILL')]
+    }),
+    (57, {
+        'entities': [(45, 68, 'SKILL'), (114, 127, 'SKILL'), (130, 155, 'SKILL'), (69, 97, 'SKILL'), (98, 111, 'SKILL'), (186, 198, 'SKILL'), (201, 211, 'SKILL'), (214, 225, 'SKILL'), (228, 235, 'SKILL'), (238, 259, 'SKILL'), (262, 266, 'SKILL'), (269, 287, 'SKILL'), (290, 294, 'SKILL'), (348, 390, 'SKILL'), (391, 397, 'ATTRIBUTE'), (398, 406, 'ATTRIBUTE'), (495, 523, 'ATTRIBUTE')]
+    }),
+    (58, {'entities': [(284, 306, 'SKILL'), (309, 324, 'SKILL'), (327, 338, 'SKILL'), (341, 372, 'SKILL'), (447, 455, 'ATTRIBUTE'), (458, 471, 'ATTRIBUTE'), (502, 526, 'SKILL'), (512, 519, 'SKILL')]
+          }),
+    (59, {
+        'entities': [(102, 129, 'SKILL'), (157, 171, 'SKILL'), (174, 191, 'SKILL'), (216, 246, 'SKILL'), (348, 363, 'SKILL'), (282, 299, 'SKILL'), (302, 312, 'SKILL'), (315, 322, 'SKILL'), (325, 333, 'SKILL'), (336, 345, 'SKILL'), (390, 418, 'ATTRIBUTE'), (473, 491, 'SKILL'), (452, 472, 'SKILL'), (515, 545, 'SKILL')]
+    }),
+    (60, {
+        'entities': [(22, 33, 'ATTRIBUTE'), (349, 359, 'SKILL'), (362, 373, 'SKILL'), (390, 393, 'SKILL'), (396, 399, 'SKILL'), (402, 442, 'SKILL'), (419, 427, 'SKILL'), (453, 508, 'SKILL'), (569, 576, 'SKILL'), (577, 582, 'SKILL'), (678, 721, 'SKILL'), (724, 772, 'SKILL'), (775, 819, 'SKILL')]
+    })
 
 ]
