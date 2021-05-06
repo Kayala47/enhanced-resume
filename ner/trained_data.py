@@ -244,6 +244,32 @@ TRAIN_DATA = [
     }),
     (60, {
         'entities': [(22, 33, 'ATTRIBUTE'), (349, 359, 'SKILL'), (362, 373, 'SKILL'), (390, 393, 'SKILL'), (396, 399, 'SKILL'), (402, 442, 'SKILL'), (419, 427, 'SKILL'), (453, 508, 'SKILL'), (569, 576, 'SKILL'), (577, 582, 'SKILL'), (678, 721, 'SKILL'), (724, 772, 'SKILL'), (775, 819, 'SKILL')]
+    }),
+    (61, {
+        'entities': [(338, 345, 'ATTRIBUTE'), (320, 324, 'ATTRIBUTE')]
+    }),
+    (62, {
+        'entities': [(79, 86, 'ATTRIBUTE'), (377, 396, 'SKILL'), (399, 406, 'SKILL'), (409, 427, 'SKILL'), (430, 440, 'SKILL'), (443, 450, 'SKILL'), (453, 461, 'SKILL'), (464, 487, 'SKILL'), (616, 622, 'SKILL'), (625, 633, 'SKILL'), (636, 647, 'SKILL'), (648, 679, 'SKILL'), (593, 615, 'SKILL'), (688, 710, 'SKILL')]
+    }),
+    (63, {
+        'entities': [(33, 59, 'SKILL'), (62, 110, 'SKILL'), (113, 121, 'SKILL'), (124, 140, 'SKILL'), (141, 158, 'SKILL'), (182, 201, 'ATTRIBUTE'), (202, 216, 'ATTRIBUTE'), (217, 228, 'ATTRIBUTE'), (229, 280, 'ATTRIBUTE'), (281, 319, 'ATTRIBUTE'), (320, 374, 'ATTRIBUTE'), (395, 446, 'ATTRIBUTE'), (449, 478, 'ATTRIBUTE'), (481, 504, 'ATTRIBUTE')]
+    }),
+    (64, {
+        'entities': [(190, 202, 'SKILL'), (554, 561, 'ATTRIBUTE'), (597, 607, 'ATTRIBUTE'), (614, 631, 'ATTRIBUTE'), (518, 528, 'ATTRIBUTE'), (576, 591, 'ATTRIBUTE'), (567, 575, 'ATTRIBUTE'), (634, 644, 'ATTRIBUTE'), (651, 676, 'ATTRIBUTE'), (677, 694, 'ATTRIBUTE'), (695, 713, 'ATTRIBUTE'), (759, 766, 'ATTRIBUTE'), (780, 812, 'ATTRIBUTE'), (815, 825, 'ATTRIBUTE'), (832, 860, 'ATTRIBUTE'), (863, 880, 'ATTRIBUTE')]
+    }),
+    (65, {
+        'entities': [(227, 248, 'SKILL'), (187, 226, 'ATTRIBUTE'), (263, 269, 'SKILL'), (277, 294, 'SKILL'), (411, 422, 'ATTRIBUTE'), (425, 434, 'ATTRIBUTE'), (437, 476, 'ATTRIBUTE')]
+    }),
+    (66, {
+        'entities': [(76, 85, 'ATTRIBUTE'), (88, 100, 'ATTRIBUTE'), (101, 104, 'ATTRIBUTE'), (126, 135, 'ATTRIBUTE')]
+    }),
+    (67, {
+        'entities': [(348, 369, 'SKILL'), (372, 391, 'SKILL'), (404, 462, 'SKILL'), (523, 544, 'ATTRIBUTE'), (554, 582, 'SKILL'), (590, 622, 'ATTRIBUTE'), (660, 669, 'ATTRIBUTE')]
+    }),
+    (68, {
+        'entities': [(608, 625, 'ATTRIBUTE')]
+    }),
+    (69, {
+        'entities': [(59, 133, 'SKILL'), (136, 154, 'SKILL'), (157, 161, 'SKILL'), (166, 200, 'SKILL'), (460, 469, 'ATTRIBUTE'), (472, 496, 'ATTRIBUTE')]
     })
-
 ]
