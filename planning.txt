@@ -1,0 +1,9 @@
+Ideas
+
+Front-end
+- CLI situation. minimum viable product
+- Procedure:
+    - what type of job are you looking for?
+    - loading screen (completion of scraping, completion of ner)
+    - load in trained model: don't do it for user
+    - 
