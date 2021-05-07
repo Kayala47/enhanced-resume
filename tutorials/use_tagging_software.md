@@ -14,7 +14,7 @@
     - In the "Named Entities" tab:
         + Make sure "Enable named entities" is clicked"
         + Click the radio button for Enter your entity labels
-        + Enter "SKILLS, ATTRIBUTES" into the text box. Don't enter the quotes, just the words themselves :)
+        + Enter "SKILL, ATTRIBUTE" into the text box. Don't enter the quotes, just the words themselves :)
 4. Now, you should see the text you entered has been separated into paragraphs, and there is another pop-up next to it, containing the labels you entered. It should look like this:
 ![](tagging.png)
 

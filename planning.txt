@@ -6,6 +6,7 @@ Front-end
     - what type of job are you looking for?
     - loading screen (completion of scraping, completion of ner)
     - load in trained model: don't do it for user
+
     - scrape top 5 jobs and run the model on those
     - keep the tags in an array, and present them nicely to the user
     - (lower priority) sort the skills somehow - probably by frequency of use
@@ -33,3 +34,4 @@ class JobListing:
 
 Demo
 - take a video of a working operation instead of doing it live
+
