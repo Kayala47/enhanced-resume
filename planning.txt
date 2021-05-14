@@ -24,10 +24,18 @@ scrape5(desc: str)
 class JobListing:
 
     vars:
-    - skills[]
-    - attributes[]
+    - description
     - job title
     - company name
+
+
+[JobListing{description: 'this is a job and you need to code in c#'} ]
+
+
+
+
+
+
 
 - front-end
 
