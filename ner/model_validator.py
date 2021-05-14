@@ -9,9 +9,14 @@ from pathlib import Path
 from tqdm import tqdm  # loading bar
 
 # grab the directory where the model is stored
-model_dir = "./output"
+model_dir = "./spacy_model"
+# nlp = spacy.load(model_dir)
+try:
+    nlp = spacy.load(model_dir)
+except:
+    nlp = spacy.blank('en')  # create blank Language class
+    print("Created blank 'en' model")
 
-nlp = spacy.load(model_dir)
 n_iter = 100
 
 # reads in the csv of tagged data
