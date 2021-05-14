@@ -207,8 +207,8 @@ TRAIN_DATA = [
     (42, {'entities': [(16, 26, 'ATTRIBUTE'), (29, 46,
                                                'ATTRIBUTE'), (49, 69, 'SKILL'), (81, 97, 'SKILL')]}),
     (43, {'entities': [(83, 93, 'ATTRIBUTE'), (367, 391, 'SKILL')]}),
-    (44, {'entities': [(4, 18, 'ATTRIBUTE'), (15, 22, 'ATTRIBUTE'), (91, 100,
-                                                                     'SKILL'), (333, 350, 'SKILL'), (378, 388, 'ATTRIBUTE'), (605, 621, 'SKILL')]}),
+    (44, {'entities': [(4, 18, 'ATTRIBUTE'), (91, 100,
+                                              'SKILL'), (333, 350, 'SKILL'), (378, 388, 'ATTRIBUTE'), (605, 621, 'SKILL')]}),
     (45, {'entities': [(326, 335, 'SKILL'), (338, 352, 'SKILL'), (366, 377, 'SKILL'), (465, 474, 'ATTRIBUTE'), (477, 485, 'ATTRIBUTE'),
                        (496, 506, 'ATTRIBUTE'), (564, 576, 'ATTRIBUTE'), (667, 678, 'ATTRIBUTE'), (772, 794, 'SKILL')]}),
     (46, {'entities': [(171, 176, 'SKILL'), (179, 181,
@@ -218,69 +218,69 @@ TRAIN_DATA = [
                        (619, 641, 'SKILL'), (671, 709, 'SKILL'), (723, 751, 'SKILL'), (789, 810, 'ATTRIBUTE'), (811, 818, 'ATTRIBUTE'), (1056, 1070, 'SKILL')]}),
     (49, {'entities': [(161, 182, 'ATTRIBUTE'), (655, 676, 'ATTRIBUTE'), (677, 689, 'SKILL'), (807, 817,
                                                                                                'SKILL'), (820, 829, 'SKILL'), (832, 848, 'SKILL'), (954, 976, 'SKILL'), (1063, 1075, 'ATTRIBUTE')]}),
-    (50, {'entities': [(116, 123, 'ATTRIBUTE'), (259, 280,
-                                                 'ATTRIBUTE'), (691, 749, 'SKILL'), (1018, 1033, 'ATTRIBUTE')]}),
-    (51, {'entities': [(4, 26, 'ATTRIBUTE'), (54, 70, 'ATTRIBUTE'), (71, 87,
-                                                                     'ATTRIBUTE'), (228, 244, 'SKILL'), (329, 371, 'SKILL'), (443, 479, 'SKILL')]}),
-    (52, {'entities': [(236, 263, 'SKILL'), (308, 321, 'SKILL'), (324, 340, 'SKILL'), (294, 305,
-     'SKILL'), (682, 686, 'ATTRIBUTE'), (687, 695, 'ATTRIBUTE'), (722, 739, 'ATTRIBUTE')]}),
-    (53, {'entities': [(356, 378, 'SKILL'), (388, 405, 'SKILL'), (419, 451, 'SKILL'), (465, 472, 'ATTRIBUTE'),
-     (475, 490, 'ATTRIBUTE'), (493, 505, 'ATTRIBUTE'), (508, 556, 'ATTRIBUTE'), (572, 627, 'SKILL')]}),
-    (54, {'entities': [(140, 164, 'SKILL'), (175, 242, 'SKILL'), (279, 289, 'SKILL'), (292, 304, 'SKILL'), (307, 331, 'SKILL'), (334, 350, 'SKILL'), (353, 376, 'SKILL'), (379, 408,
-     'SKILL'), (556, 566, 'SKILL'), (569, 581, 'SKILL'), (584, 608, 'SKILL'), (611, 627, 'SKILL'), (630, 653, 'SKILL'), (656, 685, 'SKILL'), (489, 512, 'SKILL'), (437, 473, 'SKILL')]}),
+    # (50, {'entities': [(116, 123, 'ATTRIBUTE'), (259, 280,
+    #                                              'ATTRIBUTE'), (691, 749, 'SKILL'), (1018, 1033, 'ATTRIBUTE')]}),
+    # (51, {'entities': [(4, 26, 'ATTRIBUTE'), (54, 70, 'ATTRIBUTE'), (71, 87,
+    #                                                                  'ATTRIBUTE'), (228, 244, 'SKILL'), (329, 371, 'SKILL'), (443, 479, 'SKILL')]}),
+    # (52, {'entities': [(236, 263, 'SKILL'), (308, 321, 'SKILL'), (324, 340, 'SKILL'), (294, 305,
+    #                                                                                    'SKILL'), (682, 686, 'ATTRIBUTE'), (687, 695, 'ATTRIBUTE'), (722, 739, 'ATTRIBUTE')]}),
+    # (53, {'entities': [(356, 378, 'SKILL'), (388, 405, 'SKILL'), (419, 451, 'SKILL'), (465, 472, 'ATTRIBUTE'),
+    #                    (475, 490, 'ATTRIBUTE'), (493, 505, 'ATTRIBUTE'), (508, 556, 'ATTRIBUTE'), (572, 627, 'SKILL')]}),
+    # (54, {'entities': [(140, 164, 'SKILL'), (175, 242, 'SKILL'), (279, 289, 'SKILL'), (292, 304, 'SKILL'), (307, 331, 'SKILL'), (334, 350, 'SKILL'), (353, 376, 'SKILL'), (379, 408,
+    #                                                                                                                                                                        'SKILL'), (556, 566, 'SKILL'), (569, 581, 'SKILL'), (584, 608, 'SKILL'), (611, 627, 'SKILL'), (630, 653, 'SKILL'), (656, 685, 'SKILL'), (489, 512, 'SKILL'), (437, 473, 'SKILL')]}),
 
-    (55, {
-        'entities': [(278, 332, 'SKILL'), (420, 440, 'ATTRIBUTE'), (470, 504, 'SKILL'), (505, 569, 'SKILL'), (570, 602, 'SKILL'), (605, 626, 'SKILL'), (635, 648, 'SKILL')]
-    }),
-    (56, {
-        'entities': [(53, 65, 'ATTRIBUTE'), (77, 92, 'ATTRIBUTE'), (93, 107, 'ATTRIBUTE'), (440, 447, 'SKILL'), (534, 541, 'SKILL'), (574, 581, 'SKILL'), (625, 643, 'SKILL'), (644, 674, 'SKILL'), (675, 686, 'SKILL'), (689, 733, 'SKILL'), (745, 780, 'SKILL'), (797, 833, 'SKILL'), (762, 780, 'SKILL')]
-    }),
-    (57, {
-        'entities': [(45, 68, 'SKILL'), (114, 127, 'SKILL'), (130, 155, 'SKILL'), (69, 97, 'SKILL'), (98, 111, 'SKILL'), (186, 198, 'SKILL'), (201, 211, 'SKILL'), (214, 225, 'SKILL'), (228, 235, 'SKILL'), (238, 259, 'SKILL'), (262, 266, 'SKILL'), (269, 287, 'SKILL'), (290, 294, 'SKILL'), (348, 390, 'SKILL'), (391, 397, 'ATTRIBUTE'), (398, 406, 'ATTRIBUTE'), (495, 523, 'ATTRIBUTE')]
-    }),
-    (58, {'entities': [(284, 306, 'SKILL'), (309, 324, 'SKILL'), (327, 338, 'SKILL'), (341, 372, 'SKILL'), (447, 455, 'ATTRIBUTE'), (458, 471, 'ATTRIBUTE'), (502, 526, 'SKILL'), (512, 519, 'SKILL')]
-          }),
-    (59, {
-        'entities': [(102, 129, 'SKILL'), (157, 171, 'SKILL'), (174, 191, 'SKILL'), (216, 246, 'SKILL'), (348, 363, 'SKILL'), (282, 299, 'SKILL'), (302, 312, 'SKILL'), (315, 322, 'SKILL'), (325, 333, 'SKILL'), (336, 345, 'SKILL'), (390, 418, 'ATTRIBUTE'), (473, 491, 'SKILL'), (452, 472, 'SKILL'), (515, 545, 'SKILL')]
-    }),
-    (60, {
-        'entities': [(22, 33, 'ATTRIBUTE'), (349, 359, 'SKILL'), (362, 373, 'SKILL'), (390, 393, 'SKILL'), (396, 399, 'SKILL'), (402, 442, 'SKILL'), (419, 427, 'SKILL'), (453, 508, 'SKILL'), (569, 576, 'SKILL'), (577, 582, 'SKILL'), (678, 721, 'SKILL'), (724, 772, 'SKILL'), (775, 819, 'SKILL')]
-    }),
-    (61, {
-        'entities': [(338, 345, 'ATTRIBUTE'), (320, 324, 'ATTRIBUTE')]
-    }),
-    (62, {
-        'entities': [(79, 86, 'ATTRIBUTE'), (377, 396, 'SKILL'), (399, 406, 'SKILL'), (409, 427, 'SKILL'), (430, 440, 'SKILL'), (443, 450, 'SKILL'), (453, 461, 'SKILL'), (464, 487, 'SKILL'), (616, 622, 'SKILL'), (625, 633, 'SKILL'), (636, 647, 'SKILL'), (648, 679, 'SKILL'), (593, 615, 'SKILL'), (688, 710, 'SKILL')]
-    }),
-    (63, {
-        'entities': [(33, 59, 'SKILL'), (62, 110, 'SKILL'), (113, 121, 'SKILL'), (124, 140, 'SKILL'), (141, 158, 'SKILL'), (182, 201, 'ATTRIBUTE'), (202, 216, 'ATTRIBUTE'), (217, 228, 'ATTRIBUTE'), (229, 280, 'ATTRIBUTE'), (281, 319, 'ATTRIBUTE'), (320, 374, 'ATTRIBUTE'), (395, 446, 'ATTRIBUTE'), (449, 478, 'ATTRIBUTE'), (481, 504, 'ATTRIBUTE')]
-    }),
-    (64, {
-        'entities': [(190, 202, 'SKILL'), (554, 561, 'ATTRIBUTE'), (597, 607, 'ATTRIBUTE'), (614, 631, 'ATTRIBUTE'), (518, 528, 'ATTRIBUTE'), (576, 591, 'ATTRIBUTE'), (567, 575, 'ATTRIBUTE'), (634, 644, 'ATTRIBUTE'), (651, 676, 'ATTRIBUTE'), (677, 694, 'ATTRIBUTE'), (695, 713, 'ATTRIBUTE'), (759, 766, 'ATTRIBUTE'), (780, 812, 'ATTRIBUTE'), (815, 825, 'ATTRIBUTE'), (832, 860, 'ATTRIBUTE'), (863, 880, 'ATTRIBUTE')]
-    }),
-    (65, {
-        'entities': [(227, 248, 'SKILL'), (187, 226, 'ATTRIBUTE'), (263, 269, 'SKILL'), (277, 294, 'SKILL'), (411, 422, 'ATTRIBUTE'), (425, 434, 'ATTRIBUTE'), (437, 476, 'ATTRIBUTE')]
-    }),
-    (66, {
-        'entities': [(76, 85, 'ATTRIBUTE'), (88, 100, 'ATTRIBUTE'), (101, 104, 'ATTRIBUTE'), (126, 135, 'ATTRIBUTE')]
-    }),
-    (67, {
-        'entities': [(348, 369, 'SKILL'), (372, 391, 'SKILL'), (404, 462, 'SKILL'), (523, 544, 'ATTRIBUTE'), (554, 582, 'SKILL'), (590, 622, 'ATTRIBUTE'), (660, 669, 'ATTRIBUTE')]
-    }),
-    (68, {
-        'entities': [(608, 625, 'ATTRIBUTE')]
-    }),
-    (69, {
-        'entities': [(59, 133, 'SKILL'), (136, 154, 'SKILL'), (157, 161, 'SKILL'), (166, 200, 'SKILL'), (460, 469, 'ATTRIBUTE'), (472, 496, 'ATTRIBUTE')]
-    }),
-    (70, {
-        'entities': [(156, 162, 'ATTRIBUTE'), (165, 172, 'ATTRIBUTE'), (226, 238, 'ATTRIBUTE'), (241, 249, 'ATTRIBUTE'), (395, 421, 'SKILL'), (447, 463, 'SKILL'), (488, 509, 'SKILL'), (510, 527, 'SKILL'), (475, 485, 'SKILL'), (550, 573, 'ATTRIBUTE'), (584, 622, 'SKILL'), (623, 663, 'SKILL')]
-    }),
-    (71, {
-        'entities': [(584, 605, 'ATTRIBUTE'), (670, 708, 'SKILL')]
-    }),
-    (72, {
-        'entities': [(26, 31, 'SKILL'), (77, 109, 'ATTRIBUTE'), (189, 208, 'SKILL'), (164, 169, 'SKILL'), (286, 305, 'SKILL'), (306, 317, 'SKILL'), (318, 325, 'SKILL'), (380, 385, 'SKILL'), (402, 453, 'SKILL'), (456, 475, 'SKILL'), (478, 487, 'SKILL'), (564, 567, 'SKILL'), (608, 611, 'SKILL'), (614, 637, 'SKILL'), (666, 711, 'SKILL'), (780, 790, 'SKILL'), (814, 838, 'SKILL'), (860, 864, 'SKILL'), (841, 857, 'SKILL'), (878, 905, 'SKILL'), (908, 915, 'SKILL'), (916, 923, 'SKILL'), (935, 940, 'SKILL')]
-    })
+    # (55, {
+    #     'entities': [(278, 332, 'SKILL'), (420, 440, 'ATTRIBUTE'), (470, 504, 'SKILL'), (505, 569, 'SKILL'), (570, 602, 'SKILL'), (605, 626, 'SKILL'), (635, 648, 'SKILL')]
+    # }),
+    # (56, {
+    #     'entities': [(53, 65, 'ATTRIBUTE'), (77, 92, 'ATTRIBUTE'), (93, 107, 'ATTRIBUTE'), (440, 447, 'SKILL'), (534, 541, 'SKILL'), (574, 581, 'SKILL'), (625, 643, 'SKILL'), (644, 674, 'SKILL'), (675, 686, 'SKILL'), (689, 733, 'SKILL'), (745, 780, 'SKILL'), (797, 833, 'SKILL'), ]
+    # }),
+    # (57, {
+    #     'entities': [(45, 68, 'SKILL'), (114, 127, 'SKILL'), (130, 155, 'SKILL'), (69, 97, 'SKILL'), (98, 111, 'SKILL'), (186, 198, 'SKILL'), (201, 211, 'SKILL'), (214, 225, 'SKILL'), (228, 235, 'SKILL'), (238, 259, 'SKILL'), (262, 266, 'SKILL'), (269, 287, 'SKILL'), (290, 294, 'SKILL'), (348, 390, 'SKILL'), (391, 397, 'ATTRIBUTE'), (398, 406, 'ATTRIBUTE'), (495, 523, 'ATTRIBUTE')]
+    # }),
+    # (58, {'entities': [(284, 306, 'SKILL'), (309, 324, 'SKILL'), (327, 338, 'SKILL'), (341, 372, 'SKILL'), (447, 455, 'ATTRIBUTE'), (458, 471, 'ATTRIBUTE'), (502, 526, 'SKILL')]
+    #       }),
+    # (59, {
+    #     'entities': [(102, 129, 'SKILL'), (157, 171, 'SKILL'), (174, 191, 'SKILL'), (216, 246, 'SKILL'), (348, 363, 'SKILL'), (282, 299, 'SKILL'), (302, 312, 'SKILL'), (315, 322, 'SKILL'), (325, 333, 'SKILL'), (336, 345, 'SKILL'), (390, 418, 'ATTRIBUTE'), (473, 491, 'SKILL'), (452, 472, 'SKILL'), (515, 545, 'SKILL')]
+    # }),
+    # (60, {
+    #     'entities': [(22, 33, 'ATTRIBUTE'), (349, 359, 'SKILL'), (362, 373, 'SKILL'), (390, 393, 'SKILL'), (396, 399, 'SKILL'), (402, 442, 'SKILL'), (453, 508, 'SKILL'), (569, 576, 'SKILL'), (577, 582, 'SKILL'), (678, 721, 'SKILL'), (724, 772, 'SKILL'), (775, 819, 'SKILL')]
+    # }),
+    # (61, {
+    #     'entities': [(338, 345, 'ATTRIBUTE'), (320, 324, 'ATTRIBUTE')]
+    # }),
+    # (62, {
+    #     'entities': [(79, 86, 'ATTRIBUTE'), (377, 396, 'SKILL'), (399, 406, 'SKILL'), (409, 427, 'SKILL'), (430, 440, 'SKILL'), (443, 450, 'SKILL'), (453, 461, 'SKILL'), (464, 487, 'SKILL'), (616, 622, 'SKILL'), (625, 633, 'SKILL'), (636, 647, 'SKILL'), (648, 679, 'SKILL'), (593, 615, 'SKILL'), (688, 710, 'SKILL')]
+    # }),
+    # (63, {
+    #     'entities': [(33, 59, 'SKILL'), (62, 110, 'SKILL'), (113, 121, 'SKILL'), (124, 140, 'SKILL'), (141, 158, 'SKILL'), (182, 201, 'ATTRIBUTE'), (202, 216, 'ATTRIBUTE'), (217, 228, 'ATTRIBUTE'), (229, 280, 'ATTRIBUTE'), (281, 319, 'ATTRIBUTE'), (320, 374, 'ATTRIBUTE'), (395, 446, 'ATTRIBUTE'), (449, 478, 'ATTRIBUTE'), (481, 504, 'ATTRIBUTE')]
+    # }),
+    # (64, {
+    #     'entities': [(190, 202, 'SKILL'), (554, 561, 'ATTRIBUTE'), (597, 607, 'ATTRIBUTE'), (614, 631, 'ATTRIBUTE'), (518, 528, 'ATTRIBUTE'), (576, 591, 'ATTRIBUTE'), (567, 575, 'ATTRIBUTE'), (634, 644, 'ATTRIBUTE'), (651, 676, 'ATTRIBUTE'), (677, 694, 'ATTRIBUTE'), (695, 713, 'ATTRIBUTE'), (759, 766, 'ATTRIBUTE'), (780, 812, 'ATTRIBUTE'), (815, 825, 'ATTRIBUTE'), (832, 860, 'ATTRIBUTE'), (863, 880, 'ATTRIBUTE')]
+    # }),
+    # (65, {
+    #     'entities': [(227, 248, 'SKILL'), (187, 226, 'ATTRIBUTE'), (263, 269, 'SKILL'), (277, 294, 'SKILL'), (411, 422, 'ATTRIBUTE'), (425, 434, 'ATTRIBUTE'), (437, 476, 'ATTRIBUTE')]
+    # }),
+    # (66, {
+    #     'entities': [(76, 85, 'ATTRIBUTE'), (88, 100, 'ATTRIBUTE'), (101, 104, 'ATTRIBUTE'), (126, 135, 'ATTRIBUTE')]
+    # }),
+    # (67, {
+    #     'entities': [(348, 369, 'SKILL'), (372, 391, 'SKILL'), (404, 462, 'SKILL'), (523, 544, 'ATTRIBUTE'), (554, 582, 'SKILL'), (590, 622, 'ATTRIBUTE'), (660, 669, 'ATTRIBUTE')]
+    # }),
+    # (68, {
+    #     'entities': [(608, 625, 'ATTRIBUTE')]
+    # }),
+    # (69, {
+    #     'entities': [(59, 133, 'SKILL'), (136, 154, 'SKILL'), (157, 161, 'SKILL'), (166, 200, 'SKILL'), (460, 469, 'ATTRIBUTE'), (472, 496, 'ATTRIBUTE')]
+    # }),
+    # (70, {
+    #     'entities': [(156, 162, 'ATTRIBUTE'), (165, 172, 'ATTRIBUTE'), (226, 238, 'ATTRIBUTE'), (241, 249, 'ATTRIBUTE'), (395, 421, 'SKILL'), (447, 463, 'SKILL'), (488, 509, 'SKILL'), (510, 527, 'SKILL'), (475, 485, 'SKILL'), (550, 573, 'ATTRIBUTE'), (584, 622, 'SKILL'), (623, 663, 'SKILL')]
+    # }),
+    # (71, {
+    #     'entities': [(584, 605, 'ATTRIBUTE'), (670, 708, 'SKILL')]
+    # }),
+    # (72, {
+    #     'entities': [(26, 31, 'SKILL'), (77, 109, 'ATTRIBUTE'), (189, 208, 'SKILL'), (164, 169, 'SKILL'), (286, 305, 'SKILL'), (306, 317, 'SKILL'), (318, 325, 'SKILL'), (380, 385, 'SKILL'), (402, 453, 'SKILL'), (456, 475, 'SKILL'), (478, 487, 'SKILL'), (564, 567, 'SKILL'), (608, 611, 'SKILL'), (614, 637, 'SKILL'), (666, 711, 'SKILL'), (780, 790, 'SKILL'), (814, 838, 'SKILL'), (860, 864, 'SKILL'), (841, 857, 'SKILL'), (878, 905, 'SKILL'), (908, 915, 'SKILL'), (916, 923, 'SKILL'), (935, 940, 'SKILL')]
+    # })
 
 ]
