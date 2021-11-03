@@ -1,4 +1,5 @@
 # selenium is our scraper, requires a webdriver for each browser you use
+from re import search
 from selenium import webdriver
 from selenium.common.exceptions import NoSuchElementException, ElementClickInterceptedException
 from webdriver_manager.chrome import ChromeDriverManager
@@ -34,35 +35,35 @@ def get_jobs(num_jobs: int, url: str):
     driver = webdriver.Chrome(ChromeDriverManager().install())
 
     # sign in flow
-    ac = ActionChains(driver)
+    login_ac = ActionChains(driver)
 
     # go to home page first to emulate real user
     driver.get('https://www.glassdoor.com/index.htm') 
-    time.sleep(5)
+    time.sleep(3)
     # click sign in buttoon
     driver.find_element_by_xpath('//*[@id="SiteNav"]/nav/div[2]/div/div/div/button').click() # TODO: un-hardcode this, should look for class name
     time.sleep(2)
 
     # build ActionChain
     email_elem = driver.find_element_by_id('userEmail')
-    ac.move_to_element(email_elem).click() # password field isn't an input, so have to use clicks to fill form
-    ac.pause(1)
-    ac.send_keys(os.getenv('GLASSDOOR_EMAIL'))
-    ac.pause(1)
-    ac.send_keys(Keys.TAB)
-    ac.pause(1)
-    ac.send_keys(os.getenv('GLASSDOOR_PASSWORD'))
-    ac.pause(1)
-    ac.send_keys(Keys.ENTER)
+    login_ac.move_to_element(email_elem).click() # password field isn't an input, so have to use clicks to fill form
+    login_ac.pause(1)
+    login_ac.send_keys(os.getenv('GLASSDOOR_EMAIL'))
+    login_ac.pause(1)
+    login_ac.send_keys(Keys.TAB)
+    login_ac.pause(1)
+    login_ac.send_keys(os.getenv('GLASSDOOR_PASSWORD'))
+    login_ac.pause(1)
+    login_ac.send_keys(Keys.ENTER)
 
     # perform ActionChain
-    ac.perform()
+    login_ac.perform()
+    time.sleep(3)
 
-    time.sleep(5)
-
-    # for now, hardcoded. Later, will depend on keyword entered above
-    # TODO: change to allow different keywords
-    url = url
+    # construct a url from keywords
+    query = 'machine learning jobs'
+    kw_param = '%20'.join(query.split(' '))
+    url = f'https://www.glassdoor.com/Job/jobs.htm?sc.keyword={kw_param}'
 
     driver.get(url)  # open webpage
 
@@ -83,6 +84,7 @@ def get_jobs(num_jobs: int, url: str):
         try:
             driver.find_element_by_class_name(
                 "react-job-listing").click()
+            print('test')
         except ElementClickInterceptedException:
             # something got in the way of our click
             pass  # this is just bait anyway, so hopefully we've spawned the popup
@@ -98,12 +100,12 @@ def get_jobs(num_jobs: int, url: str):
             elem = driver.find_element_by_class_name("modal_closeIcon-svg")
             print(elem)  # just to make sure we've found it
 
-            '''
-            The x is disguised as an svg, so it's not a clickable element.
-            What we do instead is find its location and move our cursor there to 
-            click it manually.
-            '''
-            # ac = ActionChains(driver) <-- this is now defined above for sign-in flow
+            
+            # The x is disguised as an svg, so it's not a clickable element.
+            # What we do instead is find its location and move our cursor there to 
+            # click it manually.
+
+            ac = ActionChains(driver)
             ac.move_to_element(elem).click().perform()
         except NoSuchElementException:
             # there is no x to close - serious issue!
