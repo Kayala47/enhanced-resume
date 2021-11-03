@@ -7,6 +7,7 @@ from typing import List
 import os
 import glob
 import csv
+import codecs
 
 
 def sample_k(k: int, csv_filename: str, new_filename: str):
@@ -17,21 +18,21 @@ def sample_k(k: int, csv_filename: str, new_filename: str):
         csv_filename (str): [description]
         new_filename (str): [description]
     """
-    f = open(csv_filename)
-    reader = csv.reader(f)
-    num_lines = len(list(reader)) - 1  # number of records in file (excludes header)
+    df = pd.read_csv(csv_filename, encoding="unicode_escape")
+    num_lines = df.shape[0] - 1  # number of records in file (excludes header)
 
     skiprows = sorted(random.sample(range(1, num_lines + 1), num_lines - k))
 
-    df = pd.read_csv(csv_filename, skiprows=skiprows)
+    df = pd.read_csv(csv_filename, skiprows=skiprows, encoding="unicode_escape")
 
-    selected_list = df["Job Description"]
+    # df = df["Job Description"]
 
     # write all the listings to the file, adding a line break between each
     with open(new_filename, "w") as f:
-        for listing in selected_list:
-            listing = listing.replace("\n", "")
-            f.write(listing)
+        for i, row in df.iterrows():
+            # print(row[3])
+            content = str(row[3]).replace("\n", "")
+            f.write(content)
             f.write("\n")
 
 
@@ -88,12 +89,12 @@ def main():
         "--filename",
         nargs=1,
         type=str,
-        default="/Users/loan/Desktop/pai_resume/enhanced-resume/output_csvs/0.csv",
+        default="/Users/loan/Desktop/pai_resume/enhanced-resume/data_processing/processed_output_csvs/final_output.csv",
     )
 
     args = cli.parse_args()
 
-    assign_tasks(args.filename[0], args.assignees, args.num)
+    assign_tasks(args.filename, args.assignees, args.num[0])
 
 
 if __name__ == "__main__":
