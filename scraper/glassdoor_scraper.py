@@ -3,19 +3,23 @@ from selenium import webdriver
 from selenium.common.exceptions import NoSuchElementException, ElementClickInterceptedException
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.common.keys import Keys
 
 import time  # to allow waiting for load
 import pandas as pd  # keep a database of our job listings
 
+# read credentials from .env to avoid public repo exposure
+import os
+from dotenv import load_dotenv
+load_dotenv()
 
 def get_jobs(num_jobs: int, url: str):
-    '''
-    Opens a chrome browser that manually clicks on job postings and scrapes the description
+    # Opens a chrome browser that manually clicks on job postings and scrapes the description
 
-    Inputs:
-    Keyword = the search term for the job listings you want. Ie, "data scientist"
-    num_jobs = number of listings you want to scrape. Low default is for testing. 
-    '''
+    # Inputs:
+    # Keyword = the search term for the job listings you want. Ie, "data scientist"
+    # num_jobs = number of listings you want to scrape. Low default is for testing.
+
     print("begain scraping")
     # we need a webdriver installed every time. However, we can get it to install
     # automatically instead of manually
@@ -28,6 +32,33 @@ def get_jobs(num_jobs: int, url: str):
     # the driver is responsible for opening the new window
     # installs driver each time
     driver = webdriver.Chrome(ChromeDriverManager().install())
+
+    # sign in flow
+    ac = ActionChains(driver)
+
+    # go to home page first to emulate real user
+    driver.get('https://www.glassdoor.com/index.htm') 
+    time.sleep(5)
+    # click sign in buttoon
+    driver.find_element_by_xpath('//*[@id="SiteNav"]/nav/div[2]/div/div/div/button').click() # TODO: un-hardcode this, should look for class name
+    time.sleep(2)
+
+    # build ActionChain
+    email_elem = driver.find_element_by_id('userEmail')
+    ac.move_to_element(email_elem).click() # password field isn't an input, so have to use clicks to fill form
+    ac.pause(1)
+    ac.send_keys(os.getenv('GLASSDOOR_EMAIL'))
+    ac.pause(1)
+    ac.send_keys(Keys.TAB)
+    ac.pause(1)
+    ac.send_keys(os.getenv('GLASSDOOR_PASSWORD'))
+    ac.pause(1)
+    ac.send_keys(Keys.ENTER)
+
+    # perform ActionChain
+    ac.perform()
+
+    time.sleep(5)
 
     # for now, hardcoded. Later, will depend on keyword entered above
     # TODO: change to allow different keywords
@@ -44,12 +75,10 @@ def get_jobs(num_jobs: int, url: str):
         # TODO: set to wait until page loads
         time.sleep(2)
 
-        '''
-        Lot's of these websites have annoying pop-ups asking you to sign up for an 
-        account. They only come up when you try to click something. To get rid of 
-        them, we "bait" the website by trying to click somewhere, and then find the
-        "x" to close that pop-up.
-        '''
+        # Lot's of these websites have annoying pop-ups asking you to sign up for an 
+        # account. They only come up when you try to click something. To get rid of 
+        # them, we "bait" the website by trying to click somewhere, and then find the
+        # "x" to close that pop-up.
 
         try:
             driver.find_element_by_class_name(
@@ -74,7 +103,7 @@ def get_jobs(num_jobs: int, url: str):
             What we do instead is find its location and move our cursor there to 
             click it manually.
             '''
-            ac = ActionChains(driver)
+            # ac = ActionChains(driver) <-- this is now defined above for sign-in flow
             ac.move_to_element(elem).click().perform()
         except NoSuchElementException:
             # there is no x to close - serious issue!
