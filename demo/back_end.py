@@ -19,9 +19,9 @@ from glassdoor_scraper import get_jobs #IMPORTANT - this must go after sys.path.
 url = 'https://www.glassdoor.com/Job/jobs.htm?context=Jobs&suggestCount=0&suggestChosen=false&clickSource=searchBox&typedKeyword=Software%20Engineer&sc.keyword=Software%20Engineer'
 
 
-def scrape5(job: str):
+def scrape_amount(job: str, amount: int):
 
-    df = get_jobs(5, url)
+    df = get_jobs(amount, url)
     # df.drop('Job Title')
     return df
     # print(df)

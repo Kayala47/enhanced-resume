@@ -1,10 +1,10 @@
 from flask import Flask
-import helper
+import front_end
 app = Flask(__name__)
 
 @app.route("/")
 def hello_world():
-    outputs = helper.output_results([["python","SKILL"],["C++","SKILL"],["python","SKILL"],["python","SKILL"],["Java","SKILL"],
+    outputs = helper.sort_results([["python","SKILL"],["C++","SKILL"],["python","SKILL"],["python","SKILL"],["Java","SKILL"],
     ["Java","SKILL"],["C++","SKILL"],["C++","SKILL"],["C++","SKILL"],["C++","SKILL"],["Java","SKILL"],
     ["hard-working","ATTRIBUTE"],["passionate","ATTRIBUTE"],["passionate","ATTRIBUTE"],["passionate","ATTRIBUTE"],["enthusiastic","ATTRIBUTE"]])
     sorted_skills = outputs[0]

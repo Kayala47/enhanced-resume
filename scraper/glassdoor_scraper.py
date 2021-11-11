@@ -16,7 +16,7 @@ def get_jobs(num_jobs: int, url: str):
     Keyword = the search term for the job listings you want. Ie, "data scientist"
     num_jobs = number of listings you want to scrape. Low default is for testing. 
     '''
-    print("begain scraping")
+    print("Began scraping")
     # we need a webdriver installed every time. However, we can get it to install
     # automatically instead of manually
     options = webdriver.ChromeOptions()
@@ -95,45 +95,48 @@ def get_jobs(num_jobs: int, url: str):
             # we only want to scrape a certain amount - don't overwhelm users
             if len(jobs_list) >= num_jobs:
                 break
+            
+            try:
+                job_listing.click()  # Go to this listing, and get react to load it
 
-            job_listing.click()  # Go to this listing, and get react to load it
+                # wait for it to load
+                time.sleep(1)
 
-            # wait for it to load
-            time.sleep(1)
+                # bool to check if we've gotten info we need from a listing
+                collected_successfully = False
 
-            # bool to check if we've gotten info we need from a listing
-            collected_successfully = False
+                while not collected_successfully:
+                    try:
 
-            while not collected_successfully:
-                try:
+                        # again, need to find specific class name for each of these for your website
 
-                    # again, need to find specific class name for each of these for your website
+                        # find company name
+                        # company_name = driver.find_element_by_xpath(
+                        #     './/div[@class="employerName"]').text
 
-                    # find company name
-                    # company_name = driver.find_element_by_xpath(
-                    #     './/div[@class="employerName"]').text
+                        company_name = -1
 
-                    company_name = -1
+                        # job_title = driver.find_element_by_xpath(
+                        #     './/div[contains(@class, "title")]').text
+                        job_title = -1
 
-                    # job_title = driver.find_element_by_xpath(
-                    #     './/div[contains(@class, "title")]').text
-                    job_title = -1
+                        # find job description
+                        job_description = driver.find_element_by_xpath(
+                            './/div[@class="jobDescriptionContent desc"]').text
+                        collected_successfully = True
+                    except:
+                        # if you can't get the info, it probably hasn't loaded. wait a bit
+                        print("couldn't find those")
+                        time.sleep(1)
 
-                    # find job description
-                    job_description = driver.find_element_by_xpath(
-                        './/div[@class="jobDescriptionContent desc"]').text
-                    collected_successfully = True
-                except:
-                    # if you can't get the info, it probably hasn't loaded. wait a bit
-                    print("couldn't find those")
-                    time.sleep(1)
-
-            # adds the listing to our jobs list
-            jobs_list.append({
-                "Job Title": job_title,
-                "Company Name": company_name,
-                "Job Description": job_description
-            })
+                # adds the listing to our jobs list
+                jobs_list.append({
+                    "Job Title": job_title,
+                    "Company Name": company_name,
+                    "Job Description": job_description
+                })
+            except Exception:
+                print('Scraper encountered an error. Continuing...')
 
         # Clicking on the "next page" button
         # you'll do this once you run out of listings on one page
