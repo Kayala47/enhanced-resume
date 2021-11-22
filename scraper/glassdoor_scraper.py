@@ -1,6 +1,9 @@
 from re import search
 from selenium import webdriver
 from selenium.common.exceptions import NoSuchElementException, ElementClickInterceptedException
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.by import By
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.keys import Keys
@@ -18,6 +21,8 @@ load_dotenv()
 # opens a chrome browser and scrapes jobs description for a given search
 # INPUTS: query = the search term for the job listings | num_jobs = number of listings scrape
 def get_jobs(query: str, num_jobs: int):
+
+## CONFIGURE THE WEBDRIVER ##
     # automatically install a webdriver
     options = webdriver.ChromeOptions()
 
@@ -27,9 +32,9 @@ def get_jobs(query: str, num_jobs: int):
 
     # the driver is responsible for opening the new window
     # installs driver each time
-    driver = webdriver.Chrome(ChromeDriverManager().install())
+    driver = webdriver.Chrome(ChromeDriverManager().install(), options=options)
 
-    # sign in flow
+## SIGN IN FLOW ##
     try:
         login_ac = ActionChains(driver)
 
@@ -66,34 +71,36 @@ def get_jobs(query: str, num_jobs: int):
 
     driver.get(url)  # open jobs page
 
+## DEAL WITH THE POPUP ##
+    time.sleep(2)
+
+    # bait the pop-up by clicking on a job listing
+    try:
+        driver.find_element_by_class_name("react-job-listing").click()
+    except (ElementClickInterceptedException, NoSuchElementException):
+        pass
+
+    time.sleep(1) # wait for pop-up to load
+
+    # close the popup
+    try:
+        elem = driver.find_element_by_class_name("modal_closeIcon-svg") # x is not directly clickable
+        ac = ActionChains(driver)
+        ac.move_to_element(elem).click().perform() # move cursor to X SVG and click
+    except NoSuchElementException:
+        # there is no x to close - serious issue!
+        print("[ERR] Failed to close popup")
+        pass
+
     jobs_list = []  # list of already-scraped listings
 
     pbar = tqdm(total=num_jobs) # initialize progress bar
 
+## SCRAPE 1 PAGE OF LISTINGS AT A TIME ##
     while len(jobs_list) < num_jobs:
         # we need a certain amt (num_jobs). If we haven't gotten that amount, keep scraping
 
-        # Let the page load. Right now, hardcoded this way.
-        # TODO: set to wait until page loads
-        time.sleep(2)
-
-        # bait the pop-up by clicking on a job listing
-        try:
-            driver.find_element_by_class_name("react-job-listing").click()
-        except (ElementClickInterceptedException, NoSuchElementException):
-            pass
-
-        time.sleep(3) # wait for pop-up to load
-
-        # close the popup
-        try:
-            elem = driver.find_element_by_class_name("modal_closeIcon-svg") # x is not directly clickable
-            ac = ActionChains(driver)
-            ac.move_to_element(elem).click().perform() # move cursor to X SVG and click
-        except NoSuchElementException:
-            # there is no x to close - serious issue!
-            print("[ERR] Failed to close popup")
-            pass
+        time.sleep(3)
 
         # enumerate job listings
         job_listings = driver.find_elements_by_class_name("react-job-listing")
@@ -104,34 +111,34 @@ def get_jobs(query: str, num_jobs: int):
             if len(jobs_list) >= num_jobs:
                 break
 
-            job_listing.click() # go to this listing, and get react to load it
-            time.sleep(1) # wait for it to load
-
-            collected_successfully = False # keep this false until we successfully scrape the listing
+            try:
+                job_listing.click() # go to this listing, and get react to load it
+            except:
+                print('[ERR] Stale element, skipping')
+                pass
 
             # scrape the listing
-            while not collected_successfully:
-                try:
-                    # TODO: find company and title
-                    company_name = -1#driver.find_element_by_xpath('.//div[@class="employerName"]').text
-                    job_title = -1#driver.find_element_by_xpath('.//div[contains(@class, "title")]').text
+            try:
+                # TODO: find company and title
+                company_name = -1#driver.find_element_by_xpath('.//div[@class="employerName"]').text
+                job_title = -1#driver.find_element_by_xpath('.//div[contains(@class, "title")]').text
 
-                    # find job description
-                    job_description = driver.find_element_by_xpath('.//div[@class="jobDescriptionContent desc"]').text
-                    collected_successfully = True
-                except:
-                    # if you can't get the info, it probably hasn't loaded. wait a bit
-                    print("[ERR] Couldn't fetch job info, trying again")
-                    time.sleep(1)
+                # find job description
+                job_description = WebDriverWait(driver, 5).until(EC.presence_of_element_located((By.XPATH, './/div[@class="jobDescriptionContent desc"]'))).text
 
-            # adds the listing to our jobs list
-            jobs_list.append({
-                "Job Title": job_title,
-                "Company Name": company_name,
-                "Job Description": job_description
-            })
+                time.sleep(0.1)
 
-            pbar.update(1)
+                 # adds the listing to our jobs list
+                jobs_list.append({
+                    "Job Title": job_title,
+                    "Company Name": company_name,
+                    "Job Description": job_description
+                })
+
+                pbar.update(1)
+            except:
+                # if you can't get the info, skip this listing
+                pass
 
         # advance to the next page of job listings
         try:
