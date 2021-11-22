@@ -120,18 +120,29 @@ def get_jobs(query: str, num_jobs: int):
             # scrape the listing
             try:
                 # TODO: find company and title
-                company_name = -1#driver.find_element_by_xpath('.//div[@class="employerName"]').text
-                job_title = -1#driver.find_element_by_xpath('.//div[contains(@class, "title")]').text
+                job_info = job_listing.text.split('\n')
+
+                # check to see if there is a rating, then remove it
+                try:
+                    float(job_info[0])
+                    job_info.pop(0)
+                except ValueError:
+                    pass
+                
+                job_company = job_info[0]
+                job_title = job_info[1]
+                job_location = job_info[2]
 
                 # find job description
                 job_description = WebDriverWait(driver, 5).until(EC.presence_of_element_located((By.XPATH, './/div[@class="jobDescriptionContent desc"]'))).text
 
                 time.sleep(0.1)
 
-                 # adds the listing to our jobs list
+                # adds the listing to our jobs list
                 jobs_list.append({
+                    "Company Name": job_company,
                     "Job Title": job_title,
-                    "Company Name": company_name,
+                    "Job Location": job_location,
                     "Job Description": job_description
                 })
 
