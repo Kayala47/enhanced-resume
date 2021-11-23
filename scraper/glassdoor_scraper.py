@@ -34,20 +34,22 @@ def get_jobs(query: str, num_jobs: int):
     # installs driver each time
     driver = webdriver.Chrome(ChromeDriverManager().install(), options=options)
 
+    print('\n\n')
+    print(f'Scraping {num_jobs} Job Listings for \'{query}\'')
+
 ## SIGN IN FLOW ##
     try:
         login_ac = ActionChains(driver)
 
         # go to home page first to emulate real user
-        driver.get('https://www.glassdoor.com/index.htm') 
-        time.sleep(3)
+        driver.get('https://www.glassdoor.com/index.htm')
 
         # click sign in buttoon
-        driver.find_element_by_xpath('//*[@id="SiteNav"]/nav/div[2]/div/div/div/button').click() # TODO: un-hardcode this, should look for class name
-        time.sleep(2)
+        WebDriverWait(driver, 5).until(EC.presence_of_element_located((By.XPATH, '//*[@id="SiteNav"]/nav/div[2]/div/div/div/button'))).click()
+        time.sleep(0.5)
 
         # build ActionChain
-        email_elem = driver.find_element_by_id('userEmail')
+        email_elem = WebDriverWait(driver, 5).until(EC.presence_of_element_located((By.ID, 'userEmail')))
         login_ac.move_to_element(email_elem).click() # password field isn't an input, so have to use clicks to fill form
         login_ac.pause(1)
         login_ac.send_keys(os.getenv('GLASSDOOR_EMAIL'))
@@ -72,6 +74,7 @@ def get_jobs(query: str, num_jobs: int):
     driver.get(url)  # open jobs page
 
 ## DEAL WITH THE POPUP ##
+
     time.sleep(2)
 
     # bait the pop-up by clicking on a job listing
@@ -80,11 +83,11 @@ def get_jobs(query: str, num_jobs: int):
     except (ElementClickInterceptedException, NoSuchElementException):
         pass
 
-    time.sleep(1) # wait for pop-up to load
+    time.sleep(1)
 
     # close the popup
     try:
-        elem = driver.find_element_by_class_name("modal_closeIcon-svg") # x is not directly clickable
+        elem = driver.find_element_by_class_name("modal_closeIcon-svg")
         ac = ActionChains(driver)
         ac.move_to_element(elem).click().perform() # move cursor to X SVG and click
     except NoSuchElementException:
@@ -100,7 +103,7 @@ def get_jobs(query: str, num_jobs: int):
     while len(jobs_list) < num_jobs:
         # we need a certain amt (num_jobs). If we haven't gotten that amount, keep scraping
 
-        time.sleep(3)
+        time.sleep(2)
 
         # enumerate job listings
         job_listings = driver.find_elements_by_class_name("react-job-listing")
@@ -136,7 +139,7 @@ def get_jobs(query: str, num_jobs: int):
                 # find job description
                 job_description = WebDriverWait(driver, 5).until(EC.presence_of_element_located((By.XPATH, './/div[@class="jobDescriptionContent desc"]'))).text
 
-                time.sleep(0.1)
+                time.sleep(0.25)
 
                 # adds the listing to our jobs list
                 jobs_list.append({
@@ -170,7 +173,6 @@ def get_jobs(query: str, num_jobs: int):
 # Run the scraper and output to a csv file
 # Input: (filename to write to, job keywords, number of jobs to scrape)
 def gather_data(filename: str = "./output.csv", keywords: str = "machine learning", num_jobs: int = 5):
-    print(f'Scraping {num_jobs} Job Listings for \'{keywords}\'')
     df = get_jobs(keywords, num_jobs) # scrape the job listing
     pd.set_option('display.max_colwidth', None)
     df.to_csv(filename, index=False) # write to an output csv
