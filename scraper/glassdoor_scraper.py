@@ -110,6 +110,8 @@ def get_jobs(query: str, num_jobs: int):
 
         # go through each listing on the site
         for job_listing in job_listings:
+            stale_page = False
+
             # we only want to scrape a certain amount - don't overwhelm users
             if len(jobs_list) >= num_jobs:
                 break
@@ -118,41 +120,43 @@ def get_jobs(query: str, num_jobs: int):
                 job_listing.click() # go to this listing, and get react to load it
             except:
                 print('[ERR] Stale element, skipping')
+                stale_page = True # if the page is stale, we need to go to the next page
                 pass
 
             # scrape the listing
-            try:
-                # TODO: find company and title
-                job_info = job_listing.text.split('\n')
-
-                # check to see if there is a rating, then remove it
+            if not stale_page:
                 try:
-                    float(job_info[0])
-                    job_info.pop(0)
-                except ValueError:
+                    # TODO: find company and title
+                    job_info = job_listing.text.split('\n')
+
+                    # check to see if there is a rating, then remove it
+                    try:
+                        float(job_info[0])
+                        job_info.pop(0)
+                    except ValueError:
+                        pass
+                    
+                    job_company = job_info[0]
+                    job_title = job_info[1]
+                    job_location = job_info[2]
+
+                    # find job description
+                    job_description = WebDriverWait(driver, 5).until(EC.presence_of_element_located((By.XPATH, './/div[@class="jobDescriptionContent desc"]'))).text
+
+                    time.sleep(0.25)
+
+                    # adds the listing to our jobs list
+                    jobs_list.append({
+                        "Company Name": job_company,
+                        "Job Title": job_title,
+                        "Job Location": job_location,
+                        "Job Description": job_description
+                    })
+
+                    pbar.update(1)
+                except:
+                    # if you can't get the info, skip this listing
                     pass
-                
-                job_company = job_info[0]
-                job_title = job_info[1]
-                job_location = job_info[2]
-
-                # find job description
-                job_description = WebDriverWait(driver, 5).until(EC.presence_of_element_located((By.XPATH, './/div[@class="jobDescriptionContent desc"]'))).text
-
-                time.sleep(0.25)
-
-                # adds the listing to our jobs list
-                jobs_list.append({
-                    "Company Name": job_company,
-                    "Job Title": job_title,
-                    "Job Location": job_location,
-                    "Job Description": job_description
-                })
-
-                pbar.update(1)
-            except:
-                # if you can't get the info, skip this listing
-                pass
 
         # advance to the next page of job listings
         try:
