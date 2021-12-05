@@ -13,31 +13,83 @@
       crossorigin="anonymous"
     />
     <title>Home</title>
+
+    <style>
+      .btn-primary {
+        background-image: linear-gradient(to bottom,#5f38c0 0,#45298a 100%) !important;
+      }
+      .btn-primary:hover {
+        background-image: linear-gradient(to bottom,#45298a 0,#45298a 100%) !important;
+        background-color: #45298a !important;
+      }
+    </style>
   </head>
-  <body>
-    <div class="jumbotron vertical-center">
-      <div class="container">
-        <div class="d-flex align-items-center">
-          <form action="/results" method="POST">
-            <div class="form-group">
-              <input
-                type="text"
-                class="form-control"
-                name="query"
-                placeholder="Enter desired job title"
-              />
-              <small id="textHelp" class="form-text text-muted"
-                >This should be a generalized title, like "software
-                engineer".</small
-              >
+  <body style="background: #466368;background: linear-gradient(#648880, #2d1d56);">
+
+    <div class="container">
+      <div class="page-header">
+        <h1 style="color:white">P-Resume <small style="color:#3b1698">Beta</small></h1>
+      </div>
+      <div style="height: 80%; display: flex; align-items: center">
+          <div class="row">
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 align-items-center">
+              <div class="jumbotron vertical-center">
+              <h3 style="color:#45298a">By Job Title</h3>
+              <p>
+                Enter your desired job title or keywords and get a general list
+                of skills, attributes, and experience to add to your resume.
+                Ideal for creating a well-rounded resume.
+              </p>
+              <form action="/job-title-results" method="POST">
+                <div class="form-group">
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="query"
+                    placeholder="Software engineer"
+                  />
+                  <!-- <small id="textHelp" class="form-text text-muted"
+                    >This should be a generalized title, like "software
+                    engineer".</small
+                  > -->
+                </div>
+                <button type="submit" value="submit" class="btn btn-primary">
+                  Submit Job Title 
+                </button>
+              </form>
+              </div>
             </div>
-            <button type="submit" value="submit" class="btn btn-primary">
-              Submit
-            </button>
-          </form>
-        </div>
+
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 align-items-center">
+              <div class="jumbotron vertical-center">
+              <h3 class="text-success">By Job URL</h3>
+              <p>
+                Enter the URL for that dream job and get a tailored selection of
+                skills, attributes, and experience to add to your resume. Ideal
+                for creating a close resume fit.
+              </p>
+              <form action="/job-url-results" method="POST">
+                <div class="form-group">
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="query"
+                    placeholder="https://www.indeed.com/jobs?q=Job-Extension-Here"
+                  />
+                  <!-- <small id="textHelp" class="form-text text-muted"
+                    >This should be an Indeed.com url.</small
+                  > -->
+                </div>
+                <button type="submit" value="submit" class="btn btn-success">
+                  Submit Job URL
+                </button>
+              </form>
+              </div>
+            </div>
+          </div>
       </div>
     </div>
+
     <script
       src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
       integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
