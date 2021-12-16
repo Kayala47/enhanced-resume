@@ -18,12 +18,28 @@ import os
 from dotenv import load_dotenv
 load_dotenv()
 
+
+    
+
 # opens a chrome browser and scrapes jobs description for a given search
+
 # INPUTS: query = the search term for the job listings | num_jobs = number of listings scrape
 def get_jobs(query: str, num_jobs: int):
+    '''
+    Opens a chrome browser that manually clicks on job postings and scrapes the description
 
-## CONFIGURE THE WEBDRIVER ##
+    Inputs:
+    Keyword = the search term for the job listings you want. Ie, "data scientist"
+    num_jobs = number of listings you want to scrape. Low default is for testing. 
+    '''
+    print("Began scraping")
+    
+    ## CONFIGURE THE WEBDRIVER ##
+    # we need a webdriver installed every time. However, we can get it to install
+    # automatically instead of manually
+
     # automatically install a webdriver
+
     options = webdriver.ChromeOptions()
 
     # uncomment below to activate headless
@@ -116,12 +132,14 @@ def get_jobs(query: str, num_jobs: int):
             if len(jobs_list) >= num_jobs:
                 break
 
+
             try:
                 job_listing.click() # go to this listing, and get react to load it
             except:
                 print('[ERR] Stale element, skipping')
                 stale_page = True # if the page is stale, we need to go to the next page
                 pass
+
 
             # scrape the listing
             if not stale_page:
@@ -177,7 +195,9 @@ def get_jobs(query: str, num_jobs: int):
 # Run the scraper and output to a csv file
 # Input: (filename to write to, job keywords, number of jobs to scrape)
 def gather_data(filename: str = "./output.csv", keywords: str = "machine learning", num_jobs: int = 5):
+
     df = get_jobs(keywords, num_jobs) # scrape the job listing
+
     pd.set_option('display.max_colwidth', None)
     df.to_csv(filename, index=False) # write to an output csv
 
