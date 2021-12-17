@@ -22,7 +22,11 @@ Project for p-ai: creating a resume generator based on using Named Entity Recogn
 2. You can test the current model by running model_validatory.py. It pulls the model saved at ner/spacy_model and tests it against data from ner/test_data.json
 
 ### Front End
-
+To access and interact with the front-end code, follow below steps:
+1. In a command line window within the main project directory, enter ``cd website``.
+2. Start the Flask website by entering ``python app.py``. Within the CLI instructional output, there should be a line which says ```Running on http://127.0.0.1:5000/```. 
+3. Copy the URL portion of the message, and paste it into a browser while the process is still running. The home page should now appear.
+4. Terminate the process anytime with the ```CTRL+C``` keys, or as specified in the initial CLI instructional output.
 
 ## TODO
 - fix scraper and model (periodic updates required)
