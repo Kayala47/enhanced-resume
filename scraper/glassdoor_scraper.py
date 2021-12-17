@@ -231,6 +231,14 @@ def gather_data(
     df.to_csv(filename, index=False)  # write to an output csv
 
 
+def get_onelisting(request):
+    # given a request tuple containing (job title, company), runs get_jobs for the first listing only
+    title, company = request
+    new_query = " ".join([title, company])  # one string fits get_jobs requirements
+
+    return get_jobs(new_query, 1)
+
+
 # Pass arguments through the command line: 'python scraper/glassdoor_scraper.py <num_jobs> <search_query>
 if __name__ == "__main__":
     if len(sys.argv) != 3:
