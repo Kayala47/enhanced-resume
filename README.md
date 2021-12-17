@@ -12,7 +12,7 @@ Project for p-ai: creating a resume generator based on using Named Entity Recogn
 ## Workflow
 
 ### Tagging
-1. we run tagging/assign_tags.py with the arguments flag followed by names of all active collaborators and a num flag of 50. That gets us 50 assigned listings per week
+1. we run tagging/assign_tags.py with the assignees flag followed by names of all active collaborators and a num flag of 50. That gets us 50 assigned listings per week
 2. each collaborator is assigned a file by the previous process. We normally post those in the discord for everyone to complete
 3. completed files are posted back to the discord by all collaborators. those are compiled in the tagging/hand_tagged folder
 4. from there, we run tagging/combine_tags.py to combine all the tagged files together, then tagging/split_data.py to categorize it into train and test datasets
