@@ -20,6 +20,11 @@ def job_title_results():
     results = calculate_job_title_results(query_title)
     return render_template('/results.html', query=query_title, results=results)
 
+@app.route('/job-title-results-test')
+def job_title_results_test():
+
+    return render_template('/results.html', query="test", results=[["Skill1","Skill2"],["Attribute1","Attribute2"]])
+
 
 @app.route('/job-url-results', methods=['POST'])
 def job_url_results():

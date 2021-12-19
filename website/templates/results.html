@@ -1,22 +1,63 @@
 
 <head>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+      integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+      crossorigin="anonymous"
+    />
     <title>Results: {{query}}</title>
 </head>
-<body>
-    <h2>Skills</h2>
-    <ol>
-        {% for skill in results[0] %}
-            <li>{{skill}}</li>
-        {% endfor %}
-    </ol>
-    <h2>Attributes</h2>
-    <ol>
-        {% for skill in results[1] %}
-            <li>{{skill}}</li>
-        {% endfor %}
-    </ol>
+<body style="background: #466368;background: linear-gradient(#648880, #2d1d56);">
 
+    <div class="container">
+        <div class="page-header">
+            <h1 style="color:white">P-Resume <small style="color:#3b1698">Beta</small></h1> 
+          </div>
+        <h3 style="color:white;padding-bottom: 20px;">Search Results: {{query}}</h3>
+
+        <div style="height: 80%;" class="vertical-center">
+            <div class="row">
+              <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+                <div class="jumbotron">
+                    <h3>Skills</h3>
+                    <ul class="list-group list-group-flush">
+                        {% for skill in results[0] %}
+                            <li class="list-group-item">{{skill}}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+              </div>
+              <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+                <div class="jumbotron">
+                    <h3>Attributes</h3>
+
+                    <ul class="list-group list-group-flush">
+                        {% for attribute in results[1] %}
+                            <li class="list-group-item">{{attribute}}</li>
+                        {% endfor %}
+                      </ul>       
+                </div>
+              </div>
+              <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+                <div class="jumbotron">
+                    <h3>Experience</h3>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Experience here</li>
+                    </ul>
+                    
+                </div>
+              </div>
+              
+            </div>
+        </div>
+    </div>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </body>
 </html>
