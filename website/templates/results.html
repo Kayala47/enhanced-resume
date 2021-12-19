@@ -16,16 +16,16 @@
 </head>
 <body style="background: #466368;background: linear-gradient(#648880, #2d1d56);">
 
-    <div class="container">
+    <div class="container" style="display: flex; align-items: center">
         <div class="page-header">
             <h1 style="color:white">P-Resume <small style="color:#3b1698">Beta</small></h1> 
           </div>
         <h3 style="color:white;padding-bottom: 20px;">Search Results: {{query}}</h3>
 
-        <div style="height: 80%;" class="vertical-center">
+        <div class="jumbotron vertical-center">
             <div class="row">
               <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
-                <div class="jumbotron">
+                <div >
                     <h3>Skills</h3>
                     <ul class="list-group list-group-flush">
                         {% for skill in results[0] %}
@@ -35,7 +35,7 @@
                 </div>
               </div>
               <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
-                <div class="jumbotron">
+                <div >
                     <h3>Attributes</h3>
 
                     <ul class="list-group list-group-flush">
@@ -46,10 +46,12 @@
                 </div>
               </div>
               <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
-                <div class="jumbotron">
+                <div >
                     <h3>Experience</h3>
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item">Experience here</li>
+                      {% for experience in results[2] %}
+                      <li class="list-group-item">{{experience}}</li>
+                      {% endfor %}
                     </ul>
                     
                 </div>

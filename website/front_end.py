@@ -7,7 +7,6 @@ sys.path.insert(0, '../data_processing')
 import stopword_remover
 import tokenizer
 
-url = 'https://www.glassdoor.com/Job/jobs.htm?context=Jobs&suggestCount=0&suggestChosen=false&clickSource=searchBox&typedKeyword=Software%20Engineer&sc.keyword=Software%20Engineer'
 
 def get_job_title():
     title = input('Enter a job title or job search query: ')
@@ -16,9 +15,16 @@ def get_job_title():
 def scrape_data(query):
     #somehow need to specfy
     print("Scraping job listings for " + query + "...")
-    scraped_data = back_end.scrape_amount(url, 50)
+    scraped_data = back_end.scrape_amount(query, 50)
     print("Scraping complete")
     return scraped_data["Job Description"].values.tolist()
+
+def scrape_data_single(title, company):
+    print(f"Scraping job listings for {title}, {company}...")
+    scraped_data = back_end.scrape_single(title, company)
+    print("Scraping complete")
+    return scraped_data["Job Description"].values.tolist()
+
 
 def process_data(data):
     output = []
@@ -43,6 +49,7 @@ def tag_data(jobs_list):
 def sort_results(tagged_data):
     skills_dict = {}
     attributes_dict = {}
+    experience_dict = {}
     
     for data in tagged_data:
         for item in data:
@@ -53,18 +60,23 @@ def sort_results(tagged_data):
                     skills_dict[value] += 1
                 else:
                     skills_dict[value] = 1
-            else:
+            elif tag == 'ATTRIBUTE':
                 if value in attributes_dict.keys():
                     attributes_dict[value] += 1
                 else:
                     attributes_dict[value] = 1
+            else:
+                if value in experience_dict.keys():
+                    experience_dict[value] += 1
+                else:
+                    experience_dict[value] = 1
 
     sorted_skills = sorted(skills_dict, key=skills_dict.get, reverse=True)
     sorted_attributes = sorted(attributes_dict, key=attributes_dict.get,reverse=True)
-
+    sorted_experience = sorted(experience_dict, key=experience_dict.get,reverse=True)
     # print(skills_dict)
     # print(attributes_dict)
-    return [sorted_skills, sorted_attributes]
+    return [sorted_skills, sorted_attributes, sorted_experience]
     
 
 

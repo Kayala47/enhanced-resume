@@ -9,25 +9,18 @@ the front end)
 # Only save without formatting - if you're on VSCode, find that by hitting Ctrl+Shift+P> "Save without formatting"
 
 import sys
-import pandas as pd
 
 sys.path.append('../scraper')
 # adds this folder to path so I can grab the scraper py files
-from glassdoor_scraper import get_jobs #IMPORTANT - this must go after sys.path.append('../scraper')
-
-
-url = 'https://www.glassdoor.com/Job/jobs.htm?context=Jobs&suggestCount=0&suggestChosen=false&clickSource=searchBox&typedKeyword=Software%20Engineer&sc.keyword=Software%20Engineer'
+from glassdoor_scraper import get_jobs, get_onelisting #IMPORTANT - this must go after sys.path.append('../scraper')
 
 
 def scrape_amount(job: str, amount: int):
-
-    df = get_jobs(amount, url)
-    # df.drop('Job Title')
+    df = get_jobs(job, amount)
     return df
-    # print(df)
+
+def scrape_single(title: str, company: str):
+    df = get_onelisting((title, company))
+    return df
 
 
-if __name__ == "__main__":
-    data = scrape5(url)
-    print(data)
-    print("gathered data")

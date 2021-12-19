@@ -18,9 +18,7 @@ from tqdm import tqdm  # progress bar
 
 # read credentials from .env to avoid public repo exposure
 import os
-from dotenv import load_dotenv
 
-load_dotenv()
 
 
 # opens a chrome browser and scrapes jobs description for a given search
@@ -95,7 +93,7 @@ def get_jobs(query: str, num_jobs: int):
     # construct a url from keywords
     kw_param = "%20".join(query.split(" "))
     url = f"https://www.glassdoor.com/Job/jobs.htm?sc.keyword={kw_param}"
-
+    print(url)
     driver.get(url)  # open jobs page
 
     ## DEAL WITH THE POPUP ##
