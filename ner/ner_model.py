@@ -1,103 +1,115 @@
 import numpy as np
+from numpy.core.fromnumeric import size
 import pandas as pd
 import spacy
+from spacy.util import minibatch, compounding
+from spacy.training.example import Example
+from icecream import ic
+
 import re
-import trained_data
 import random
 import plac
 from pathlib import Path
 from tqdm import tqdm  # loading bar
+import json
+import os
 
-model = None
-output_dir = "./output"
-n_iter = 100
 
-nlp = spacy.load("en_core_web_sm")
+def train_model(output_dir: str, training_data: str, testing_data: str):
 
-df = pd.read_csv("tagged_data.csv")
-texts = pd.read_csv(
-    "..\\data_processing\\processed_output_csvs\\final_output.csv")
+    # start with blank model
+    model = None
+    output_dir = "./spacy_model"
+    n_iter = 100
 
-list_text = df['Finished Text']
+    train_perc: float = 0.8  # percent of tagged data used for training
 
-# # converts dataset into one big string
-# bigString = ''
-# for i in list_text:
-#     i = str(i)
-#     bigString += i
+    # load in tagged data
+    with open(training_data, "r") as train_file:
+        tagged_data = json.load(train_file)
+        annotations = tagged_data["annotations"]
 
-if model is not None:
-    nlp1 = spacy.load(model)  # load existing spaCy model
-    print("Loaded model '%s'" % model)
-else:
-    nlp1 = spacy.blank('en')  # create blank Language class
-    print("Created blank 'en' model")
+    if model is not None:
+        nlp = spacy.load(model)  # load existing spaCy model
+        print("Loaded model '%s'" % model)
+    else:
+        nlp = spacy.blank("en")  # create blank Language class
+        print("Created blank 'en' model")
 
-# create the built-in pipeline components and add them to the pipeline
+    # create the built-in pipeline components and add them to the pipeline
     # nlp.create_pipe works for built-ins that are registered with spaCy
-if 'ner' not in nlp1.pipe_names:
-    ner = nlp1.create_pipe('ner')
-    nlp1.add_pipe(ner, last=True)
-# otherwise, get it so we can add labels
-else:
-    ner = nlp1.get_pipe('ner')
+    if "ner" not in nlp.pipe_names:
+        ner = nlp.create_pipe("ner")
+        nlp.add_pipe("ner", last=True)
+    # otherwise, get it so we can add labels
+    else:
+        ner = nlp.get_pipe("ner")
 
-# add labels
-for _, annotations in trained_data.TRAIN_DATA:
-    for ent in annotations.get('entities'):
-        ner.add_label(ent[2])
+    # add labels
+    for label in tagged_data["classes"]:
+        ner.add_label(label)
 
     # get names of other pipes to disable them during training
-other_pipes = [pipe for pipe in nlp1.pipe_names if pipe != 'ner']
-with nlp1.disable_pipes(*other_pipes):  # only train NER
-    optimizer = nlp1.begin_training()
-    for itn in range(n_iter):
-        random.shuffle(trained_data.TRAIN_DATA)
-        losses = {}
-        for text_num, annotations in tqdm(trained_data.TRAIN_DATA):
-            print([text_num])
-            # print(annotations)
-            nlp1.update(
-                [df['Finished Text'][text_num]],  # batch of texts
-                [annotations],  # batch of annotations
-                drop=0.5,  # dropout - make it harder to memorise data
-                sgd=optimizer,  # callable to update weights
-                losses=losses)
-        print(losses)
+    other_pipes = [pipe for pipe in nlp.pipe_names if pipe != "ner"]
+    with nlp.disable_pipes(*other_pipes):  # only train NER
+
+        optimizer = nlp.begin_training()
+        for itn in range(n_iter):
+
+            random.shuffle(annotations)
+            losses = {}
+            ic(annotations)
+
+            # using minibatch to combine the examples
+            # batches = minibatch(annotations, size=2)
+            # ic(batches)
+
+            for text, entities in tqdm(annotations):
+
+                example_list = []
+
+                doc = nlp.make_doc(text)
+                example = Example.from_dict(doc, entities)
+                example_list.append(example)
+
+                nlp.update(
+                    example_list,  # batch of annotations
+                    drop=0.2,  # dropout - make it harder to memorise data
+                    sgd=optimizer,  # callable to update weights
+                    losses=losses,
+                )
+                print(losses)
+
+    # save model to output directory
+    if output_dir is not None:
+        output_dir = Path(output_dir)
+    if not output_dir.exists():
+        output_dir.mkdir()
+    nlp.to_disk(output_dir)
+    print("Saved model to", output_dir)
+
+    with open(testing_data, "r") as test_file:
+        tagged_data = json.load(test_file)
+        test_annotations = tagged_data["annotations"]
+
+    # test the saved model
+    print("Loading from", output_dir)
+    saved_model = spacy.load(output_dir)
+
+    for text, ent_dict in test_annotations:
+
+        comparison_ent = ent_dict["entities"]
+
+        doc = saved_model(text)
+        print(
+            f"Entities recognized by the model: \n {[(ent.text, ent.label_) for ent in doc.ents]}"
+        )
+        print(
+            f"Entities tagged by hand:  \n {[(text[start:end], tag) for start, end, tag in comparison_ent]}"
+        )
 
 
-# test the trained model
-# print(len(texts['Finished Text']))
-for num, _ in trained_data.TRAIN_DATA:
+os.chdir("/Users/loan/Desktop/pai_resume/enhanced-resume/ner/")
 
-    doc = nlp1(list_text[num])
-    print('Entities', [(ent.text, ent.label_) for ent in doc.ents])
+train_model("./spacy_model", "hand_tagged.json", "hand_tagged.json")
 
-# test on 3 random paragraphs
-for i in range(0, 3):
-    doc = nlp1(list_text[random.randint(0, len(list_text))])
-    print('Entities', [(ent.text, ent.label_) for ent in doc.ents])
-
-
-# save model to output directory
-if output_dir is not None:
-    output_dir = Path(output_dir)
-if not output_dir.exists():
-    output_dir.mkdir()
-nlp1.to_disk(output_dir)
-print("Saved model to", output_dir)
-
-
-# test the saved model
-print("Loading from", output_dir)
-nlp2 = spacy.load(output_dir)
-for num, _ in trained_data.TRAIN_DATA:
-    doc = nlp2(list_text[num])
-    print("Entities", [(ent.text, ent.label_) for ent in doc.ents])
-
-# test against stock model
-print("Loading from", output_dir)
-nlp1 = spacy.load(output_dir)
-for num, _ in trained_data.TRAIN_DATA:
-    doc = nlp(list_text[num])
-    print("Entities", [(ent.text, ent.label_) for ent in doc.ents])
