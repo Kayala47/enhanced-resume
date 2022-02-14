@@ -4,15 +4,21 @@ Project for p-ai: creating a resume generator based on using Named Entity Recogn
 ## Collaborators:
 - Kevin Ayala
 - Evan Von Oehsen
-- Marghi Andreassi
-- Alida Schefers
 - Aidan Wu
+- Marghi Andreassi
 
 
 ## Workflow
 
+### Scraping
+1. Run scraper/data_collector.py, which produces lots of csv files with raw data, saving them into /output_csvs
+2. Run scraper/coallescer.py, which coallesces all the previous files into one file and saves it in the root directory as final_output.csv
+
+### Data Processing
+1. Run data_processing/main.py with the path to the final_output.csv file we received in the last step. This will produce an identical csv with columns for stopwords removed and tokenized text. The result will be in data_processing/processed_output_csvs
+
 ### Tagging
-1. we run tagging/assign_tags.py with the assignees flag followed by names of all active collaborators and a num flag of 50. That gets us 50 assigned listings per week
+1. we run tagging/assign_tags.py with the assignees flag followed by names of all active collaborators and a num flag of 50. That gets us 50 assigned listings per week. By default, it will take examples from the file we got in the last step.
 2. each collaborator is assigned a file by the previous process. We normally post those in the discord for everyone to complete
 3. completed files are posted back to the discord by all collaborators. those are compiled in the tagging/hand_tagged folder
 4. from there, we run tagging/combine_tags.py to combine all the tagged files together, then tagging/split_data.py to categorize it into train and test datasets
