@@ -79,10 +79,7 @@ def main():
     )
 
     cli.add_argument(
-        "--num",
-        nargs=1,
-        type=int,
-        default=50,
+        "--num", nargs=1, type=int, default=50,
     )
 
     cli.add_argument(
