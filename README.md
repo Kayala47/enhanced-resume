@@ -38,3 +38,4 @@ To access and interact with the front-end code, follow below steps:
 - fix scraper and model (periodic updates required)
 - train model on un-tokenized data
 - get it to modify a word doc
+- finish onboarding new members and set up Kanban board on Github
