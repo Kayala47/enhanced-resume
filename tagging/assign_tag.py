@@ -28,7 +28,7 @@ def sample_k(k: int, csv_filename: str, new_filename: str):
     # df = df["Job Description"]
 
     # write all the listings to the file, adding a line break between each
-    with open(new_filename, "w") as f:
+    with open(new_filename, "w", encoding="unicode escape") as f:
         for i, row in df.iterrows():
             # print(row[3])
             content = str(row[3]).replace("\n", "")
@@ -54,7 +54,11 @@ def assign_tasks(filename: str, assignees: List[str], num_assigned: int):
     for assignee in assignees:
         cwd = os.getcwd()
         print(cwd)
-        new_filename = cwd + "/weekly_assignments/" + assignee + ".txt"
+
+        if os.name == "nt":  # windows 10!
+            new_filename = cwd + "\\weekly_assignments\\" + assignee + ".txt"
+        else:
+            new_filename = cwd + "/weekly_assignments/" + assignee + ".txt"
 
         # if we're assigning a new file to someone, delete the old file
         try:
@@ -91,7 +95,7 @@ def main():
 
     args = cli.parse_args()
 
-    assign_tasks(args.filename, args.assignees, args.num[0])
+    assign_tasks(args.filename[0], args.assignees, args.num)
 
 
 if __name__ == "__main__":

@@ -12,7 +12,7 @@ Project for p-ai: creating a resume generator based on using Named Entity Recogn
 
 ### Scraping
 1. Run scraper/data_collector.py, which produces lots of csv files with raw data, saving them into /output_csvs
-2. Run scraper/coallescer.py, which coallesces all the previous files into one file and saves it in the root directory as final_output.csv
+2. Run scraper/coallescer.py, which coallesces all the previous files into one file and saves it in the output_from_scraper directory as final_output.csv
 
 ### Data Processing
 1. Run data_processing/main.py with the path to the final_output.csv file we received in the last step. This will produce an identical csv with columns for stopwords removed and tokenized text. The result will be in data_processing/processed_output_csvs
@@ -38,4 +38,4 @@ To access and interact with the front-end code, follow below steps:
 - fix scraper and model (periodic updates required)
 - train model on un-tokenized data
 - get it to modify a word doc
-y5ruhdtyhnr7u
+- finish onboarding new members and set up Kanban board on Github
