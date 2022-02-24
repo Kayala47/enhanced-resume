@@ -7,7 +7,7 @@ I've found a free and seemingly fully-featured solution [here](https://github.co
 There's a good bit of setup required to get our tagging software to work. The good news: you only have to do it once. Even better, this is going to make your tagging so much faster and easier. 
 
 ### Repo
-Start by cloning [this repo](https://github.com/tecoholic/ner-annotator). 
+Start by cloning [this repo](https://github.com/Kayala47/ner-annotator). 
 
 ### Docker
 You'll first need to install [Docker](https://docs.docker.com/get-docker/). It's software that allows us to set up "containers", which are basically mini-VMs. That means we won't have to worry about incompatibility on our computers, and you'll (hopefully) never have to deal with issues because of your specific device.
