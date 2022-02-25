@@ -6,7 +6,7 @@ Project for p-ai: creating a resume generator based on using Named Entity Recogn
 - Evan Von Oehsen
 - Aidan Wu
 - Marghi Andreassi
-- Vivien Song
+- Vivien Song :()
 
 
 ## Workflow
