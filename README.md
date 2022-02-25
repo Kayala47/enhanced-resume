@@ -4,7 +4,7 @@ Project for p-ai: creating a resume generator based on using Named Entity Recogn
 ## Collaborators:
 - Kevin Ayala
 - Evan Von Oehsen
-- Aidan Wu
+- Aidan Wu 
 - Marghi Andreassi
 
 
