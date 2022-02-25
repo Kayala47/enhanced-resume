@@ -20,6 +20,8 @@ You'll be assigned some number of text files. Upload them to the site and you'll
 
 Start by adding categories for "SKILL" and "ATTRIBUTE". All caps, to make sure we're all writing the exact same thing. 
 
+To separate out the job listings, change the text separator option to "Custom String" and write in "\r\n". That should parse each listing separately instead of a huge file.
+
 Then, you can tag by selecting the category you want, then highlighting the word that matches that category. Switch between categories as needed. Once you've confirmed that everything is tagged properly, click "Save". 
 
 You'll be given an alert at the very end telling you that you've gone through all sections. Once you're there, click the "export" button. 
