@@ -199,10 +199,7 @@ def get_jobs(query: str, num_jobs: int):
         # advance to the next page of job listings
         try:
             # next page button is also an SVG, not a button
-            elem = driver.find_element_by_css_selector('[data-test="pagination-next"]')
-
-            ac = ActionChains(driver)
-            ac.move_to_element(elem).click().perform()  # move to SVG and click
+            driver.find_element_by_class_name("nextButton").click()
         except NoSuchElementException:
             # not enough job listings to satisfy criteria
             print(
