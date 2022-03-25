@@ -20,7 +20,6 @@ from tqdm import tqdm  # progress bar
 import os
 
 
-
 # opens a chrome browser and scrapes jobs description for a given search
 
 # INPUTS: query = the search term for the job listings | num_jobs = number of listings scrape
@@ -30,7 +29,7 @@ def get_jobs(query: str, num_jobs: int):
 
     Inputs:
     Keyword = the search term for the job listings you want. Ie, "data scientist"
-    num_jobs = number of listings you want to scrape. Low default is for testing. 
+    num_jobs = number of listings you want to scrape. Low default is for testing.
     """
     print("Began scraping")
 
@@ -43,8 +42,8 @@ def get_jobs(query: str, num_jobs: int):
     options = webdriver.ChromeOptions()
 
     # uncomment below to activate headless
-    # options.add_argument('headless')
-    options.add_argument("start-maximized")
+    # options.add_argument("headless")
+    # options.add_argument("start-maximized")
 
     # the driver is responsible for opening the new window
     # installs driver each time
@@ -93,7 +92,7 @@ def get_jobs(query: str, num_jobs: int):
     # construct a url from keywords
     kw_param = "%20".join(query.split(" "))
     url = f"https://www.glassdoor.com/Job/jobs.htm?sc.keyword={kw_param}"
-    print(url)
+
     driver.get(url)  # open jobs page
 
     ## DEAL WITH THE POPUP ##
