@@ -3,6 +3,7 @@ import typing
 from numpy.testing._private.utils import assert_string_equal
 import pandas as pd
 import random
+import unicodedata
 from typing import List
 import os
 import glob
@@ -31,9 +32,22 @@ def sample_k(k: int, csv_filename: str, new_filename: str):
     with open(new_filename, "w", encoding="unicode escape") as f:
         for i, row in df.iterrows():
             # print(row[3])
-            content = str(row[3]).replace("\n", "")
-            f.write(content)
-            f.write("\n")
+            content = str(row[3]).replace("\r\n", " ")
+            # manually removes some unicode
+            content = content.replace("_x000D_", " ") \
+                .replace("\xe2\x80\x99", "'") \
+                .replace("\xe2\x80\x98", "'") \
+                .replace("\xe2\x80\x9c", '"') \
+                .replace("\xe2\x80\x9d", '"') \
+                .replace("\xe2\x80\x94", " - ") \
+                .replace("\xe2\x80\x93", " - ") \
+                .replace("\xe2\x80\x92", " - ") \
+                .replace("\xe2\x80\x91", " - ") \
+                .replace("\xe2\x80\x90", " - ")
+            # removes the rest of the unicode
+            normalized = unicodedata.normalize('NFKD', content).encode('ascii', 'ignore').decode('ascii')
+            f.write(normalized)
+            f.write(" ")
 
 
 def assign_tasks(filename: str, assignees: List[str], num_assigned: int):
