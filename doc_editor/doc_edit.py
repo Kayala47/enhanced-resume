@@ -1,6 +1,15 @@
 import argparse
 
 
+def sort_skills(job_skills, resume_skills):
+    for js in reversed(job_skills):
+        for i, rs in enumerate(resume_skills):
+            if js.upper() == rs.upper():
+                resume_skills.insert(0, resume_skills.pop(i))
+
+    return resume_skills
+
+
 def main(args):
     sorted_skills, sorted_exp, sorted_attr = get_sorted_lists(args.search)
     (
