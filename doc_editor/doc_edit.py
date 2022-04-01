@@ -1,4 +1,8 @@
 import argparse
+from typing import List, Tuple
+from docx import Document
+
+SORTED_SKILLS_TEST = ["Python", "React.js", "Swift", "C++"]
 
 
 def sort_skills(job_skills, resume_skills):
@@ -10,8 +14,58 @@ def sort_skills(job_skills, resume_skills):
     return resume_skills
 
 
+def coallesece_skils(doc, idxs, text_lists):
+
+    for i, list in zip(idxs, text_lists):
+        print(list)
+        doc.paragraphs[i].text = ", ".join(list)
+
+
+def scrape_doc(
+    doc,
+) -> Tuple[List[str], List[int], List[str], List[int], List[str], List[int]]:
+
+    exp = []
+    exp_idx = []
+
+    attr = []
+    attr_idx = []
+
+    styles = doc.styles
+
+    skills_lists = []
+    skills_idxs = []
+    last_style = "Heading 1"
+    stage = 0  # whether we're scraping attr, exp, or skills
+
+    for i, p in enumerate(doc.paragraphs):
+        if p.style == styles["Heading 2"]:
+            # time for a context switch!
+            # TODO add exp and attr
+
+            if p.text == "SKILLS":
+                stage = 3
+                # but don't scrape this line
+                continue
+
+            else:
+                stage = 4
+
+        if stage == 3:
+            print("in stage 3")
+            # scraping skills
+            if p.style != styles["Heading 3"]:
+                # don't want to collect these, but collect the actual info for sure
+                skills_lists.append(p.text.split(", "))
+                skills_idxs.append(i)
+
+    return skills_lists, skills_idxs, exp, exp_idx, attr, attr_idx
+
+
 def main(args):
-    sorted_skills, sorted_exp, sorted_attr = get_sorted_lists(args.search)
+    # sorted_skills, sorted_exp, sorted_attr = get_sorted_lists(args.search)
+    doc = Document(args.resume_filename)
+
     (
         present_skills,
         skills_idx,
@@ -19,13 +73,22 @@ def main(args):
         exp_idx,
         present_attr,
         attr_idx,
-    ) = scrape_doc(args.filename)
+    ) = scrape_doc(doc)
 
-    new_skills = coallesce_skills(sort_skills(sorted_skills, present_skills))
-    new_exp = sort_experiences(sorted_exp, present_exp)
+    new_skills = []
+    for skill_list in present_skills:
+        new_skills.append(sort_skills(SORTED_SKILLS_TEST, skill_list))
 
-    write_paragraphs(new_skills, skills_idx, args.filename)
-    write_paragraphs(new_exp, exp_idx, args.filename)
+    print(new_skills)
+
+    coallesece_skils(doc, skills_idx, new_skills)
+
+    doc.save("output_resume.docx")
+
+    # new_exp = sort_experiences(sorted_exp, present_exp)
+
+    # write_paragraphs(new_skills, skills_idx, args.filename)
+    # write_paragraphs(new_exp, exp_idx, args.filename)
 
 
 if __name__ == "__main__":
