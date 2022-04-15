@@ -11,6 +11,8 @@ from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.keys import Keys
 
+import html2text
+
 import sys  # for CLI arguments
 import time  # to allow waiting for load
 import pandas as pd  # keep a database of our job listings
@@ -175,8 +177,10 @@ def get_jobs(query: str, num_jobs: int):
                                 )
                             )
                         )
-                        .text
+                        .get_attribute('innerHTML')
                     )
+
+                    print(job_description)
 
                     time.sleep(0.25)
 
@@ -186,7 +190,7 @@ def get_jobs(query: str, num_jobs: int):
                             "Company Name": job_company,
                             "Job Title": job_title,
                             "Job Location": job_location,
-                            "Job Description": job_description,
+                            "Job Description": html2text.html2text(job_description),
                         }
                     )
 
@@ -197,7 +201,6 @@ def get_jobs(query: str, num_jobs: int):
 
         # advance to the next page of job listings
         try:
-            # next page button is also an SVG, not a button
             driver.find_element_by_class_name("nextButton").click()
         except NoSuchElementException:
             # not enough job listings to satisfy criteria
