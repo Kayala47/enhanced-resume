@@ -109,7 +109,6 @@ def train_model(output_dir: str, training_data: str, testing_data: str):
         )
 
 
-os.chdir("/Users/loan/Desktop/pai_resume/enhanced-resume/ner/")
+# os.chdir("/Users/loan/Desktop/pai_resume/enhanced-resume/ner/")
 
 train_model("./spacy_model", "hand_tagged.json", "hand_tagged.json")
-

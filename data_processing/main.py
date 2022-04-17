@@ -31,9 +31,10 @@ def remove_stopwords(csv_name):
         # Create a csv.writer object from the output file object
         csv_writer = csv.writer(write_obj)
         # Add title row to new csv
-        row0 = next(csv_reader)
+        # row0 = next(csv_reader)
+        row0 = ["Original"]
         row0.append("Tokenized")
-        row0.append("Stop Words Removed")
+        # row0.append("Stop Words Removed")
         row0.append("Finished Text")
         csv_writer.writerow(row0)
         # Read each row of the input csv file as list
@@ -41,21 +42,24 @@ def remove_stopwords(csv_name):
             new_row = []
 
             # description is in column 2
-            description_text = row[3].lower()
+            description_text = row[4].lower()
+            # ic(description_text)
             new_row.append(description_text)
 
             # tokenization here...
             tokenized_data = tokenizer.tokenize(description_text)
-            ic(tokenized_data)
+            # ic(tokenized_data)
             new_row.append(tokenized_data)
 
             # stop word removal here...
-            stopwords_removed = stopword_remover.remove_from(tokenized_data)
-            ic(stopwords_removed)
-            new_row.append(stopwords_removed)
+            # stopwords_removed = stopword_remover.remove_from(tokenized_data)
+            # ic(stopwords_removed)
+            # new_row.append(stopwords_removed)
 
-            finished = " ".join(stopwords_removed)
-            ic(finished)
+            finished = " ".join(tokenized_data)
+            # ic(finished)
+            # ic(len(finished))
+            # print(finished)
             new_row.append(finished)
 
             # Add the updated row / list to the output file
