@@ -6,7 +6,7 @@ import pandas
 sys.path.insert(0, '../data_processing')
 import stopword_remover
 import tokenizer
-
+import docx
 
 def get_job_title():
     title = input('Enter a job title or job search query: ')
@@ -93,6 +93,11 @@ def cli_output(sorted_skills, sorted_attributes):
     for attribute in sorted_attributes:
         print(attribute)
     print("-----------------------------------------------------------")
+
+def grab_resume(path):
+    doc = Document(path)
+    #doc.save(path)
+    return doc
 
 def main():
     query = get_job_title()

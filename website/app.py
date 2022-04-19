@@ -20,6 +20,8 @@ def home():
 def job_query_results():
     job_query = request.form['query']
     print(job_query)
+    #path = request.form['file']
+    print(request.files['file'])
     results = calculate_job_query_results(job_query)
     return render_template('/results.html', query=job_query, results=results)
 
@@ -27,6 +29,8 @@ def job_query_results():
 def job_url_results():
     title_query = request.form['title']
     company_query = request.form['company']
+    #path = request.form['file']
+    print(request.files['file'])
     results = calculate_job_title_results(title_query, company_query)
     return render_template('/results.html', query=f"{title_query}, {company_query}", results=results)
 

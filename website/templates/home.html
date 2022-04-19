@@ -50,7 +50,7 @@
                 of skills, attributes, and experience to add to your resume.
                 Ideal for creating a well-rounded resume.
               </p>
-              <form action="/job-query-results" method="POST">
+              <form action="/job-query-results" method="POST" enctype = "multipart/form-data">
                 <div class="form-group">
                   <input
                     type="text"
@@ -58,6 +58,16 @@
                     name="query"
                     placeholder="New-Grad Software Engineer"
                   />
+                  <div class="input-group"; style="padding-top: 20px;">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+                    </div>
+                    <div class="custom-file">
+                      <input type="file" class="custom-file-input" id="inputGroupFile01" name="file"
+                        aria-describedby="inputGroupFileAddon01">
+                      <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                    </div>
+                  </div> 
                   <!-- <small id="textHelp" class="form-text text-muted"
                     >This should be a generalized title, like "software
                     engineer".</small
@@ -78,7 +88,7 @@
                 skills, attributes, and experience to add to your resume. Ideal
                 for a close resume fit.
               </p>
-              <form action="/job-title-results" method="POST">
+              <form action="/job-title-results" method="POST" enctype = "multipart/form-data">
                 <div class="form-group">
                   <input
                     type="text"
@@ -93,6 +103,17 @@
                     placeholder="P-ai"
                     style="margin-top:10px;"
                   />
+                  <div class="input-group"; style="padding-top: 20px;">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+                    </div>
+                    <div class="custom-file">
+                      <input type="file" class="custom-file-input" id="inputGroupFile01"
+                        aria-describedby="inputGroupFileAddon01">
+                      <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                    </div>
+                  </div> 
+
                   <!-- <small id="textHelp" class="form-text text-muted"
                     >This should be an Indeed.com url.</small
                   > -->
@@ -129,12 +150,7 @@
                     <!-- <small id="textHelp" class="form-text text-muted"
                       >This should be a generalized title, like "software
                       engineer".</small
-                    > -->
-                    <button onclick="return showSpinner('main');" type="submit" value="submit" class="btn btn-primary">
-                      <span id="query-spinner" class="spinner-border spinner-border-sm" style="display:none;" role="status" aria-hidden="true"></span>
-                      Upload Resume
-  
-                    </button>
+                    > --> 
                   </div>
 
                 </form>
