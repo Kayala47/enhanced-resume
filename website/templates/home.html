@@ -39,6 +39,7 @@
         </h1>
       </div>
       <hr style="background-color: white;">
+    <div class="row">
       <div style="min-height: 80%; display: flex; align-items: center">
           <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 align-items-center">
@@ -105,7 +106,46 @@
             </div>
           </div>
       </div>
-    </div>
+    </div>  
+
+    <div class="row">
+      <div style="min-height: 20%; display: inline-block; align-items: center; width:100%">
+          <div class="row">
+              <div class="col-xs-12 col-md-12 col-sm-12 col-lg-12 align-items-center">
+                <div class="jumbotron vertical-center">
+                <h3 style="color:#2127d9">Upload Resume Here</h3>
+                <p>
+                  Upload your most recently updated resume file here. Resume files should be in .docx format. 
+                </p>
+                <form action="/job-query-results" method="POST">
+                  <!--<div class="form-group">
+                    <input
+                      type="text"
+                      class="form-control"
+                      name="query"
+                      placeholder="Upload file here"
+                    />
+                  -->
+                    <!-- <small id="textHelp" class="form-text text-muted"
+                      >This should be a generalized title, like "software
+                      engineer".</small
+                    > -->
+                    <button onclick="return showSpinner('main');" type="submit" value="submit" class="btn btn-primary">
+                      <span id="query-spinner" class="spinner-border spinner-border-sm" style="display:none;" role="status" aria-hidden="true"></span>
+                      Upload Resume
+  
+                    </button>
+                  </div>
+
+                </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
 
     <script>
       function showSpinner(id) {

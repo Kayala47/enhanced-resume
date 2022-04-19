@@ -1,6 +1,8 @@
 from flask import Flask
 from flask_bootstrap import Bootstrap
 from front_end import *
+import nltk
+nltk.download('punkt')
 
 app = Flask(__name__)
 
