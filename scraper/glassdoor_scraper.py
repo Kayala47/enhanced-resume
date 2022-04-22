@@ -1,4 +1,4 @@
-from re import search
+import re
 from selenium import webdriver
 from selenium.common.exceptions import (
     NoSuchElementException,
@@ -10,8 +10,6 @@ from selenium.webdriver.common.by import By
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.keys import Keys
-
-import html2text
 
 import sys  # for CLI arguments
 import time  # to allow waiting for load
@@ -113,7 +111,8 @@ def get_jobs(query: str, num_jobs: int):
     try:
         elem = driver.find_element_by_class_name("modal_closeIcon-svg")
         ac = ActionChains(driver)
-        ac.move_to_element(elem).click().perform()  # move cursor to X SVG and click
+        # move cursor to X SVG and click
+        ac.move_to_element(elem).click().perform()
     except NoSuchElementException:
         # there is no x to close - serious issue!
         print("[ERR] Failed to close popup")
@@ -177,10 +176,8 @@ def get_jobs(query: str, num_jobs: int):
                                 )
                             )
                         )
-                        .get_attribute('innerHTML')
+                        .get_attribute('innerText')
                     )
-
-                    print(job_description)
 
                     time.sleep(0.25)
 
@@ -190,7 +187,7 @@ def get_jobs(query: str, num_jobs: int):
                             "Company Name": job_company,
                             "Job Title": job_title,
                             "Job Location": job_location,
-                            "Job Description": html2text.html2text(job_description),
+                            "Job Description": job_description,
                         }
                     )
 
@@ -231,7 +228,8 @@ def gather_data(
 def get_onelisting(request):
     # given a request tuple containing (job title, company), runs get_jobs for the first listing only
     title, company = request
-    new_query = " ".join([title, company])  # one string fits get_jobs requirements
+    # one string fits get_jobs requirements
+    new_query = " ".join([title, company])
 
     return get_jobs(new_query, 1)
 
