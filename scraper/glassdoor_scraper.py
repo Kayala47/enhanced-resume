@@ -16,6 +16,9 @@ import time  # to allow waiting for load
 import pandas as pd  # keep a database of our job listings
 from tqdm import tqdm  # progress bar
 
+import requests
+from bs4 import BeautifulSoup
+
 # read credentials from .env to avoid public repo exposure
 import os
 
@@ -45,7 +48,6 @@ def get_jobs(query: str, num_jobs: int):
     # options.add_argument("headless")
     # options.add_argument("start-maximized")
 
-    # the driver is responsible for opening the new window
     # installs driver each time
     driver = webdriver.Chrome(ChromeDriverManager().install(), options=options)
 
@@ -143,9 +145,7 @@ def get_jobs(query: str, num_jobs: int):
                 job_listing.click()  # go to this listing, and get react to load it
             except:
                 print("[ERR] Stale element, skipping")
-                stale_page = (
-                    True  # if the page is stale, we need to go to the next page
-                )
+                stale_page = True  # if the page is stale, we need to go to the next page
                 pass
 
             # scrape the listing
@@ -225,29 +225,33 @@ def gather_data(
     df.to_csv(filename, index=False)  # write to an output csv
 
 
-def get_onelisting(request):
-    # given a request tuple containing (job title, company), runs get_jobs for the first listing only
-    title, company = request
-    # one string fits get_jobs requirements
-    new_query = " ".join([title, company])
+def get_onelisting(url):
+    r = requests.get(url, headers={
+        'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.60 Safari/537.36'
+    })
 
-    return get_jobs(new_query, 1)
+    soup = BeautifulSoup(r.text, 'html.parser')
+
+    desc = soup.find('div', {'id': 'JobDescriptionContainer'}).text
+    job_info = list(soup.find('div', {'class': 'smarterBannerEmpInfo'}).stripped_strings)
+
+    return pd.DataFrame([
+        {
+            "Company Name": job_info[0],
+            "Job Title": job_info[1],
+            "Job Location": job_info[2],
+            "Job Description": desc,
+        }
+    ])
 
 
 # Pass arguments through the command line: 'python scraper/glassdoor_scraper.py <num_jobs> <search_query>
 if __name__ == "__main__":
-    if len(sys.argv) != 3:
-        print(sys.argv)
-        print(
-            "Incorrect number of arguments, should be 'python glassdoor_scraper.py <num_jobs> <search_query>'"
-        )
-    else:
-        try:
-            num = int(sys.argv[1])
-            query = str(sys.argv[2])
-        except:
-            print(
-                "Incorrect argument format, should be 'python glassdoor_scraper.py <num_jobs> <search_query>'"
-            )
-        gather_data(keywords=query, num_jobs=num)
-        print("Finished Scraping")
+    try:
+        num = int(sys.argv[1])
+        query = str(sys.argv[2])
+    except:
+        print("Incorrect format, use: 'python glassdoor_scraper.py <num_jobs> <search_query>'")
+
+    gather_data(keywords=query, num_jobs=num)
+    print("Finished Scraping")
