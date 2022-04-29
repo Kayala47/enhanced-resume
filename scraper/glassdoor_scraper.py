@@ -12,6 +12,7 @@ from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.keys import Keys
 
 import sys  # for CLI arguments
+import json
 import time  # to allow waiting for load
 import pandas as pd  # keep a database of our job listings
 from tqdm import tqdm  # progress bar
@@ -225,33 +226,56 @@ def gather_data(
     df.to_csv(filename, index=False)  # write to an output csv
 
 
-def get_onelisting(url):
+def scrape_description(url):
     r = requests.get(url, headers={
         'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.60 Safari/537.36'
     })
 
     soup = BeautifulSoup(r.text, 'html.parser')
 
-    desc = soup.find('div', {'id': 'JobDescriptionContainer'}).text
-    job_info = list(soup.find('div', {'class': 'smarterBannerEmpInfo'}).stripped_strings)
+    return soup.find('div', {'id': 'JobDescriptionContainer'}).text
 
-    return pd.DataFrame([
-        {
-            "Company Name": job_info[0],
-            "Job Title": job_info[1],
-            "Job Location": job_info[2],
+def scrape_page(query):
+    options = webdriver.ChromeOptions()
+    # options.add_argument("headless")
+    # options.add_argument("start-maximized")
+
+    driver = webdriver.Chrome(ChromeDriverManager().install(), options=options)
+
+    kw_param = "%20".join(query.split(" "))
+    url = f"https://www.glassdoor.com/Job/jobs.htm?sc.keyword={kw_param}"
+
+    driver.get(url)  # open jobs page
+
+    job_listings = driver.find_elements_by_class_name("react-job-listing")
+
+    scraped_listings = []
+    for listing in job_listings:
+        a_tag = listing.find_elements_by_tag_name('a')[1]
+        url = a_tag.get_attribute('href')
+        name = a_tag.text
+        title = listing.get_attribute('data-normalize-job-title')
+        loc = listing.get_attribute('data-job-loc')
+        desc = scrape_description(url)
+        scraped_listings.append({
+            "Company Name": name,
+            "Job Title": title,
+            "Job Location": loc,
             "Job Description": desc,
-        }
-    ])
+        })
 
+    return scraped_listings
 
 # Pass arguments through the command line: 'python scraper/glassdoor_scraper.py <num_jobs> <search_query>
 if __name__ == "__main__":
-    try:
-        num = int(sys.argv[1])
-        query = str(sys.argv[2])
-    except:
-        print("Incorrect format, use: 'python glassdoor_scraper.py <num_jobs> <search_query>'")
+    # try:
+    #     num = int(sys.argv[1])
+    #     query = str(sys.argv[2])
+    # except:
+    #     print("Incorrect format, use: 'python glassdoor_scraper.py <num_jobs> <search_query>'")
 
-    gather_data(keywords=query, num_jobs=num)
-    print("Finished Scraping")
+    # gather_data(keywords=query, num_jobs=num)
+    # print("Finished Scraping")
+    listings = scrape_page('machine learning')
+    with open('test.json', 'w') as f:
+        json.dump(listings, f)
