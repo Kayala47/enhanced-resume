@@ -17,15 +17,17 @@ import time  # to allow waiting for load
 import pandas as pd  # keep a database of our job listings
 from tqdm import tqdm  # progress bar
 
+from threading import Thread
+
 import requests
 from bs4 import BeautifulSoup
 
 # read credentials from .env to avoid public repo exposure
 import os
 
+THREADS = 30 # MUST BE FACTOR OF LISTINGS PER PAGE (30)
 
 # opens a chrome browser and scrapes jobs description for a given search
-
 # INPUTS: query = the search term for the job listings | num_jobs = number of listings scrape
 def get_jobs(query: str, num_jobs: int):
     """
@@ -226,14 +228,28 @@ def gather_data(
     df.to_csv(filename, index=False)  # write to an output csv
 
 
-def scrape_description(url):
-    r = requests.get(url, headers={
-        'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.60 Safari/537.36'
-    })
+def scrape_single(listings, scraped):
+    for listing in listings:
+        a_tag = listing.find_elements_by_tag_name('a')[1]
+        url = a_tag.get_attribute('href')
 
-    soup = BeautifulSoup(r.text, 'html.parser')
+        name = a_tag.text
+        title = listing.get_attribute('data-normalize-job-title')
+        loc = listing.get_attribute('data-job-loc')
 
-    return soup.find('div', {'id': 'JobDescriptionContainer'}).text
+        r = requests.get(url, headers={
+            'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.60 Safari/537.36'
+        })
+
+        soup = BeautifulSoup(r.text, 'html.parser')
+        desc = soup.find('div', {'id': 'JobDescriptionContainer'}).text
+
+        scraped.append({
+            "Company Name": name,
+            "Job Title": title,
+            "Job Location": loc,
+            "Job Description": desc,
+        })
 
 def scrape_page(query):
     options = webdriver.ChromeOptions()
@@ -250,20 +266,20 @@ def scrape_page(query):
     job_listings = driver.find_elements_by_class_name("react-job-listing")
 
     scraped_listings = []
-    for listing in job_listings:
-        a_tag = listing.find_elements_by_tag_name('a')[1]
-        url = a_tag.get_attribute('href')
-        name = a_tag.text
-        title = listing.get_attribute('data-normalize-job-title')
-        loc = listing.get_attribute('data-job-loc')
-        desc = scrape_description(url)
-        scraped_listings.append({
-            "Company Name": name,
-            "Job Title": title,
-            "Job Location": loc,
-            "Job Description": desc,
-        })
+    threads = []
+    tsz = int(len(job_listings)/THREADS)
+    start = time.time()
+    for n in range(0,THREADS):
+        t = Thread(target=scrape_single, args=(job_listings[n*tsz:(n+1)*tsz], scraped_listings))
+        threads.append(t)
+        t.start()
 
+    for t in threads:
+        t.join()
+
+    elapsed = time.time() - start
+    print(elapsed)
+        
     return scraped_listings
 
 # Pass arguments through the command line: 'python scraper/glassdoor_scraper.py <num_jobs> <search_query>
