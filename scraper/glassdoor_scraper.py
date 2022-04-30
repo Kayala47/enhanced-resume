@@ -1,4 +1,4 @@
-import re
+from re import search
 from selenium import webdriver
 from selenium.common.exceptions import (
     NoSuchElementException,
@@ -12,22 +12,16 @@ from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.keys import Keys
 
 import sys  # for CLI arguments
-import json
 import time  # to allow waiting for load
 import pandas as pd  # keep a database of our job listings
 from tqdm import tqdm  # progress bar
 
-from threading import Thread
-
-import requests
-from bs4 import BeautifulSoup
-
 # read credentials from .env to avoid public repo exposure
 import os
 
-THREADS = 30 # MUST BE FACTOR OF LISTINGS PER PAGE (30)
 
 # opens a chrome browser and scrapes jobs description for a given search
+
 # INPUTS: query = the search term for the job listings | num_jobs = number of listings scrape
 def get_jobs(query: str, num_jobs: int):
     """
@@ -51,6 +45,7 @@ def get_jobs(query: str, num_jobs: int):
     # options.add_argument("headless")
     # options.add_argument("start-maximized")
 
+    # the driver is responsible for opening the new window
     # installs driver each time
     driver = webdriver.Chrome(ChromeDriverManager().install(), options=options)
 
@@ -116,8 +111,7 @@ def get_jobs(query: str, num_jobs: int):
     try:
         elem = driver.find_element_by_class_name("modal_closeIcon-svg")
         ac = ActionChains(driver)
-        # move cursor to X SVG and click
-        ac.move_to_element(elem).click().perform()
+        ac.move_to_element(elem).click().perform()  # move cursor to X SVG and click
     except NoSuchElementException:
         # there is no x to close - serious issue!
         print("[ERR] Failed to close popup")
@@ -148,7 +142,9 @@ def get_jobs(query: str, num_jobs: int):
                 job_listing.click()  # go to this listing, and get react to load it
             except:
                 print("[ERR] Stale element, skipping")
-                stale_page = True  # if the page is stale, we need to go to the next page
+                stale_page = (
+                    True  # if the page is stale, we need to go to the next page
+                )
                 pass
 
             # scrape the listing
@@ -179,7 +175,7 @@ def get_jobs(query: str, num_jobs: int):
                                 )
                             )
                         )
-                        .get_attribute('innerText')
+                        .text
                     )
 
                     time.sleep(0.25)
@@ -201,6 +197,7 @@ def get_jobs(query: str, num_jobs: int):
 
         # advance to the next page of job listings
         try:
+            # next page button is also an SVG, not a button
             driver.find_element_by_class_name("nextButton").click()
         except NoSuchElementException:
             # not enough job listings to satisfy criteria
@@ -228,70 +225,28 @@ def gather_data(
     df.to_csv(filename, index=False)  # write to an output csv
 
 
-def scrape_single(listings, scraped):
-    for listing in listings:
-        a_tag = listing.find_elements_by_tag_name('a')[1]
-        url = a_tag.get_attribute('href')
+def get_onelisting(request):
+    # given a request tuple containing (job title, company), runs get_jobs for the first listing only
+    title, company = request
+    new_query = " ".join([title, company])  # one string fits get_jobs requirements
 
-        name = a_tag.text
-        title = listing.get_attribute('data-normalize-job-title')
-        loc = listing.get_attribute('data-job-loc')
+    return get_jobs(new_query, 1)
 
-        r = requests.get(url, headers={
-            'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.60 Safari/537.36'
-        })
-
-        soup = BeautifulSoup(r.text, 'html.parser')
-        desc = soup.find('div', {'id': 'JobDescriptionContainer'}).text
-
-        scraped.append({
-            "Company Name": name,
-            "Job Title": title,
-            "Job Location": loc,
-            "Job Description": desc,
-        })
-
-def scrape_page(query):
-    options = webdriver.ChromeOptions()
-    # options.add_argument("headless")
-    # options.add_argument("start-maximized")
-
-    driver = webdriver.Chrome(ChromeDriverManager().install(), options=options)
-
-    kw_param = "%20".join(query.split(" "))
-    url = f"https://www.glassdoor.com/Job/jobs.htm?sc.keyword={kw_param}"
-
-    driver.get(url)  # open jobs page
-
-    job_listings = driver.find_elements_by_class_name("react-job-listing")
-
-    scraped_listings = []
-    threads = []
-    tsz = int(len(job_listings)/THREADS)
-    start = time.time()
-    for n in range(0,THREADS):
-        t = Thread(target=scrape_single, args=(job_listings[n*tsz:(n+1)*tsz], scraped_listings))
-        threads.append(t)
-        t.start()
-
-    for t in threads:
-        t.join()
-
-    elapsed = time.time() - start
-    print(elapsed)
-        
-    return scraped_listings
 
 # Pass arguments through the command line: 'python scraper/glassdoor_scraper.py <num_jobs> <search_query>
 if __name__ == "__main__":
-    # try:
-    #     num = int(sys.argv[1])
-    #     query = str(sys.argv[2])
-    # except:
-    #     print("Incorrect format, use: 'python glassdoor_scraper.py <num_jobs> <search_query>'")
-
-    # gather_data(keywords=query, num_jobs=num)
-    # print("Finished Scraping")
-    listings = scrape_page('machine learning')
-    with open('test.json', 'w') as f:
-        json.dump(listings, f)
+    if len(sys.argv) != 3:
+        print(sys.argv)
+        print(
+            "Incorrect number of arguments, should be 'python glassdoor_scraper.py <num_jobs> <search_query>'"
+        )
+    else:
+        try:
+            num = int(sys.argv[1])
+            query = str(sys.argv[2])
+        except:
+            print(
+                "Incorrect argument format, should be 'python glassdoor_scraper.py <num_jobs> <search_query>'"
+            )
+        gather_data(keywords=query, num_jobs=num)
+        print("Finished Scraping")
