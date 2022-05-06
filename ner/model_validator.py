@@ -57,6 +57,5 @@ def validate_model(model_dir: str, test_data: str) -> float:
     print(f"Total accuracy = {int((correct/total) * 100)}%")
 
 
-os.chdir("/Users/loan/Desktop/pai_resume/enhanced-resume/ner/")
-ic(validate_model("./output/", "test_data.json"))
-
+# os.chdir("/Users/loan/Desktop/pai_resume/enhanced-resume/ner/")
+ic(validate_model("./spacy_model/", "test_data.json"))

@@ -9,6 +9,8 @@ import os
 import glob
 import csv
 import codecs
+from pathlib import Path
+from icecream import ic
 
 
 def sample_k(k: int, csv_filename: str, new_filename: str):
@@ -19,6 +21,8 @@ def sample_k(k: int, csv_filename: str, new_filename: str):
         csv_filename (str): [description]
         new_filename (str): [description]
     """
+
+    print(f"{new_filename} = new filename")
     df = pd.read_csv(csv_filename, encoding="unicode_escape")
     num_lines = df.shape[0] - 1  # number of records in file (excludes header)
 
@@ -29,25 +33,33 @@ def sample_k(k: int, csv_filename: str, new_filename: str):
     # df = df["Job Description"]
 
     # write all the listings to the file, adding a line break between each
-    with open(new_filename, "w", encoding="unicode escape") as f:
+    with open(new_filename, "w+", encoding="unicode escape") as f:
         for i, row in df.iterrows():
             # print(row[3])
-            content = str(row[3]).replace("\r\n", " ")
+            content = str(row[2]).replace("\r\n", " ")
+            # ic(content)
             # manually removes some unicode
-            content = content.replace("_x000D_", " ") \
-                .replace("\xe2\x80\x99", "'") \
-                .replace("\xe2\x80\x98", "'") \
-                .replace("\xe2\x80\x9c", '"') \
-                .replace("\xe2\x80\x9d", '"') \
-                .replace("\xe2\x80\x94", " - ") \
-                .replace("\xe2\x80\x93", " - ") \
-                .replace("\xe2\x80\x92", " - ") \
-                .replace("\xe2\x80\x91", " - ") \
+            content = (
+                content.replace("_x000D_", " ")
+                .replace("\xe2\x80\x99", "'")
+                .replace("\xe2\x80\x98", "'")
+                .replace("\xe2\x80\x9c", '"')
+                .replace("\xe2\x80\x9d", '"')
+                .replace("\xe2\x80\x94", " - ")
+                .replace("\xe2\x80\x93", " - ")
+                .replace("\xe2\x80\x92", " - ")
+                .replace("\xe2\x80\x91", " - ")
                 .replace("\xe2\x80\x90", " - ")
+            )
             # removes the rest of the unicode
-            normalized = unicodedata.normalize('NFKD', content).encode('ascii', 'ignore').decode('ascii')
+            normalized = (
+                unicodedata.normalize("NFKD", content)
+                .encode("ascii", "ignore")
+                .decode("ascii")
+            )
+            # ic(normalized)
             f.write(normalized)
-            f.write(" ")
+            f.write(" \n ")
 
 
 def assign_tasks(filename: str, assignees: List[str], num_assigned: int):
@@ -65,14 +77,13 @@ def assign_tasks(filename: str, assignees: List[str], num_assigned: int):
 
     assert filename != ""
 
+    weekly_assignments_path = Path(".\\weekly_assignments\\")
+
     for assignee in assignees:
         cwd = os.getcwd()
         print(cwd)
 
-        if os.name == "nt":  # windows 10!
-            new_filename = cwd + "\\weekly_assignments\\" + assignee + ".txt"
-        else:
-            new_filename = cwd + "/weekly_assignments/" + assignee + ".txt"
+        new_filename = weekly_assignments_path.joinpath(f"{assignee}.txt")
 
         # if we're assigning a new file to someone, delete the old file
         try:
@@ -97,19 +108,24 @@ def main():
     )
 
     cli.add_argument(
-        "--num", nargs=1, type=int, default=50,
+        "--num",
+        nargs=1,
+        type=int,
+        default=50,
     )
+
+    default_path = Path("../data_processing/processed_output_csvs/processed_final.csv")
 
     cli.add_argument(
         "--filename",
         nargs=1,
         type=str,
-        default="/Users/loan/Desktop/pai_resume/enhanced-resume/data_processing/processed_output_csvs/final_output.csv",
+        default=default_path,
     )
 
     args = cli.parse_args()
 
-    assign_tasks(args.filename[0], args.assignees, args.num)
+    assign_tasks(args.filename, args.assignees, args.num)
 
 
 if __name__ == "__main__":

@@ -22,7 +22,7 @@ class scraperThread(threading.Thread):
         self.name = name
         print(f"Created Thread {self.threadID} and began scraping {self.name}")
 
-        self.filename = r"../output_csvs/" + str(threadID) + ".csv"
+        self.filename = r"../output_from_scraper/" + str(threadID) + ".csv"
 
     def run(self):
         gather_data(self.filename, self.name, NUM_DESCR)
@@ -65,7 +65,7 @@ def main():
     master.join()
     # multi_threaded_scrape()  # do all the scraping first
 
-    os.chdir("../output_csvs")  # change to directory with all the files
+    os.chdir("../output_from_scraper")  # change to directory with all the files
     extension = "csv"
 
     # grabs all files with csv extension
