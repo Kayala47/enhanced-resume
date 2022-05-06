@@ -20,6 +20,7 @@ def coallesece_skils(doc, idxs, text_lists):
         print(list)
         doc.paragraphs[i].text = ", ".join(list)
 
+
 def sort_exp(job_exp, resume_exp):
     sortedList = []
     for paragraph in resume_exp:
