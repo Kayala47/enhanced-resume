@@ -58,7 +58,7 @@ def train_model(output_dir: str, training_data: str, testing_data: str):
 
             random.shuffle(annotations)
             losses = {}
-            ic(annotations)
+            # ic(annotations)
 
             # using minibatch to combine the examples
             # batches = minibatch(annotations, size=2)
