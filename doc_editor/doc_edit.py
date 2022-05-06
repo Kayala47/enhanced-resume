@@ -21,14 +21,15 @@ def coallesece_skils(doc, idxs, text_lists):
         doc.paragraphs[i].text = ", ".join(list)
 
 def sort_exp(job_exp, resume_exp):
-    jobdict = dict(resume_exp, [0]*len(resume_exp))
+    sortedList = []
     for paragraph in resume_exp:
+        jobdict = dict(paragraph, [0]*len(paragraph))
         for i, jex in enumerate(reversed(job_exp)):
             for rex in paragraph:
                 if jex in rex:
                     jobdict[rex] += i
-    jobdict = sorted(jobdict)
-    sortedList = list(jobdict.keys())
+        jobdict = sorted(jobdict)
+        sortedList += [list(jobdict.keys())]
     return sortedList
         
 
