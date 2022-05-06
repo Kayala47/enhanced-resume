@@ -20,6 +20,18 @@ def coallesece_skils(doc, idxs, text_lists):
         print(list)
         doc.paragraphs[i].text = ", ".join(list)
 
+def sort_exp(job_exp, resume_exp):
+    jobdict = dict(resume_exp, [0]*len(resume_exp))
+    for paragraph in resume_exp:
+        for i, jex in enumerate(reversed(job_exp)):
+            for rex in paragraph:
+                if jex in rex:
+                    jobdict[rex] += i
+    jobdict = sorted(jobdict)
+    sortedList = list(jobdict.keys())
+    return sortedList
+        
+
 
 def scrape_doc(
     doc,
