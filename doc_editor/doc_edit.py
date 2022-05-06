@@ -3,6 +3,7 @@ from typing import List, Tuple
 from docx import Document
 
 SORTED_SKILLS_TEST = ["Python", "React.js", "Swift", "C++"]
+SORTED_EXP_TEST = ["Hyperparameter Tuning", "Optimization", "quadrupedal bot"]
 
 
 def sort_skills(job_skills, resume_skills):
@@ -24,15 +25,16 @@ def coallesece_skils(doc, idxs, text_lists):
 def sort_exp(job_exp, resume_exp):
     sortedList = []
     for paragraph in resume_exp:
-        jobdict = dict(paragraph, [0]*len(paragraph))
+        print(paragraph.text)
+        jobdict = dict(paragraph, [0] * len(paragraph))
         for i, jex in enumerate(reversed(job_exp)):
             for rex in paragraph:
                 if jex in rex:
                     jobdict[rex] += i
         jobdict = sorted(jobdict)
+        print(jobdict.keys())
         sortedList += [list(jobdict.keys())]
     return sortedList
-        
 
 
 def scrape_doc(
@@ -98,11 +100,13 @@ def main(args):
     coallesece_skils(doc, skills_idx, new_skills)
 
     doc.save("output_resume.docx")
+    print(present_exp)
 
-    # new_exp = sort_experiences(sorted_exp, present_exp)
+    new_exp = sort_exp(SORTED_EXP_TEST, present_exp)
+    print(f"new = {new_exp}")
 
     # write_paragraphs(new_skills, skills_idx, args.filename)
-    # write_paragraphs(new_exp, exp_idx, args.filename)
+    # # write_paragraphs(new_exp, exp_idx, args.filename)
 
 
 if __name__ == "__main__":

@@ -18,7 +18,7 @@ from bs4 import BeautifulSoup
 
 THREADS = 30 # MUST BE FACTOR OF LISTINGS PER PAGE (30)
 
-def scrape_single(query):
+def scrape_one(query):
     options = webdriver.ChromeOptions()
     options.add_argument("headless")
 
